@@ -1,11 +1,16 @@
 # Public repositories and featured work
 
-The official public project list is updated automatically from [@theihtishaam](https://github.com/theihtishaam?tab=repositories). It currently has no public project repositories beyond the special profile README repository.
+Refreshed 2026-11-11T21:22:59.902Z. Public project repositories under the official account are listed separately from featured public work in the previous account.
 
-## Featured public projects from @ihtishaam-dev
+## Official public repositories: @theihtishaam
 
-- **[agent-shadow-brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** — Shared local memory and scoped context for coding agents.
-- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — Evidence-led regulatory decisions and scenarios.
-- **[procureguard-ai-band-agents](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** — Auditable multi-agent procurement approval.
+There are no additional public project repositories beyond this profile repository yet.
 
-The original repositories are still hosted under @ihtishaam-dev and have not been transferred. [Migration guide](./MIGRATE_PROJECTS.md).
+
+## Featured public AI projects: @ihtishaam-dev
+
+- **[agent-shadow-brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** — Shared local memory and a live activity portal for coding agents. Curated context, MCP, skills, graphs, and review tools.
+- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — Featured AI engineering project
+- **[procureguard-ai-band-agents](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** — Multi-agent enterprise procurement approval on the Band platform - Band of Agents Hackathon Track 1
+
+Original source repositories remain under @ihtishaam-dev until an ownership transfer is completed. Private repositories are not displayed.
