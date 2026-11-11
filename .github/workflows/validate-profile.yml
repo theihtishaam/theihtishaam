@@ -1,0 +1,31 @@
+name: Validate GitHub portfolio
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - 'assets/**'
+      - 'docs/**'
+      - 'tools/**'
+      - '.github/workflows/validate-profile.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check docs/app.js
+          node --check tools/refresh.mjs
+      - name: Check profile graphics, links and JSON
+        run: python3 tools/validate_profile.py
