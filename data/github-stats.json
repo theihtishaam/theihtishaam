@@ -1,5 +1,8 @@
 {
-  "status": "awaiting-first-refresh",
+  "schemaVersion": 1,
   "login": "theihtishaam",
-  "source": "https://api.github.com/users/theihtishaam"
+  "status": "initial-public-snapshot",
+  "publicRepositories": 3,
+  "starsOnNonForkRepositories": 0,
+  "source": "https://api.github.com/repos/theihtishaam/theihtishaam"
 }
