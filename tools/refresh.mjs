@@ -16,9 +16,45 @@ let v=start(1200,246,'GitHub activity updated '+date)+text(30,46,'// PUBLIC GITH
 fields.forEach(([label,value],i)=>{let x=30+i*294;v+='<rect x="'+x+'" y="67" width="274" height="119" rx="12" fill="#152440" stroke="#526492"/>'+text(x+18,105,label,15,'#a8c5dc',650)+text(x+18,164,value,43,'#ffffff',800)+'<path d="M'+(x+18)+' 177h168" stroke="url(#a)" stroke-width="3"/>';});
 v+=text(32,224,'Top languages: '+short([...langs].sort((a,b)=>b[1]-a[1]).slice(0,5).map(x=>x[0]).join(' · ')||'Projects updating',72),15,'#bfd0ec');v+=text(965,224,'REFRESHED '+date.slice(0,10),14,'#7df4e8',700);return v+'</svg>';}
 function projectsSvg(all,date){const six=all.slice(0,6),h=100+Math.max(1,Math.ceil(six.length/3))*187;let v=start(1200,h,'Latest public repositories as of '+date)+text(30,45,'// RECENT PUBLIC PROJECTS',19,'#71f0e3',750)+text(968,45,'LIVE FEED',15,'#baadff',700);
-six.forEach((r,i)=>{const x=30+(i%3)*394,y=70+Math.floor(i/3)*187;v+='<rect x="'+x+'" y="'+y+'" width="374" height="164" rx="13" fill="#182440" stroke="'+['#69e9ed','#a88eff','#ff91c9'][i%3]+'"/>'+text(x+17,y+35,short(r.name,25),23,'#fff',770)+text(x+17,y+70,short(r.description||'Public project',41),15,'#b4c4e1')+text(x+17,y+113,short(r.language||(r.fork?'Fork':'Project'),25),15,'#71f0e3',700)+text(x+17,y+146,'UPDATED '+String(r.pushed_at||r.updated_at||'').slice(0,10),13,'#b4c4e1');});if(!six.length)v+=text(30,132,'No public projects available yet',23);return v+'</svg>';}
-function markdown(all,date){let s='# Public projects\n\nGenerated automatically from [@'+login+'](https://github.com/'+login+'?tab=repositories) on '+date+'.\n\n';for(const r of all){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean([r.language||'No language',r.fork?'Fork':'Source',r.archived?'Archived':'Active','updated '+(r.pushed_at||r.updated_at||'').slice(0,10)].join(' · '))+'\n';if(r.description)s+='  '+clean(short(r.description,220))+'\n';}return s;}
+six.forEach((r,i)=>{const x=30+(i%3)*394,y=70+Math.floor(i/3)*187;v+='<rect x="'+x+'" y="'+y+'" width="374" height="164" rx="13" fill="#182440" stroke="'+['#69e9ed','#a88eff','#ff91c9'][i%3]+'"/>'+text(x+17,y+35,short(r.name,25),23,'#fff',770)+text(x+17,y+70,short(r.description||'Public project',41),15,'#b4c4e1')+text(x+17,y+113,short(r.language||(r.fork?'Fork':'Project'),25),15,'#71f0e3',700)+text(x+17,y+146,'OWNER: '+String(r.owner?.login||login).toUpperCase(),13,'#b4c4e1');});if(!six.length)v+=text(30,132,'No public projects available yet',23);return v+'</svg>';}
+function markdown(all,date){
+ let s='# Public repositories and featured work\n\nRefreshed '+date+'. Public project repositories under the official account are listed separately from featured public work in the previous account.\n\n';
+ const official=all.filter(r=>(r.owner?.login||login)===login);
+ const featured=all.filter(r=>(r.owner?.login||login)!==login);
+ s+='## Official public repositories: @'+login+'\n\n';
+ if(!official.length)s+='There are no additional public project repositories beyond this profile repository yet.\n\n';
+ for(const r of official){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||r.language||'Public project',180))+'\n';}
+ s+='\n## Featured public AI projects: @ihtishaam-dev\n\n';
+ for(const r of featured){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||'Featured AI engineering project',180))+'\n';}
+ return s+'\nOriginal source repositories remain under @ihtishaam-dev until an ownership transfer is completed. Private repositories are not displayed.\n';
+}
 async function avatar(u){if(!/^https:\/\/avatars\.githubusercontent\.com\/u\/\d+(\?v=\d+)?$/.test(u.avatar_url))throw Error('Unexpected avatar URL');const r=await fetch(u.avatar_url,{headers:{'User-Agent':'github-profile-refresh'},signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Avatar HTTP '+r.status);const type=(r.headers.get('content-type')||'').split(';')[0];if(!['image/png','image/jpeg','image/webp'].includes(type))throw Error('Unsupported avatar type');const b=Buffer.from(await r.arrayBuffer());if(b.length<100||b.length>3000000)throw Error('Bad avatar size');return 'data:'+type+';base64,'+b.toString('base64');}
-async function main(){const [u,raw]=await Promise.all([api('/users/'+login),repos()]);if(u.login!==login)throw Error('Unexpected account');const all=raw.filter(r=>r.owner?.login===login&&!r.private);const eligible=all.filter(r=>r.name!==login).sort((a,b)=>(b.pushed_at||b.updated_at||'').localeCompare(a.pushed_at||a.updated_at||'')||a.name.localeCompare(b.name));const date=new Date().toISOString();const summary={schemaVersion:1,login,refreshedAt:date,publicRepositories:u.public_repos,followers:u.followers,starsOnNonForkRepositories:all.filter(r=>!r.fork).reduce((n,r)=>n+(r.stargazers_count||0),0),source:'https://api.github.com/users/'+login};const data={schemaVersion:1,login,refreshedAt:date,repositoryCount:eligible.length,repositories:eligible.map(r=>({name:r.name,url:r.html_url,description:r.description,language:r.language,createdAt:r.created_at,pushedAt:r.pushed_at,fork:r.fork,archived:r.archived}))};
-await put('data/github-stats.json',JSON.stringify(summary,null,2)+'\n');await put('data/public-projects.json',JSON.stringify(data,null,2)+'\n');await put('assets/statistics.svg',statistics(u,all,date));await put('assets/recent-projects.svg',projectsSvg(eligible,date));await put('docs/PUBLIC_PROJECTS.md',markdown(eligible,date));try{let t=await readFile('assets/face-scan.template.svg','utf8');if(!t.includes('{{AVATAR_DATA_URI}}'))throw Error('Avatar placeholder missing');await put('assets/face-scan.svg',t.replaceAll('{{AVATAR_DATA_URI}}',await avatar(u)));}catch(e){console.warn('Avatar refresh skipped; existing image retained:',e.message);}console.log('Updated '+eligible.length+' public projects for '+login);}
+async function selectedPublicProjects(){
+ const names=['agent-shadow-brain','Civic-Twins','procureguard-ai-band-agents'];
+ return (await Promise.all(names.map(async name=>{
+   try{const data=await api('/repos/ihtishaam-dev/'+encodeURIComponent(name));return data.private?null:data;}
+   catch(err){console.warn('Using known public link for '+name,err.message);return {name,html_url:'https://github.com/ihtishaam-dev/'+name,description:'Featured AI engineering project',language:null,owner:{login:'ihtishaam-dev'}};}
+ }))).filter(Boolean);
+}
+async function main(){
+ const [u,raw,featured]=await Promise.all([api('/users/'+login),repos(),selectedPublicProjects()]);
+ if(u.login!==login)throw Error('Unexpected account');
+ const all=raw.filter(r=>r.owner?.login===login&&!r.private);
+ const official=all.filter(r=>r.name!==login).sort((a,b)=>(b.pushed_at||b.updated_at||'').localeCompare(a.pushed_at||a.updated_at||'')||a.name.localeCompare(b.name));
+ const display=[...official,...featured.filter(r=>!official.some(p=>p.name.toLowerCase()===r.name.toLowerCase()))];
+ const date=new Date().toISOString();
+ const summary={schemaVersion:2,login,refreshedAt:date,publicRepositories:u.public_repos,officialProjectCount:official.length,featuredFromPreviousAccount:display.length-official.length,followers:u.followers,starsOnNonForkRepositories:all.filter(r=>!r.fork).reduce((n,r)=>n+(r.stargazers_count||0),0),source:'https://api.github.com/users/'+login};
+ const data={schemaVersion:2,login,refreshedAt:date,officialRepositoryCount:official.length,featuredExternalProjects:display.length-official.length,repositoryCount:display.length,repositories:display.map(r=>({name:r.name,url:r.html_url,description:r.description,language:r.language,sourceOwner:r.owner?.login||login,pushedAt:r.pushed_at,fork:r.fork||false,archived:r.archived||false}))};
+ await put('data/github-stats.json',JSON.stringify(summary,null,2)+'\n');
+ await put('data/public-projects.json',JSON.stringify(data,null,2)+'\n');
+ await put('assets/statistics.svg',statistics(u,all,date));
+ await put('assets/recent-projects.svg',projectsSvg(display,date));
+ await put('docs/PUBLIC_PROJECTS.md',markdown(display,date));
+ try{
+  let t=await readFile('assets/face-scan.template.svg','utf8');
+  if(!t.includes('{{AVATAR_DATA_URI}}'))throw Error('Avatar placeholder missing');
+  await put('assets/face-scan.svg',t.replaceAll('{{AVATAR_DATA_URI}}',await avatar(u)));
+ }catch(e){console.warn('Avatar refresh failed; retaining last graphic:',e.message);}
+ console.log('Refreshed '+official.length+' official public projects and '+(display.length-official.length)+' featured projects.');
+}
 main().catch(e=>{console.error(e);process.exitCode=1;});

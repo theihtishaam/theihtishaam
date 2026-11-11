@@ -49,6 +49,7 @@ if(field){for(let i=0;i<30;i++){
 function scrollProgress(){const size=document.documentElement.scrollHeight-innerHeight;document.documentElement.style.setProperty('--scroll',size>0?(scrollY/size*100)+'%':'0%');}
 addEventListener('scroll',scrollProgress,{passive:true});scrollProgress();
 const LOGIN='theihtishaam';
+const FEATURED=['agent-shadow-brain','Civic-Twins','procureguard-ai-band-agents'];
 const API='https://api.github.com';
 async function request(path){const res=await fetch(API+path,{headers:{Accept:'application/vnd.github+json'},signal:AbortSignal.timeout(15000)});if(!res.ok)throw Error('API '+res.status);return res.json();}
 function makeRepo(r){
@@ -59,6 +60,7 @@ function makeRepo(r){
   const lang=document.createElement('span');lang.textContent=r.language||'Project';meta.append(lang);
   const date=document.createElement('span');date.textContent='Updated '+String(r.pushed_at||r.pushedAt||r.updated_at||'').slice(0,10);meta.append(date);
   if(r.fork){const fork=document.createElement('span');fork.textContent='Fork';meta.append(fork);}
+  const owner=r.owner?.login||r.sourceOwner||LOGIN;if(owner!==LOGIN){const original=document.createElement('span');original.textContent='FEATURED · '+owner;meta.append(original);}
   a.append(title,desc,meta);return a;
 }
 function displayProjects(items){const box=$('#repo-list');box.replaceChildren(...items.filter(r=>r.name!==LOGIN).slice(0,24).map(makeRepo));if(!box.children.length){const a=document.createElement('a');a.className='repo-item';a.href='https://github.com/'+LOGIN+'?tab=repositories';a.textContent='Explore public repositories on GitHub ↗';box.append(a);}}
@@ -74,7 +76,11 @@ async function load(){
   $('#stat-followers').textContent=user.followers.toLocaleString();
   $('#stat-status').textContent='LIVE';
   repos.sort((a,b)=>String(b.pushed_at||'').localeCompare(String(a.pushed_at||'')));
-  displayProjects(repos);
+  const featured=await Promise.all(FEATURED.map(async name=>{
+    try{return await request('/repos/ihtishaam-dev/'+encodeURIComponent(name));}
+    catch{return {name,html_url:'https://github.com/ihtishaam-dev/'+name,description:'Featured public AI engineering project',owner:{login:'ihtishaam-dev'},language:'AI engineering'};}
+  }));
+  displayProjects(repos.concat(featured.filter(r=>!repos.some(p=>p.name.toLowerCase()===r.name.toLowerCase()))));
  }catch(error){
   console.warn('Using repository snapshot instead of live GitHub API',error.message);
   $('#stat-status').textContent='CACHED';
