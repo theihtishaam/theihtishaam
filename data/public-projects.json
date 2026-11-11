@@ -1,26 +1,7 @@
 {
   "schemaVersion": 1,
   "login": "theihtishaam",
-  "status": "initial-public-snapshot",
-  "repositoryCount": 2,
-  "repositories": [
-    {
-      "name": "dww",
-      "url": "https://github.com/theihtishaam/dww",
-      "description": null,
-      "language": "Python",
-      "pushedAt": "2025-02-04T11:57:06Z",
-      "fork": false,
-      "archived": false
-    },
-    {
-      "name": "demo_stock",
-      "url": "https://github.com/theihtishaam/demo_stock",
-      "description": null,
-      "language": "Python",
-      "pushedAt": "2023-03-07T18:07:40Z",
-      "fork": false,
-      "archived": false
-    }
-  ]
+  "refreshedAt": "2026-11-11T21:01:34.764Z",
+  "repositoryCount": 0,
+  "repositories": []
 }

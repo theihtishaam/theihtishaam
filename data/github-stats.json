@@ -1,8 +1,9 @@
 {
   "schemaVersion": 1,
   "login": "theihtishaam",
-  "status": "initial-public-snapshot",
-  "publicRepositories": 3,
+  "refreshedAt": "2026-11-11T21:01:34.764Z",
+  "publicRepositories": 1,
+  "followers": 0,
   "starsOnNonForkRepositories": 0,
-  "source": "https://api.github.com/repos/theihtishaam/theihtishaam"
+  "source": "https://api.github.com/users/theihtishaam"
 }
