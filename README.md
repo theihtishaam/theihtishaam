@@ -56,6 +56,8 @@ Recorded with scripted MCP clients and synthetic data.
 
 <img src="./assets/stack-wall.svg" width="100%" alt="C#, .NET Core, Angular, React, WPF, SQL Server, Python, TypeScript, AI agents, MCP, machine learning, Laravel, Azure, AWS and GitHub Actions">
 
+<img src="./assets/experience.svg" width="100%" alt="Engineering career timeline from 2017 to present across CNS, GCS, Xtreme Soft, Zaid International and Spartan Soft">
+
 <img src="./assets/section-activity.svg" width="100%" alt="05 — GitHub activity and public project feed">
 
 <a href="./data/github-stats.json"><img src="./assets/statistics.svg" width="100%" alt="Automated GitHub statistics for @theihtishaam"></a>
