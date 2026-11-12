@@ -122,8 +122,8 @@ New public repositories created under this account will automatically appear her
 
 **Featured open-source projects from previous account — [@ihtishaam-dev](https://github.com/ihtishaam-dev)**
 
-- **[agent-shadow-brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** — TypeScript · Shared local memory and a live activity portal for coding agents. Curated context, MCP, skills, graphs, and re
-- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — TypeScript · AI engineering project
+- **[agent-shadow-brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** — TypeScript · Shared local memory and a live activity portal for coding agents. Curated context, MCP, skills, graphs, and review tools.
+- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — TypeScript · Public software project
 - **[procureguard-ai-band-agents](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** — Python · Multi-agent enterprise procurement approval on the Band platform - Band of Agents Hackathon Track 1
 
 [**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)
