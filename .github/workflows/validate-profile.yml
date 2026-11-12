@@ -26,6 +26,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check docs/app.js
+          node --check docs/case.js
           node --check tools/refresh.mjs
       - name: Check profile graphics, links and JSON
         run: python3 tools/validate_profile.py

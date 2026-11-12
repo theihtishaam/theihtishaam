@@ -6,6 +6,8 @@ import json
 import re
 import sys
 from pathlib import Path
+from html.parser import HTMLParser
+from urllib.parse import unquote
 from xml.etree import ElementTree as ET
 
 root = Path(__file__).resolve().parent.parent
@@ -46,6 +48,58 @@ html = (root / "docs/index.html").read_text(encoding="utf-8")
 for section in ["id=\"work\"", "id=\"journey\"", "id=\"sites\"", "id=\"contact\""]:
     if section not in html:
         errors.append(f"Missing site section: {section}")
+# Check local links and image paths across the Pages site and all case studies.
+class LinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.refs = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag not in {"a", "img", "script", "link"}:
+            return
+        for key, value in attrs:
+            if key in {"href", "src"} and value:
+                self.refs.append(value)
+
+def verify_local_ref(source: Path, ref: str) -> None:
+    if ref.startswith(("https:", "http:", "mailto:", "tel:", "data:", "#", "//")):
+        return
+    clean = unquote(ref.split("#", 1)[0].split("?", 1)[0])
+    if not clean:
+        return
+    if clean.startswith("/"):
+        errors.append(f"Root-relative URL may be incorrect on project Pages: {source.relative_to(root)} -> {ref}")
+        return
+    local = (source.parent / clean).resolve()
+    try:
+        local.relative_to(root.resolve())
+    except ValueError:
+        errors.append(f"Link escapes repository root: {source.relative_to(root)} -> {ref}")
+        return
+    if not local.is_file():
+        errors.append(f"Broken local link: {source.relative_to(root)} -> {ref}")
+
+pages = [root / "docs/index.html", *sorted((root / "docs/projects").glob("*.html"))]
+for page in pages:
+    parser = LinkParser()
+    parser.feed(page.read_text(encoding="utf-8"))
+    for ref in parser.refs:
+        verify_local_ref(page, ref)
+
+for document in sorted((root / "docs/projects").glob("*.md")):
+    body = document.read_text(encoding="utf-8")
+    for ref in re.findall(r'\[[^\]]+\]\(([^)]+)\)', body):
+        verify_local_ref(document, ref)
+    for ref in re.findall(r'<img[^>]*src="([^"]+)"', body):
+        verify_local_ref(document, ref)
+
+required_cases = ["agent-shadow-brain", "civic-twin", "procureguard-ai"]
+for name in required_cases:
+    for path in [f"docs/projects/{name}.md", f"docs/projects/{name}.html",
+                 f"assets/case-{name}.svg", f"assets/flow-{name}.svg"]:
+        if not (root / path).is_file():
+            errors.append(f"Missing project case-study artifact: {path}")
+
 for err in errors:
     print("ERROR", err)
 print(f"Validated {len(svg_files)} SVG assets, README links and portfolio sections")
