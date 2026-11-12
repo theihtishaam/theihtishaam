@@ -27,8 +27,12 @@ jobs:
         run: |
           node --check docs/app.js
           node --check docs/catalogue.js
+          node --check docs/navigation.js
+          node --check tools/portfolio-ui.test.mjs
           node --check docs/spider-web.js
           node --check docs/case.js
           node --check tools/refresh.mjs
+      - name: Smoke-test interactive project catalogue and workflow tabs
+        run: node --test tools/portfolio-ui.test.mjs
       - name: Check profile graphics, links and JSON
         run: python3 tools/validate_profile.py
