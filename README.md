@@ -112,6 +112,25 @@ An award-winning multi-agent review workspace. Specialist roles inspect procurem
 
 <a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/recent-projects.svg" width="100%" alt="Automatically discovered public repositories and linked featured projects"></a>
 
+<!-- AUTO_PUBLIC_PROJECTS_START -->
+<details open>
+<summary><b>✦ AUTO-SYNC PROJECT INDEX · LAST VERIFIED 2026-11-12</b></summary>
+
+**Official public projects — [@theihtishaam](https://github.com/theihtishaam?tab=repositories)**
+
+New public repositories created under this account will automatically appear here after the next profile refresh.
+
+**Featured open-source projects from previous account — [@ihtishaam-dev](https://github.com/ihtishaam-dev)**
+
+- **[agent-shadow-brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** — TypeScript · Shared local memory and a live activity portal for coding agents. Curated context, MCP, skills, graphs, and re
+- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — TypeScript · AI engineering project
+- **[procureguard-ai-band-agents](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** — Python · Multi-agent enterprise procurement approval on the Band platform - Band of Agents Hackathon Track 1
+
+[**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)
+
+</details>
+<!-- AUTO_PUBLIC_PROJECTS_END -->
+
 <div align="center">
 
 [**Every public project**](./docs/PUBLIC_PROJECTS.md) · [**Source and metrics**](./data/github-stats.json) · [**Auto-refresh workflow**](./.github/workflows/profile.yml)

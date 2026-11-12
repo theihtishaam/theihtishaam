@@ -148,6 +148,19 @@ try:
 except (OSError, ValueError, TypeError) as err:
     errors.append(f"Cannot verify public project mirror: {err}")
 
+# Ensure README auto-project list updates do not misattribute original repositories.
+if readme.count("<!-- AUTO_PUBLIC_PROJECTS_START -->") != 1 or readme.count("<!-- AUTO_PUBLIC_PROJECTS_END -->") != 1:
+    errors.append("README requires exactly one auto-project start and end marker")
+else:
+    auto = readme.split("<!-- AUTO_PUBLIC_PROJECTS_START -->", 1)[1].split("<!-- AUTO_PUBLIC_PROJECTS_END -->", 1)[0]
+    for item in json.loads((root / "data/public-projects.json").read_text(encoding="utf-8")).get("repositories", []):
+        if item.get("sourceOwner") != "theihtishaam":
+            continue
+        if f"https://github.com/theihtishaam/{item.get('name')}" not in auto and len(auto) < 200000:
+            # The README list intentionally caps at 50; the markdown directory has the complete set.
+            if auto.count("**[") < 50:
+                errors.append(f"Official public repository absent from README catalogue: {item.get('name')}")
+
 for err in errors:
     print("ERROR", err)
 print(f"Validated {len(svg_files)} SVG assets, README links and portfolio sections")

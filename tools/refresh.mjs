@@ -72,6 +72,33 @@ async function refreshNpm(){
  }
 }
 
+/**
+ * Keep a compact, source-attributed list of public repositories visible
+ * directly in the GitHub profile README. Full details always remain in docs.
+ */
+async function publishReadmeProjects(official,featured,date){
+ const before='<!-- AUTO_PUBLIC_PROJECTS_START -->',after='<!-- AUTO_PUBLIC_PROJECTS_END -->';
+ const current=await readFile('README.md','utf8');
+ const start=current.indexOf(before),end=current.indexOf(after);
+ if(start<0||end<=start){console.warn('Auto project README markers missing; preserving README');return;}
+ const trim=s=>clean(short(String(s||'Public software project'),132)).replace(/\s+/g,' ').trim();
+ const bullet=r=>{
+  const name=trim(r.name),url=r.html_url||r.url;
+  if(!/^https:\/\/github\.com\/[\w-]+\/[\w.-]+\/?$/.test(url||''))return '';
+  const lang=trim(r.language||'Source code');
+  return '- **['+name+']('+url+')** — '+lang+' · '+trim(r.description)+'\n';
+ };
+ const shown=official.slice(0,50);
+ const region=before+'\n<details open>\n<summary><b>✦ AUTO-SYNC PROJECT INDEX · LAST VERIFIED '+date.slice(0,10)+'</b></summary>\n\n'+
+ '**Official public projects — [@theihtishaam](https://github.com/theihtishaam?tab=repositories)**\n\n'+
+ (shown.length?shown.map(bullet).join(''):'New public repositories created under this account will automatically appear here after the next profile refresh.\n')+
+ (official.length>shown.length?'\n**'+(official.length-shown.length)+' more official projects** in the complete directory.\n':'')+
+ '\n**Featured open-source projects from previous account — [@ihtishaam-dev](https://github.com/ihtishaam-dev)**\n\n'+
+ featured.map(bullet).join('')+
+ '\n[**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)\n\n</details>\n'+after;
+ const next=current.slice(0,start)+region+current.slice(end+after.length);
+ await put('README.md',next);
+}
 async function main(){
  await refreshNpm();
  const [u,raw,featured]=await Promise.all([api('/users/'+login),repos(),selectedPublicProjects()]);
@@ -94,6 +121,7 @@ async function main(){
   if(!t.includes('{{AVATAR_DATA_URI}}'))throw Error('Avatar placeholder missing');
   await put('assets/face-scan.svg',t.replaceAll('{{AVATAR_DATA_URI}}',await avatar(u)));
  }catch(e){console.warn('Avatar refresh failed; retaining last graphic:',e.message);}
+ await publishReadmeProjects(official,display.filter(r=>!official.some(p=>p.name.toLowerCase()===r.name.toLowerCase())),date);
  console.log('Refreshed '+official.length+' official public projects and '+(display.length-official.length)+' featured projects.');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
