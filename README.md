@@ -30,12 +30,43 @@
 <img src="./assets/section-projects.svg" width="100%" alt="02 — featured AI engineering projects">
 
 <div align="center">
-<a href="https://github.com/ihtishaam-dev/agent-shadow-brain"><img src="./assets/feature-shadow.svg" width="32%" alt="Agent Shadow Brain — shared local memory, scoped context and live agent activity"></a>
-<a href="https://github.com/ihtishaam-dev/Civic-Twins"><img src="./assets/feature-twin.svg" width="32%" alt="CivicTwin Delta — evidence-led regulation scenarios"></a>
-<a href="https://github.com/ihtishaam-dev/procureguard-ai-band-agents"><img src="./assets/feature-procure.svg" width="32%" alt="ProcureGuard AI — award-winning procurement agents"></a>
+<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/feature-shadow.svg" width="32%" alt="Agent Shadow Brain — shared local memory, scoped context and live agent activity"></a>
+<a href="./docs/projects/civic-twin.md"><img src="./assets/feature-twin.svg" width="32%" alt="CivicTwin Delta — evidence-led regulation scenarios"></a>
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/feature-procure.svg" width="32%" alt="ProcureGuard AI — award-winning procurement agents"></a>
 </div>
 
-**[Agent Shadow Brain](https://github.com/ihtishaam-dev/agent-shadow-brain)** · [npm package](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) &nbsp; | &nbsp; **[CivicTwin Δ](https://github.com/ihtishaam-dev/Civic-Twins)** · [Live prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) &nbsp; | &nbsp; **[ProcureGuard AI](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** · [Demo video](https://youtu.be/KhKxOJJEYho)
+
+
+<div align="center">
+
+**GO DEEPER — INTERACTIVE PROJECT EXPLAINERS, ARCHITECTURE MAPS & REAL SCREENSHOTS**
+
+<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/case-agent-shadow-brain.svg" width="100%" alt="Agent Shadow Brain case study: click for architecture, screenshots, technology and links"></a>
+
+<a href="./docs/projects/civic-twin.md"><img src="./assets/case-civic-twin.svg" width="100%" alt="CivicTwin Delta case study: click for evidence and scenario workflow"></a>
+
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/case-procureguard-ai.svg" width="100%" alt="ProcureGuard AI case study: click for vendor approval workflow and screenshots"></a>
+
+</div>
+
+<details>
+<summary><b>⊕ Explore the engineering workflows visually</b></summary>
+
+**Agent Shadow Brain — how memory reaches a coding agent**
+
+<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/flow-agent-shadow-brain.svg" width="100%" alt="Agent Shadow Brain example workflow diagram"></a>
+
+**CivicTwin Δ — six-stage regulatory scenario pipeline**
+
+<a href="./docs/projects/civic-twin.md"><img src="./assets/flow-civic-twin.svg" width="100%" alt="CivicTwin capture, resolve, compile, decide, compare, prove stages"></a>
+
+**ProcureGuard AI — evidence before human approval**
+
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/flow-procureguard-ai.svg" width="100%" alt="ProcureGuard AI procurement review workflow"></a>
+
+</details>
+
+**[Agent Shadow Brain](./docs/projects/agent-shadow-brain.md)** · [npm package](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) &nbsp; | &nbsp; **[CivicTwin Δ](./docs/projects/civic-twin.md)** · [Live prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) &nbsp; | &nbsp; **[ProcureGuard AI](./docs/projects/procureguard-ai.md)** · [Demo video](https://youtu.be/KhKxOJJEYho)
 
 <details>
 <summary><b>▶ Watch the Agent Shadow Brain live demonstration</b></summary>
