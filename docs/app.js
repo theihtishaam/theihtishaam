@@ -119,3 +119,21 @@ tabs.forEach((tab,i)=>{
 });
 load();
 })();
+
+/* Download milestone is served by this same GitHub Pages repository. */
+(async()=>{
+ const count=document.getElementById('npm-downloads-count');
+ if(!count)return;
+ try{
+  const result=await fetch('./npm-metrics.json',{signal:AbortSignal.timeout(10000),cache:'no-cache'});
+  if(!result.ok)throw new Error('Cached data unavailable');
+  const stats=await result.json();
+  if(stats.package!=='@theihtisham/agent-shadow-brain')throw new Error('Unexpected package');
+  if(!Number.isFinite(stats.downloads)||stats.downloads<0)throw new Error('Invalid count');
+  count.textContent=Math.floor(stats.downloads).toLocaleString('en-US');
+  const date=document.getElementById('npm-downloads-date');
+  if(date&&/^\d{4}-\d{2}-\d{2}$/.test(stats.coverageEnd||'')){
+   date.textContent='Verified through '+stats.coverageEnd+' · not unique users';
+  }
+ }catch(error){console.warn('Using last verified npm download snapshot',error.message);}
+})();

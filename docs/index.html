@@ -12,9 +12,11 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a1024'/%3E%3Cpath d='M18 43V19h8v24zm20 0V19h8v24z' fill='%2361efe5'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
+  <script src="./spider-web.js" defer></script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
+  <canvas id="spider-web" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
   <div class="spotlight" aria-hidden="true"></div>
   <div id="reading-progress" aria-hidden="true"></div>
@@ -35,7 +37,7 @@
     <section id="top" class="hero shell">
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-light"></span> THE ENGINEERING LAB // UAE</p>
-        <p class="overline">CODE • INTELLIGENCE • AUTOMATION</p>
+        <p class="overline">CODE • INTELLIGENCE • AUTOMATION • NEURAL WEB</p>
         <h1>Building software<br>that <span class="rainbow">thinks ahead.</span></h1>
         <p class="hero-intro">I'm <strong>Ihtisham Ahmad</strong> — a full-stack software engineer working at the intersection of AI agents, .NET systems, Python automation and practical digital products.</p>
         <div class="hero-actions">
@@ -58,6 +60,17 @@
       </div>
       <div class="hero-index" aria-hidden="true">01 / INTRODUCTION</div>
     </section>
+    <section class="impact-strip shell" aria-label="Open-source impact">
+      <a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain" target="_blank" rel="noopener noreferrer" class="impact-stat">
+        <span class="impact-label">SHADOW BRAIN / NPM DOWNLOADS</span><strong id="npm-downloads-count" data-default="5316">5,316</strong><span class="impact-foot" id="npm-downloads-date">Verified through 10 Nov 2026 · not unique users</span>
+      </a>
+      <a href="./projects/agent-shadow-brain.html" class="impact-stat">
+        <span class="impact-label">PUBLIC PACKAGE MILESTONE</span><strong>5K+</strong><span class="impact-foot">Coding-agent tool downloads · explore architecture ↗</span>
+      </a>
+      <a href="#work" class="impact-stat">
+        <span class="impact-label">FEATURED AI ENGINEERING</span><strong>03</strong><span class="impact-foot">Memory · regulation · agent governance ↗</span>
+      </a>
+    </section>
     <section id="about" class="shell highlights">
       <div class="highlight tile tilt-card" data-tilt><span class="tile-symbol cyan">◉</span><span class="tile-kicker">DISCIPLINE 01</span><h2>Full-stack<br>engineering</h2><p>ASP.NET Core · C# · Angular · SQL</p></div>
       <div class="highlight tile tilt-card" data-tilt><span class="tile-symbol violet">⌘</span><span class="tile-kicker">DISCIPLINE 02</span><h2>Agentic<br>AI tooling</h2><p>Memory · tool orchestration · MCP</p></div>
@@ -68,6 +81,7 @@
     </section>
     <section id="work" class="section shell">
       <div class="section-heading"><div><p class="section-kicker">// 02 — FEATURED ENGINEERING</p><h2>Built to solve <span class="rainbow">real problems.</span></h2></div><p>Three selected AI engineering systems, each with real source code, demos and technical details.</p></div>
+      <a class="ecosystem-diagram" href="#workflow-explorer" aria-label="Explore all three AI engineering projects and their workflows"><img src="./assets/project-overview.svg" width="1200" height="298" alt="Agent Shadow Brain, CivicTwin Delta and ProcureGuard AI connected engineering ecosystem" loading="lazy"></a>
       <div class="project-grid">
         <article class="project-card project-teal tilt-card" data-tilt>
           <div class="project-art"><span class="project-counter">01 // AI TOOLING</span><div class="art-grid neural-art"><span class="neural-node node-a"></span><span class="neural-node node-b"></span><span class="neural-node node-c"></span><span class="neural-core">◉</span></div><span class="project-art-caption">AGENT MEMORY NETWORK / ACTIVE</span></div>
