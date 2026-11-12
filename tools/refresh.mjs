@@ -61,6 +61,7 @@ async function refreshNpm(){
   const svg=svgTemplate.replaceAll('{{TOTAL}}',count.toLocaleString('en-US'))
    .replaceAll('{{COVERAGE_END}}',date).replaceAll('{{MILESTONE}}',count>=5000?'5K+':'TOTAL');
   await put('assets/npm-milestone.svg',svg);
+  await put('docs/assets/npm-milestone.svg',svg);
   const json=JSON.stringify(snapshot,null,2)+'\n';
   await put('data/npm-metrics.json',json);
   await put('docs/npm-metrics.json',json);
