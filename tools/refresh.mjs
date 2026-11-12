@@ -36,7 +36,43 @@ async function selectedPublicProjects(){
    catch(err){console.warn('Using known public link for '+name,err.message);return {name,html_url:'https://github.com/ihtishaam-dev/'+name,description:'Featured AI engineering project',language:null,owner:{login:'ihtishaam-dev'}};}
  }))).filter(Boolean);
 }
+/** Verify the upstream project's publicly reported npm totals, without third-party packages. */
+async function refreshNpm(){
+ try{
+  const u='https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/npm-metrics.json';
+  const res=await fetch(u,{headers:{'User-Agent':'theihtishaam-profile-refresh'},signal:AbortSignal.timeout(15000)});
+  if(!res.ok)throw Error('Upstream stats HTTP '+res.status);
+  const m=await res.json();
+  if(m.package!=='@theihtisham/agent-shadow-brain')throw Error('Unexpected npm package');
+  if(m.coverage?.completeSinceCreation!==true)throw Error('Incomplete lifetime coverage');
+  if(!Number.isSafeInteger(m.npm?.total)||m.npm.total<0)throw Error('Invalid download total');
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(m.coverage?.end||''))throw Error('Invalid coverage date');
+  const count=m.npm.total,date=m.coverage.end;
+  const snapshot={
+    schemaVersion:2,
+    package:m.package,sourceRepo:'ihtishaam-dev/agent-shadow-brain',
+    refreshedAt:m.refreshedAt||null,coverageStart:m.coverage.start,coverageEnd:date,
+    downloads:count,last30Days:m.npm.lastMonth?.downloads??null,
+    source:'https://github.com/ihtishaam-dev/agent-shadow-brain/blob/main/docs/STATS.md',
+    note:'Package downloads are not unique users; the date refers to the latest complete reporting day.'
+  };
+  const svgTemplate=await readFile('assets/npm-milestone.template.svg','utf8');
+  if(!['{{TOTAL}}','{{COVERAGE_END}}','{{MILESTONE}}'].every(v=>svgTemplate.includes(v)))throw Error('Missing milestone SVG placeholder');
+  const svg=svgTemplate.replaceAll('{{TOTAL}}',count.toLocaleString('en-US'))
+   .replaceAll('{{COVERAGE_END}}',date).replaceAll('{{MILESTONE}}',count>=5000?'5K+':'TOTAL');
+  await put('assets/npm-milestone.svg',svg);
+  const json=JSON.stringify(snapshot,null,2)+'\n';
+  await put('data/npm-metrics.json',json);
+  await put('docs/npm-metrics.json',json);
+  console.log('Verified npm lifetime downloads: '+count+' through '+date);
+ }catch(e){
+  // Existing verified data and image remain intact if the upstream endpoint fails.
+  console.warn('Npm download refresh skipped; preserving last verified snapshot:',e.message);
+ }
+}
+
 async function main(){
+ await refreshNpm();
  const [u,raw,featured]=await Promise.all([api('/users/'+login),repos(),selectedPublicProjects()]);
  if(u.login!==login)throw Error('Unexpected account');
  const all=raw.filter(r=>r.owner?.login===login&&!r.private);

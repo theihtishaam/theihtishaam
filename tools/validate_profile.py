@@ -100,6 +100,29 @@ for name in required_cases:
         if not (root / path).is_file():
             errors.append(f"Missing project case-study artifact: {path}")
 
+# Validate the mirrored npm download snapshot and animated spider-web setup.
+try:
+    root_npm = json.loads((root / "data/npm-metrics.json").read_text(encoding="utf-8"))
+    site_npm = json.loads((root / "docs/npm-metrics.json").read_text(encoding="utf-8"))
+    if root_npm.get("package") != "@theihtisham/agent-shadow-brain":
+        errors.append("Incorrect npm package ID")
+    if root_npm.get("downloads") != site_npm.get("downloads"):
+        errors.append("GitHub Pages npm stats differ from root stats")
+    if not isinstance(root_npm.get("downloads"), int):
+        errors.append("Download total must be an integer")
+except (OSError, ValueError) as exc:
+    errors.append(f"npm metric data: {exc}")
+web_html = (root / "docs/index.html").read_text(encoding="utf-8")
+for snippet in ["id=\"spider-web\"", "src=\"./spider-web.js\""]:
+    if snippet not in web_html:
+        errors.append(f"Missing spider-web integration: {snippet}")
+for name in required_cases:
+    case_html = (root / "docs/projects" / (name + ".html")).read_text(encoding="utf-8")
+    if 'id="spider-web"' not in case_html:
+        errors.append(f"Spider web missing in {name} HTML")
+    if 'src="../spider-web.js"' not in case_html:
+        errors.append(f"Spider web script missing in {name} HTML")
+
 for err in errors:
     print("ERROR", err)
 print(f"Validated {len(svg_files)} SVG assets, README links and portfolio sections")
