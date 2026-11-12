@@ -93,7 +93,7 @@ async function load(){
  }
 }
 /* Interactive workflow selector */
-const tabs=$('.caseflow-tab');
+const tabs=$$('.caseflow-tab');
 const flowData={
  shadow:{image:'./assets/flow-agent-shadow-brain.svg',link:'./projects/agent-shadow-brain.html',alt:'Agent Shadow Brain example workflow for coding-agent memory and scoped context',description:'Curate memory, build context packs and inspect coding agent activity.'},
  civic:{image:'./assets/flow-civic-twin.svg',link:'./projects/civic-twin.html',alt:'CivicTwin six-stage regulatory analysis pipeline',description:'Capture facts, evaluate typed rules, compare scenarios and show the proof boundary.'},
