@@ -10,6 +10,12 @@
 
 </div>
 
+## Public npm impact
+
+<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="../../assets/npm-milestone.svg" width="100%" alt="Verified Agent Shadow Brain npm downloads"></a>
+
+The published total reached **5,316 cumulative npm downloads** through **November 10, 2026** (a 5K+ milestone). These are package download events, **not** unique people. The figure is mirrored from the [public package statistics](https://github.com/ihtishaam-dev/agent-shadow-brain/blob/main/docs/STATS.md) and is updated by the profile workflow.
+
 ## What problem does it solve?
 
 Curated memory, scoped context packs and a live operations portal for agent workflows. The project is documented and published in its [source repository](https://github.com/ihtishaam-dev/agent-shadow-brain), which remains the authoritative reference for its latest behavior and setup.
