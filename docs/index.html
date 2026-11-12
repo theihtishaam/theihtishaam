@@ -12,6 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a1024'/%3E%3Cpath d='M18 43V19h8v24zm20 0V19h8v24z' fill='%2361efe5'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
+  <script src="./catalogue.js" defer></script>
   <script src="./spider-web.js" defer></script>
 </head>
 <body>
@@ -140,7 +141,26 @@
     <section id="public" class="section shell">
       <div class="section-heading"><div><p class="section-kicker">// 05 — LIVE FROM GITHUB</p><h2>Open-source <span class="rainbow">pulse.</span></h2></div><p>All public repositories from the official account. The list updates when the public GitHub data changes.</p></div>
       <div class="stats-row"><div><strong id="stat-repos">—</strong><span>PUBLIC REPOS</span></div><div><strong id="stat-stars">—</strong><span>PUBLIC STARS</span></div><div><strong id="stat-followers">—</strong><span>FOLLOWERS</span></div><div><strong id="stat-status">SYNCING</strong><span>DATA STATUS</span></div></div>
-      <div id="repo-list" class="repo-grid" aria-live="polite"><a class="repo-item" href="https://github.com/theihtishaam?tab=repositories">Loading public repositories… browse on GitHub ↗</a></div>
+      <div class="repo-explorer" aria-label="Public repository explorer">
+        <div class="repo-explorer-head">
+          <span class="repo-explorer-kicker">PUBLIC REPOSITORY TERMINAL // AUTO SYNC</span>
+          <span class="repo-explorer-light" aria-hidden="true">●</span>
+        </div>
+        <div class="repo-toolbar">
+          <div class="repo-filter-group" role="group" aria-label="Filter repositories">
+            <button type="button" class="repo-filter is-active" data-filter="all" aria-pressed="true">ALL PUBLIC</button>
+            <button type="button" class="repo-filter" data-filter="official" aria-pressed="false">OFFICIAL ACCOUNT</button>
+            <button type="button" class="repo-filter" data-filter="featured" aria-pressed="false">FEATURED AI</button>
+          </div>
+          <div class="repo-controls">
+            <label class="repo-search-wrap"><span class="repo-search-icon" aria-hidden="true">⌕</span><span class="visually-hidden">Search repositories</span><input id="repo-search" type="search" placeholder="Find projects or technologies…" autocomplete="off" aria-label="Search repositories"></label>
+            <label class="repo-sort-wrap"><span class="visually-hidden">Sort repositories</span><select id="repo-sort" aria-label="Sort repositories"><option value="updated">RECENTLY UPDATED</option><option value="name">NAME A–Z</option></select></label>
+          </div>
+        </div>
+        <p id="repo-result-summary" class="repo-result-summary" role="status" aria-live="polite">Loading public projects…</p>
+        <div id="repo-list" class="repo-grid"><a class="repo-item" href="https://github.com/theihtishaam?tab=repositories">Browse public GitHub repositories ↗</a></div>
+        <button id="repo-show-more" class="repo-show-more" type="button" hidden>SHOW MORE PUBLIC PROJECTS ↓</button>
+      </div>
       <p class="data-footnote">Public GitHub API only; private repositories are never requested or displayed. Data may be rate-limited or cached.</p>
     </section>
     <section id="contact" class="section shell contact">
