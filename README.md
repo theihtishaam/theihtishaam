@@ -1,81 +1,98 @@
 <div align="center">
 
-<a href="https://github.com/theihtishaam"><img src="./assets/hero.svg" width="100%" alt="Ihtisham Ahmad: AI systems and software engineering — cinematic animated neon header"></a>
+<a href="./docs/ENABLE_PAGES.md"><img src="./assets/hero.svg" width="100%" alt="Ihtisham Ahmad · full-stack and AI systems engineering · neon spider web across a dark background"></a>
 
-<a href="https://github.com/theihtishaam?tab=repositories"><img src="https://img.shields.io/badge/GITHUB-EXPLORE_CODE-0A2033?style=for-the-badge&logo=github&logoColor=63EEE7" alt="Explore GitHub repositories"></a>
-<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="https://img.shields.io/badge/LINKEDIN-CONNECT-17244A?style=for-the-badge&logo=linkedin&logoColor=ADD3FF" alt="Connect on LinkedIn"></a>
-<a href="./docs/ENABLE_PAGES.md"><img src="https://img.shields.io/badge/INTERACTIVE_SITE-SETUP-432256?style=for-the-badge&logo=githubpages&logoColor=FFB2DF" alt="Open interactive site setup instructions"></a>
+<a href="./docs/ENABLE_PAGES.md"><img src="https://img.shields.io/badge/EXPLORE-SPIDER_WEB_PORTFOLIO-112B40?style=for-the-badge&logo=githubpages&logoColor=70F4EA" alt="Open instructions for interactive GitHub Pages portfolio"></a>
+<a href="https://github.com/theihtishaam?tab=repositories"><img src="https://img.shields.io/badge/GITHUB-VIEW_PUBLIC_REPOS-1B203F?style=for-the-badge&logo=github&logoColor=CCC0FF" alt="GitHub repositories"></a>
+<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="https://img.shields.io/badge/LINKEDIN-LET'S_CONNECT-351E43?style=for-the-badge&logo=linkedin&logoColor=FFB4D9" alt="LinkedIn profile"></a>
+
+**Full-stack Software Engineer · C#/.NET · Python · TypeScript · AI Agents · Automation**
+
+*I connect software, evidence and intelligent agents into practical engineering systems.*
+
+<a href="https://github.com/theihtishaam"><img src="./assets/spider-web.svg" width="100%" alt="Animated dark neon spider-web connecting memory, rules and governance"></a>
 
 </div>
-
-<a href="https://github.com/theihtishaam"><img src="./assets/welcome.svg" width="100%" alt="Engineering with purpose: AI agents, full-stack and automation"></a>
 
 <div align="center">
 
-<img src="./assets/face-scan.svg" width="100%" alt="Decorative animated face scan over my current GitHub avatar; this is a design effect, not biometric verification">
+<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="./assets/npm-milestone.svg" width="100%" alt="Agent Shadow Brain cumulative npm downloads, verified above 5,000 as of 2026-11-10"></a>
+
+[**Download evidence & reporting period**](https://github.com/ihtishaam-dev/agent-shadow-brain/blob/main/docs/STATS.md) · [Local count snapshot](./data/npm-metrics.json) · [npm package](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)
 
 </div>
 
-<img src="./assets/section-social.svg" width="100%" alt="01 — connect and social profiles">
+<img src="./assets/section-social.svg" width="100%" alt="Connect with Ihtisham Ahmad — public profiles">
 
 <div align="center">
-<a href="https://github.com/theihtishaam"><img src="./assets/social-github.svg" width="24%" alt="GitHub: @theihtishaam"></a>
-<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="./assets/social-linkedin.svg" width="24%" alt="LinkedIn: ihtishamdeveloper"></a>
-<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="./assets/social-npm.svg" width="24%" alt="npm: Agent Shadow Brain"></a>
-<a href="https://ababiltechnology.com/"><img src="./assets/social-ababil-tech.svg" width="24%" alt="Ababil Technology: ababiltechnology.com"></a>
+<a href="https://github.com/theihtishaam"><img src="./assets/social-github.svg" width="24%" alt="GitHub @theihtishaam"></a>
+<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="./assets/social-linkedin.svg" width="24%" alt="LinkedIn ihtishamdeveloper"></a>
+<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="./assets/social-npm.svg" width="24%" alt="Agent Shadow Brain on npm"></a>
+<a href="https://ababiltechnology.com/"><img src="./assets/social-ababil-tech.svg" width="24%" alt="Ababil Technology website"></a>
 </div>
 
-<img src="./assets/award.svg" width="100%" alt="2026 Band of Agents: Best Use of AI/ML API category winner — Team Purrwolf, ProcureGuard AI">
+<img src="./assets/section-projects.svg" width="100%" alt="Featured AI project overview and architecture">
 
-<img src="./assets/section-projects.svg" width="100%" alt="02 — featured AI engineering projects">
+<a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/project-overview.svg" width="100%" alt="Three project overview: agent memory, regulatory decisions and procurement governance"></a>
 
 <div align="center">
-<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/feature-shadow.svg" width="32%" alt="Agent Shadow Brain — shared local memory, scoped context and live agent activity"></a>
-<a href="./docs/projects/civic-twin.md"><img src="./assets/feature-twin.svg" width="32%" alt="CivicTwin Delta — evidence-led regulation scenarios"></a>
-<a href="./docs/projects/procureguard-ai.md"><img src="./assets/feature-procure.svg" width="32%" alt="ProcureGuard AI — award-winning procurement agents"></a>
+<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/feature-shadow.svg" width="32%" alt="Explore Agent Shadow Brain case study"></a>
+<a href="./docs/projects/civic-twin.md"><img src="./assets/feature-twin.svg" width="32%" alt="Explore CivicTwin Delta case study"></a>
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/feature-procure.svg" width="32%" alt="Explore ProcureGuard AI case study"></a>
 </div>
 
+### 01. Agent Shadow Brain — memory for coding agents
 
+Shared local memory and a visual workspace for reviewing decisions, building scoped context packs, integrating coding assistants, and inspecting tool activity.
 
-<div align="center">
+**Stack:** TypeScript · Node.js · MCP · CLI · Local-first
 
-**GO DEEPER — INTERACTIVE PROJECT EXPLAINERS, ARCHITECTURE MAPS & REAL SCREENSHOTS**
-
-<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/case-agent-shadow-brain.svg" width="100%" alt="Agent Shadow Brain case study: click for architecture, screenshots, technology and links"></a>
-
-<a href="./docs/projects/civic-twin.md"><img src="./assets/case-civic-twin.svg" width="100%" alt="CivicTwin Delta case study: click for evidence and scenario workflow"></a>
-
-<a href="./docs/projects/procureguard-ai.md"><img src="./assets/case-procureguard-ai.svg" width="100%" alt="ProcureGuard AI case study: click for vendor approval workflow and screenshots"></a>
-
-</div>
+[**Full project overview**](./docs/projects/agent-shadow-brain.md) · [**Source code**](https://github.com/ihtishaam-dev/agent-shadow-brain) · [**Release & demo**](https://github.com/ihtishaam-dev/agent-shadow-brain/releases/tag/v7.1.3) · [**npm**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)
 
 <details>
-<summary><b>⊕ Explore the engineering workflows visually</b></summary>
+<summary><b>View memory pipeline and real workspace images</b></summary>
 
-**Agent Shadow Brain — how memory reaches a coding agent**
+<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/flow-agent-shadow-brain.svg" width="100%" alt="Coding task through context pack and agent workflow"></a>
 
-<a href="./docs/projects/agent-shadow-brain.md"><img src="./assets/flow-agent-shadow-brain.svg" width="100%" alt="Agent Shadow Brain example workflow diagram"></a>
+<a href="https://github.com/ihtishaam-dev/agent-shadow-brain"><img src="https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/assets/workspace-overview-v7.2.png" width="49%" alt="Real Agent Shadow Brain workspace screenshot"></a>
+<a href="https://github.com/ihtishaam-dev/agent-shadow-brain"><img src="https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/assets/workspace-graph-v7.2.png" width="49%" alt="Real Agent Shadow Brain graph screenshot"></a>
 
-**CivicTwin Δ — six-stage regulatory scenario pipeline**
-
-<a href="./docs/projects/civic-twin.md"><img src="./assets/flow-civic-twin.svg" width="100%" alt="CivicTwin capture, resolve, compile, decide, compare, prove stages"></a>
-
-**ProcureGuard AI — evidence before human approval**
-
-<a href="./docs/projects/procureguard-ai.md"><img src="./assets/flow-procureguard-ai.svg" width="100%" alt="ProcureGuard AI procurement review workflow"></a>
+*The demo uses scripted local MCP clients and synthetic data.*
 
 </details>
 
-**[Agent Shadow Brain](./docs/projects/agent-shadow-brain.md)** · [npm package](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) &nbsp; | &nbsp; **[CivicTwin Δ](./docs/projects/civic-twin.md)** · [Live prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) &nbsp; | &nbsp; **[ProcureGuard AI](./docs/projects/procureguard-ai.md)** · [Demo video](https://youtu.be/KhKxOJJEYho)
+### 02. CivicTwin Δ — regulation with evidence
+
+A scenario-based regulatory prototype that explains why a requirement applies, which business fact triggers it, and what changes when a founder's plan changes. Unverified values remain visibly unknown.
+
+**Stack:** React · TypeScript · Tailwind · typed rules
+
+[**Full project overview**](./docs/projects/civic-twin.md) · [**Source code**](https://github.com/ihtishaam-dev/Civic-Twins) · [**Demo prototype**](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/)
 
 <details>
-<summary><b>▶ Watch the Agent Shadow Brain live demonstration</b></summary>
-<a href="https://github.com/ihtishaam-dev/agent-shadow-brain/releases/tag/v7.1.3"><img src="https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/assets/live-v7.1.3.gif" width="100%" alt="Agent Shadow Brain workspace demonstration with synthetic activity"></a>
-
-Recorded with scripted MCP clients and synthetic data.
+<summary><b>View CivicTwin's six-stage scenario workflow</b></summary>
+<a href="./docs/projects/civic-twin.md"><img src="./assets/flow-civic-twin.svg" width="100%" alt="Capture, resolve, compile, decide, compare, and prove regulatory scenario pipeline"></a>
 </details>
 
-<img src="./assets/section-websites.svg" width="100%" alt="03 — websites and live products">
+### 03. ProcureGuard AI — procurement decision room
+
+An award-winning multi-agent review workspace. Specialist roles inspect procurement, security, finance, vendor and legal evidence; an adversarial red-team challenges the findings before a human decision gate.
+
+**Stack:** Python · FastAPI · Band · LangGraph · CrewAI · Pydantic AI integrations
+
+[**Full project overview**](./docs/projects/procureguard-ai.md) · [**Source code**](https://github.com/ihtishaam-dev/procureguard-ai-band-agents) · [**Recorded video**](https://youtu.be/KhKxOJJEYho)
+
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/award.svg" width="100%" alt="2026 Band of Agents Hackathon Best Use of AI/ML API — ProcureGuard AI Team Purrwolf"></a>
+
+<details>
+<summary><b>View agent approval workflow and real dashboard images</b></summary>
+<a href="./docs/projects/procureguard-ai.md"><img src="./assets/flow-procureguard-ai.svg" width="100%" alt="Procurement specialists, evidence packet, red-team and human approval"></a>
+
+<a href="https://github.com/ihtishaam-dev/procureguard-ai-band-agents"><img src="https://raw.githubusercontent.com/ihtishaam-dev/procureguard-ai-band-agents/main/output/playwright/procureguard-live-dashboard.png" width="49%" alt="ProcureGuard AI dashboard screenshot"></a>
+<a href="https://github.com/ihtishaam-dev/procureguard-ai-band-agents"><img src="https://raw.githubusercontent.com/ihtishaam-dev/procureguard-ai-band-agents/main/output/playwright/procureguard-handoff-map-final.png" width="49%" alt="ProcureGuard AI handoff map screenshot"></a>
+</details>
+
+<img src="./assets/section-websites.svg" width="100%" alt="Web products and official websites">
 
 <div align="center">
 <a href="https://ababiltechnology.com/"><img src="./assets/website-ababil.svg" width="32%" alt="Ababil Technology"></a>
@@ -83,36 +100,30 @@ Recorded with scripted MCP clients and synthetic data.
 <a href="https://dealvorio.com/"><img src="./assets/website-deal.svg" width="32%" alt="DealVorio"></a>
 </div>
 
-<img src="./assets/section-stack.svg" width="100%" alt="04 — technology stack">
+<img src="./assets/section-stack.svg" width="100%" alt="Technical skills and stack">
 
-<img src="./assets/stack-wall.svg" width="100%" alt="C#, .NET Core, Angular, React, WPF, SQL Server, Python, TypeScript, AI agents, MCP, machine learning, Laravel, Azure, AWS and GitHub Actions">
+<img src="./assets/stack-wall.svg" width="100%" alt="C#, .NET, Angular, React, Python, TypeScript, AI agents, SQL Server, Azure, AWS and GitHub Actions">
 
-<img src="./assets/experience.svg" width="100%" alt="Engineering career timeline from 2017 to present across CNS, GCS, Xtreme Soft, Zaid International and Spartan Soft">
+<img src="./assets/experience.svg" width="100%" alt="Software engineering experience and career timeline">
 
-<img src="./assets/section-activity.svg" width="100%" alt="05 — GitHub activity and public project feed">
+<img src="./assets/section-activity.svg" width="100%" alt="GitHub activity and public project feed">
 
-<a href="./data/github-stats.json"><img src="./assets/statistics.svg" width="100%" alt="Automated GitHub statistics for @theihtishaam"></a>
+<a href="./data/github-stats.json"><img src="./assets/statistics.svg" width="100%" alt="Public GitHub metrics from the latest automated refresh"></a>
 
-<a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/recent-projects.svg" width="100%" alt="Automatically refreshed public repository feed"></a>
-
-<div align="center">
-
-**[Browse official public repositories](https://github.com/theihtishaam?tab=repositories)** · **[Browse all featured projects](./docs/PUBLIC_PROJECTS.md)** · **[See update automation](./.github/workflows/profile.yml)**
-
-</div>
-
-<img src="./assets/section-social.svg" width="100%" alt="Connect with me on GitHub, LinkedIn, npm, and Ababil Technology">
+<a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/recent-projects.svg" width="100%" alt="Automatically discovered public repositories and linked featured projects"></a>
 
 <div align="center">
 
-<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="https://img.shields.io/badge/LinkedIn-ihtishamdeveloper-162C53?style=for-the-badge&logo=linkedin&logoColor=B3D8FF"></a>
-<a href="https://github.com/theihtishaam"><img src="https://img.shields.io/badge/GitHub-theihtishaam-112A35?style=for-the-badge&logo=github&logoColor=84F9E7"></a>
-<a href="https://ababiltechnology.com/"><img src="https://img.shields.io/badge/Website-Ababil_Technology-2A1E50?style=for-the-badge&logo=googlechrome&logoColor=D8C2FF"></a>
+[**Every public project**](./docs/PUBLIC_PROJECTS.md) · [**Source and metrics**](./data/github-stats.json) · [**Auto-refresh workflow**](./.github/workflows/profile.yml)
 
-**Interactive portfolio with real mouse hover, cursor glow and 3D tilt:** [Open the complete source](./docs/index.html) · [Enable GitHub Pages](./docs/ENABLE_PAGES.md)
+**THE IMMERSIVE WEB EXPERIENCE**
 
-<sub>GitHub's surrounding interface, its light/dark setting and user-sidebar layout are controlled by GitHub, not by a README. These profile graphics use dark backgrounds and image animations. Interactive cursor effects run on the companion GitHub Pages website. The three featured source repositories currently live on @ihtishaam-dev; they have not yet been transferred.</sub>
+The GitHub profile README is a visual showcase. The full black spider-web background, cursor-reactive nodes, hover animations, and project interactivity run in the **same repository's GitHub Pages portfolio**: [**Site source**](./docs/index.html) · [**Enable or open GitHub Pages**](./docs/ENABLE_PAGES.md).
 
-<img src="./assets/footer.svg" width="100%" alt="Code with purpose — build learn ship repeat">
+*GitHub.com controls its own surrounding page background and sidebar. A README cannot override those elements or run cursor-tracking JavaScript for other visitors.*
+
+*Three featured project source repositories currently remain under [@ihtishaam-dev](https://github.com/ihtishaam-dev); these case studies link to them rather than claiming they were transferred.*
+
+<img src="./assets/footer.svg" width="100%" alt="Build, learn, ship and repeat with purpose">
 
 </div>
