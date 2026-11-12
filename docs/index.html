@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
   <script src="./catalogue.js" defer></script>
+  <script src="./navigation.js" defer></script>
   <script src="./spider-web.js" defer></script>
 </head>
 <body>
@@ -26,13 +27,19 @@
     <div class="site-header-inner shell">
       <a class="brand" href="#top" aria-label="Ihtisham Ahmad, back to top"><span class="brand-mark">IA<span>.</span></span><span class="brand-subtitle">IHTISHAM<span class="brand-divider"> / </span>DEV</span></a>
       <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#about">ABOUT</a><a href="#work">PROJECTS</a><a href="#stack">STACK</a><a href="#journey">JOURNEY</a><a href="#sites">WEBSITES</a><a href="#contact">CONNECT</a>
+        <a href="#about">ABOUT</a><a href="#work">PROJECTS</a><a href="#stack">STACK</a><a href="#journey">JOURNEY</a><a href="#sites">WEBSITES</a><a href="#public">LIVE REPOS</a><a href="#contact">CONNECT</a>
       </nav>
       <div class="header-actions">
+        <button id="mobile-menu-button" class="mobile-menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation"><span aria-hidden="true">☰</span></button>
         <button id="motion-toggle" class="motion-toggle" type="button" aria-label="Reduce motion" aria-pressed="false"><span class="motion-icon" aria-hidden="true">✦</span><span class="motion-text">MOTION ON</span></button>
         <a class="header-github" href="https://github.com/theihtishaam" target="_blank" rel="noopener noreferrer">GITHUB <span aria-hidden="true">↗</span></a>
       </div>
     </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <div class="shell mobile-menu-inner">
+        <a href="#about">ABOUT</a><a href="#work">PROJECTS</a><a href="#stack">TECH STACK</a><a href="#journey">EXPERIENCE</a><a href="#sites">WEBSITES</a><a href="#public">LIVE REPOSITORIES</a><a href="#contact">CONNECT</a>
+      </div>
+    </nav>
   </header>
   <main id="main">
     <section id="top" class="hero shell">
@@ -173,6 +180,7 @@
       </div>
     </section>
   </main>
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top" hidden>↑</button>
   <footer class="footer"><div class="shell footer-inner"><a class="brand" href="#top" aria-label="Back to top"><span class="brand-mark">IA<span>.</span></span></a><span>DESIGNED &amp; BUILT BY IHTISHAM AHMAD</span><span>© 2026 · CODE WITH PURPOSE.</span></div></footer>
   <noscript><div class="noscript">JavaScript is disabled; the project showcases and contact links remain available. Live GitHub stats and cursor effects need JavaScript.</div></noscript>
 </body>
