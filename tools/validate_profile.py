@@ -123,6 +123,31 @@ for name in required_cases:
     if 'src="../spider-web.js"' not in case_html:
         errors.append(f"Spider web script missing in {name} HTML")
 
+# Verify the public-project catalogue is bundled in GitHub Pages.
+site_html = (root / "docs/index.html").read_text(encoding="utf-8")
+for required in ['src="./catalogue.js"', 'id="repo-search"', 'id="repo-sort"',
+                 'id="repo-show-more"', 'data-filter="official"', 'data-filter="featured"']:
+    if required not in site_html:
+        errors.append(f"Missing repository terminal element: {required}")
+for filename in ["docs/public-projects.json", "docs/github-stats.json"]:
+    if not (root / filename).is_file():
+        errors.append(f"Missing offline first-party catalogue data: {filename}")
+try:
+    index = json.loads((root / "data/public-projects.json").read_text(encoding="utf-8"))
+    mirrored = json.loads((root / "docs/public-projects.json").read_text(encoding="utf-8"))
+    if index != mirrored:
+        errors.append("Public-project mirror differs from root source")
+    official_count = sum(1 for p in index.get("repositories", [])
+                         if p.get("sourceOwner", "theihtishaam") == "theihtishaam")
+    if official_count != index.get("officialRepositoryCount"):
+        errors.append("Official project count excludes or includes the wrong repositories")
+    rootstats = json.loads((root / "data/github-stats.json").read_text(encoding="utf-8"))
+    sitestats = json.loads((root / "docs/github-stats.json").read_text(encoding="utf-8"))
+    if rootstats != sitestats:
+        errors.append("GitHub statistics mirror differs from root source")
+except (OSError, ValueError, TypeError) as err:
+    errors.append(f"Cannot verify public project mirror: {err}")
+
 for err in errors:
     print("ERROR", err)
 print(f"Validated {len(svg_files)} SVG assets, README links and portfolio sections")

@@ -83,7 +83,9 @@ async function main(){
  const summary={schemaVersion:2,login,refreshedAt:date,publicRepositories:u.public_repos,officialProjectCount:official.length,featuredFromPreviousAccount:display.length-official.length,followers:u.followers,starsOnNonForkRepositories:all.filter(r=>!r.fork).reduce((n,r)=>n+(r.stargazers_count||0),0),source:'https://api.github.com/users/'+login};
  const data={schemaVersion:2,login,refreshedAt:date,officialRepositoryCount:official.length,featuredExternalProjects:display.length-official.length,repositoryCount:display.length,repositories:display.map(r=>({name:r.name,url:r.html_url,description:r.description,language:r.language,sourceOwner:r.owner?.login||login,pushedAt:r.pushed_at,fork:r.fork||false,archived:r.archived||false}))};
  await put('data/github-stats.json',JSON.stringify(summary,null,2)+'\n');
+ await put('docs/github-stats.json',JSON.stringify(summary,null,2)+'\n');
  await put('data/public-projects.json',JSON.stringify(data,null,2)+'\n');
+ await put('docs/public-projects.json',JSON.stringify(data,null,2)+'\n');
  await put('assets/statistics.svg',statistics(u,all,date));
  await put('assets/recent-projects.svg',projectsSvg(display,date));
  await put('docs/PUBLIC_PROJECTS.md',markdown(display,date));

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 2,
+  "login": "theihtishaam",
+  "refreshedAt": "2026-11-12T10:11:21.231Z",
+  "officialRepositoryCount": 0,
+  "featuredExternalProjects": 3,
+  "repositoryCount": 3,
+  "repositories": [
+    {
+      "name": "agent-shadow-brain",
+      "url": "https://github.com/ihtishaam-dev/agent-shadow-brain",
+      "description": "Shared local memory and a live activity portal for coding agents. Curated context, MCP, skills, graphs, and review tools.",
+      "language": "TypeScript",
+      "sourceOwner": "ihtishaam-dev",
+      "pushedAt": "2026-11-11T19:12:18Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "Civic-Twins",
+      "url": "https://github.com/ihtishaam-dev/Civic-Twins",
+      "description": null,
+      "language": "TypeScript",
+      "sourceOwner": "ihtishaam-dev",
+      "pushedAt": "2026-08-06T04:23:07Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "procureguard-ai-band-agents",
+      "url": "https://github.com/ihtishaam-dev/procureguard-ai-band-agents",
+      "description": "Multi-agent enterprise procurement approval on the Band platform - Band of Agents Hackathon Track 1",
+      "language": "Python",
+      "sourceOwner": "ihtishaam-dev",
+      "pushedAt": "2026-08-31T14:55:05Z",
+      "fork": false,
+      "archived": false
+    }
+  ]
+}
