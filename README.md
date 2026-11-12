@@ -1,10 +1,10 @@
 <div align="center">
 
-<a href="./docs/ENABLE_PAGES.md"><img src="./assets/hero.svg" width="100%" alt="Ihtisham Ahmad · full-stack and AI systems engineering · neon spider web across a dark background"></a>
+<a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/hero.svg" width="100%" alt="Ihtisham Ahmad · full-stack and AI systems engineering · neon spider web across a dark background"></a>
 
-<a href="./docs/ENABLE_PAGES.md"><img src="https://img.shields.io/badge/EXPLORE-SPIDER_WEB_PORTFOLIO-112B40?style=for-the-badge&logo=githubpages&logoColor=70F4EA" alt="Open instructions for interactive GitHub Pages portfolio"></a>
-<a href="https://github.com/theihtishaam?tab=repositories"><img src="https://img.shields.io/badge/GITHUB-VIEW_PUBLIC_REPOS-1B203F?style=for-the-badge&logo=github&logoColor=CCC0FF" alt="GitHub repositories"></a>
-<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="https://img.shields.io/badge/LINKEDIN-LET'S_CONNECT-351E43?style=for-the-badge&logo=linkedin&logoColor=FFB4D9" alt="LinkedIn profile"></a>
+<a href="https://github.com/theihtishaam?tab=repositories"><img src="./assets/nav-github.svg" width="32%" alt="Explore theihtishaam public GitHub repositories"></a>
+<a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="./assets/nav-linkedin.svg" width="32%" alt="Connect on LinkedIn ihtishamdeveloper"></a>
+<a href="./docs/PUBLIC_PROJECTS.md"><img src="./assets/nav-projects.svg" width="32%" alt="Open linked AI engineering project case studies"></a>
 
 **Full-stack Software Engineer · C#/.NET · Python · TypeScript · AI Agents · Automation**
 
