@@ -12,7 +12,9 @@
 
 ## Selected work
 
-- [Agent Shadow Brain](https://github.com/ihtishaam-dev/agent-shadow-brain) — shared memory and auditable tooling for AI coding agents
+- [ExactWork Skills](https://github.com/theihtishaam/exactwork-skills) — six project-local Agent Skills for scoped work, research, review, handoff, context and learning
+
+- [Agent Shadow Brain](https://github.com/theihtishaam/agents-brain) — shared memory and auditable tooling for AI coding agents
 - [CivicTwin Delta](https://github.com/ihtishaam-dev/Civic-Twins) — regulatory and operating-scenario prototype
 - [ProcureGuard AI](https://github.com/ihtishaam-dev/procureguard-ai-band-agents) — AI-assisted vendor review, recognized for Best Use of AI/ML API at the 2026 Band of Agents hackathon
 - [Job Opportunity](https://jobopportunity.info/) and [DealVorio](https://dealvorio.com/) — public-facing web products

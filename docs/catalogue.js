@@ -4,7 +4,7 @@ const LOGIN='theihtishaam',OWNER=LOGIN.toLowerCase();
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const list=$('#repo-list');if(!list)return;
 const ARCHIVE_FALLBACK=[
- {name:'agent-shadow-brain',url:'https://github.com/ihtishaam-dev/agent-shadow-brain',sourceOwner:'ihtishaam-dev',description:'Local memory, context packs and a visual coding-agent workspace.',language:'TypeScript',pushedAt:'2026-11-11T19:12:18Z'},
+ {name:'agent-shadow-brain',url:'https://github.com/theihtishaam/agents-brain',sourceOwner:'ihtishaam-dev',description:'Local memory, context packs and a visual coding-agent workspace.',language:'TypeScript',pushedAt:'2026-11-11T19:12:18Z'},
  {name:'Civic-Twins',url:'https://github.com/ihtishaam-dev/Civic-Twins',sourceOwner:'ihtishaam-dev',description:'Source-aware regulatory scenarios, rule changes and proof receipts.',language:'TypeScript',pushedAt:'2026-08-06T04:23:07Z'},
  {name:'procureguard-ai-band-agents',url:'https://github.com/ihtishaam-dev/procureguard-ai-band-agents',sourceOwner:'ihtishaam-dev',description:'Eight AI roles reviewing vendor risks, with a red-team challenge and human signoff.',language:'Python',pushedAt:'2026-08-31T14:55:05Z'}
 ];

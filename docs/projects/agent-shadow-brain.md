@@ -1,64 +1,25 @@
-<div align="center">
+# Agent Shadow Brain
 
-[← Return to official GitHub profile](../../README.md) · [Browse all projects](../PUBLIC_PROJECTS.md)
+[Back to profile](../../README.md) · [Project source](https://github.com/theihtishaam/agents-brain) · [npm](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)
 
-<img src="../../assets/case-agent-shadow-brain.svg" width="100%" alt="AGENT SHADOW BRAIN case study">
+![Agent Brain control room](../../assets/agent-brain-runtime.gif)
 
-**Curated memory, scoped context packs and a live operations portal for agent workflows.**
+Agent Shadow Brain gives coding agents a shared project memory and a visual workspace. The current source repository is `theihtishaam/agents-brain`.
 
-[Source code](https://github.com/ihtishaam-dev/agent-shadow-brain) · [Watch recorded demo](https://github.com/ihtishaam-dev/agent-shadow-brain/releases/tag/v7.1.3) · [Documentation](https://github.com/ihtishaam-dev/agent-shadow-brain/tree/main/docs)
+## Working together
 
-</div>
+The project portal connects stored knowledge, memory relationships, scoped context and recorded tool activity. PDF intake extracts text by page for review before memory admission. Shared rooms record tasks, claims, messages, artifacts and outcomes. Project lessons can be evaluated, promoted and rolled back by the operator.
 
-## Public npm impact
+It does not read private model reasoning. Model token usage remains unknown when a connected client does not provide it; context-pack size estimates are not billed-token measurements. Lesson evaluation records the operator's evidence rather than training model weights.
 
-<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="../../assets/npm-milestone.svg" width="100%" alt="Verified Agent Shadow Brain npm downloads"></a>
+## Run locally
 
-The published total reached **5,316 cumulative npm downloads** through **November 10, 2026** (a 5K+ milestone). These are package download events, **not** unique people. The figure is mirrored from the [public package statistics](https://github.com/ihtishaam-dev/agent-shadow-brain/blob/main/docs/STATS.md) and is updated by the profile workflow.
+Use the [project quickstart](https://github.com/theihtishaam/agents-brain/blob/main/docs/QUICKSTART.md) for the current release, Node requirements and client setup.
 
-## What problem does it solve?
+## Package activity
 
-Curated memory, scoped context packs and a live operations portal for agent workflows. The project is documented and published in its [source repository](https://github.com/ihtishaam-dev/agent-shadow-brain), which remains the authoritative reference for its latest behavior and setup.
+![npm downloads](../../assets/npm-milestone.svg)
 
-## What it includes
+The [dated download snapshot](../../data/npm-metrics.json) refreshes from the project's public metrics. Downloads count package requests, not unique people.
 
-- Search and review locally stored coding decisions and lessons.
-- Build project-scoped context packs within a token budget.
-- Inspect context selection, memory relationships, agent activity, and integrations.
-- Install workflow skill files for supported coding clients.
-
-## How it works
-
-<img src="../../assets/flow-agent-shadow-brain.svg" width="100%" alt="Architecture workflow illustration for AGENT SHADOW BRAIN">
-
-This is an illustrated overview of the documented workflow, not a live system measurement.
-
-## Interface gallery
-
-These are images published in the project source repository.
-
-| Workspace view | Detailed view |
-|:--:|:--:|
-| <img src="https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/assets/workspace-overview-v7.2.png" width="440" alt="AGENT SHADOW BRAIN product view"> | <img src="https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/assets/workspace-graph-v7.2.png" width="440" alt="AGENT SHADOW BRAIN second product view"> |
-
-## Technology
-
-TypeScript · Node.js · MCP · Local workspace / CLI
-
-## Getting started
-
-For full setup and configuration, use the project's [official README](https://github.com/ihtishaam-dev/agent-shadow-brain#readme). A short starting point from the project documentation is:
-
-```bash
-npm install -g @theihtisham/agent-shadow-brain@7.1.3
-```
-
-## Notes and boundaries
-
-The product's public demo uses scripted local MCP clients and synthetic project data.
-
-**Ownership:** Project code remains under `ihtishaam-dev`; this case study is hosted in the official `theihtishaam` profile repository. No transfer of Git history has been completed.
-
----
-
-[View source](https://github.com/ihtishaam-dev/agent-shadow-brain) · [Watch recorded demo](https://github.com/ihtishaam-dev/agent-shadow-brain/releases/tag/v7.1.3) · [Back to profile](../../README.md)
+The animation above was captured in the actual portal using synthetic project data.

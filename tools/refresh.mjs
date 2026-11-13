@@ -15,7 +15,7 @@ function statistics(u,all,date){const own=all.filter(r=>!r.fork),stars=own.reduc
 let v=start(1200,246,'GitHub activity updated '+date)+text(30,46,'// PUBLIC GITHUB TELEMETRY',19,'#72f7e3',750);
 fields.forEach(([label,value],i)=>{let x=30+i*294;v+='<rect x="'+x+'" y="67" width="274" height="119" rx="12" fill="#152440" stroke="#526492"/>'+text(x+18,105,label,15,'#a8c5dc',650)+text(x+18,164,value,43,'#ffffff',800)+'<path d="M'+(x+18)+' 177h168" stroke="url(#a)" stroke-width="3"/>';});
 v+=text(32,224,'Top languages: '+short([...langs].sort((a,b)=>b[1]-a[1]).slice(0,5).map(x=>x[0]).join(' · ')||'Projects updating',72),15,'#bfd0ec');v+=text(965,224,'REFRESHED '+date.slice(0,10),14,'#7df4e8',700);return v+'</svg>';}
-function projectsSvg(all,date){const six=all.slice(0,6),h=100+Math.max(1,Math.ceil(six.length/3))*187;let v=start(1200,h,'Latest public repositories as of '+date)+text(30,45,'// RECENT PUBLIC PROJECTS',19,'#71f0e3',750)+text(968,45,'LIVE FEED',15,'#baadff',700);
+function projectsSvg(all,date){const six=all.slice(0,6),h=100+Math.max(1,Math.ceil(six.length/3))*187;let v=start(1200,h,'Latest public repositories as of '+date)+text(30,45,'// RECENT PUBLIC PROJECTS',19,'#71f0e3',750)+text(968,45,'DAILY SYNC',15,'#baadff',700);
 six.forEach((r,i)=>{const x=30+(i%3)*394,y=70+Math.floor(i/3)*187;v+='<rect x="'+x+'" y="'+y+'" width="374" height="164" rx="13" fill="#182440" stroke="'+['#69e9ed','#a88eff','#ff91c9'][i%3]+'"/>'+text(x+17,y+35,short(r.name,25),23,'#fff',770)+text(x+17,y+70,short(r.description||'Public project',41),15,'#b4c4e1')+text(x+17,y+113,short(r.language||(r.fork?'Fork':'Project'),25),15,'#71f0e3',700)+text(x+17,y+146,'OWNER: '+String(r.owner?.login||login).toUpperCase(),13,'#b4c4e1');});if(!six.length)v+=text(30,132,'No public projects available yet',23);return v+'</svg>';}
 function markdown(all,date){
  let s='# Public repositories and featured work\n\nRefreshed '+date+'. Public project repositories under the official account are listed separately from featured public work in the previous account.\n\n';
@@ -26,11 +26,11 @@ function markdown(all,date){
  for(const r of official){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||r.language||'Public project',180))+'\n';}
  s+='\n## Featured public AI projects: @ihtishaam-dev\n\n';
  for(const r of featured){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||'Featured AI engineering project',180))+'\n';}
- return s+'\nOriginal source repositories remain under @ihtishaam-dev until an ownership transfer is completed. Private repositories are not displayed.\n';
+ return s+'\nThe featured CivicTwin and ProcureGuard repositories are hosted under @ihtishaam-dev. Private repositories are not displayed.\n';
 }
 async function avatar(u){if(!/^https:\/\/avatars\.githubusercontent\.com\/u\/\d+(\?v=\d+)?$/.test(u.avatar_url))throw Error('Unexpected avatar URL');const r=await fetch(u.avatar_url,{headers:{'User-Agent':'github-profile-refresh'},signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Avatar HTTP '+r.status);const type=(r.headers.get('content-type')||'').split(';')[0];if(!['image/png','image/jpeg','image/webp'].includes(type))throw Error('Unsupported avatar type');const b=Buffer.from(await r.arrayBuffer());if(b.length<100||b.length>3000000)throw Error('Bad avatar size');return 'data:'+type+';base64,'+b.toString('base64');}
 async function selectedPublicProjects(){
- const names=['agent-shadow-brain','Civic-Twins','procureguard-ai-band-agents'];
+ const names=['Civic-Twins','procureguard-ai-band-agents'];
  return (await Promise.all(names.map(async name=>{
    try{const data=await api('/repos/ihtishaam-dev/'+encodeURIComponent(name));return data.private?null:data;}
    catch(err){console.warn('Using known public link for '+name,err.message);return {name,html_url:'https://github.com/ihtishaam-dev/'+name,description:'Featured AI engineering project',language:null,owner:{login:'ihtishaam-dev'}};}
@@ -39,7 +39,7 @@ async function selectedPublicProjects(){
 /** Verify the upstream project's publicly reported npm totals, without third-party packages. */
 async function refreshNpm(){
  try{
-  const u='https://raw.githubusercontent.com/ihtishaam-dev/agent-shadow-brain/main/docs/npm-metrics.json';
+  const u='https://raw.githubusercontent.com/theihtishaam/agents-brain/main/docs/npm-metrics.json';
   const res=await fetch(u,{headers:{'User-Agent':'theihtishaam-profile-refresh'},signal:AbortSignal.timeout(15000)});
   if(!res.ok)throw Error('Upstream stats HTTP '+res.status);
   const m=await res.json();
@@ -50,10 +50,10 @@ async function refreshNpm(){
   const count=m.npm.total,date=m.coverage.end;
   const snapshot={
     schemaVersion:2,
-    package:m.package,sourceRepo:'ihtishaam-dev/agent-shadow-brain',
+    package:m.package,sourceRepo:'theihtishaam/agents-brain',
     refreshedAt:m.refreshedAt||null,coverageStart:m.coverage.start,coverageEnd:date,
     downloads:count,last30Days:m.npm.lastMonth?.downloads??null,
-    source:'https://github.com/ihtishaam-dev/agent-shadow-brain/blob/main/docs/STATS.md',
+    source:'https://github.com/theihtishaam/agents-brain/blob/main/docs/STATS.md',
     note:'Package downloads are not unique users; the date refers to the latest complete reporting day.'
   };
   const svgTemplate=await readFile('assets/npm-milestone.template.svg','utf8');

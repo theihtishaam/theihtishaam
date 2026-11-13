@@ -32,8 +32,8 @@ jobs:
         run: node tools/refresh.mjs
       - name: Commit changed public data
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "theihtishaam"
+          git config user.email "59793939+theihtishaam@users.noreply.github.com"
           git add -- README.md assets/statistics.svg assets/recent-projects.svg assets/face-scan.svg docs/PUBLIC_PROJECTS.md data/github-stats.json data/public-projects.json docs/github-stats.json docs/public-projects.json assets/npm-milestone.svg data/npm-metrics.json docs/npm-metrics.json docs/assets/npm-milestone.svg
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: refresh public GitHub profile"
