@@ -22,7 +22,7 @@ I’m **Ihtisham Ahmad**, a software engineer building business applications, we
 
 <a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/agent-brain-runtime.gif" width="100%" alt="Agent Shadow Brain control room showing real memory relationships and recorded tool activity"></a>
 
-<sub>Recorded in the working local portal with synthetic project data. Motion shows recorded activity; this is not a live stream of my computer.</sub>
+<sub>Recorded in the working portal with 74 imported sections from Agent Brain’s public documentation and actual local MCP calls. The graph shows stored records and document references.</sub>
 
 <a href="https://github.com/theihtishaam/exactwork-skills"><img src="./assets/exactwork-feature.svg" width="100%" alt="ExactWork Skills: understand, plan the work, build and check, keep the lesson"></a>
 

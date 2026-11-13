@@ -22,4 +22,4 @@ Use the [project quickstart](https://github.com/theihtishaam/agents-brain/blob/m
 
 The [dated download snapshot](../../data/npm-metrics.json) refreshes from the project's public metrics. Downloads count package requests, not unique people.
 
-The animation above was captured in the actual portal using synthetic project data.
+The animation above uses 74 imported sections from 18 public project documents in an isolated store. Its graph shows actual stored records and document references; its journal records real local MCP calls. No native host connection or model usage is inferred.
