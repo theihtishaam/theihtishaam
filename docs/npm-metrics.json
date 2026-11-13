@@ -2,11 +2,12 @@
   "schemaVersion": 2,
   "package": "@theihtisham/agent-shadow-brain",
   "sourceRepo": "theihtishaam/agents-brain",
-  "refreshedAt": "2026-11-13T10:46:49.286Z",
+  "refreshedAt": "2026-11-13T11:09:29.415Z",
   "coverageStart": "2026-04-10",
   "coverageEnd": "2026-11-12",
   "downloads": 6030,
   "last30Days": 819,
-  "source": "https://github.com/theihtishaam/agents-brain/blob/main/docs/STATS.md",
-  "note": "Package downloads are not unique users; the date refers to the latest complete reporting day."
+  "source": "https://api.npmjs.org/downloads/point/",
+  "status": "verified",
+  "note": "Package downloads are not unique users; each snapshot retains its reporting date."
 }

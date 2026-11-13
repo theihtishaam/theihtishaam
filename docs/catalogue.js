@@ -84,8 +84,10 @@ async function github(path){
  if(!res.ok)throw Error('GitHub API '+res.status);return res.json();
 }
 function updateStats(stats,status){
- const vals=[['#stat-repos',stats.publicRepositories],['#stat-stars',stats.starsOnNonForkRepositories],['#stat-followers',stats.followers]];
+ const vals=[['#stat-repos',stats.publicRepositories],['#stat-stars',stats.starsReceivedOnPublicRepositories??stats.starsOnNonForkRepositories],['#stat-followers',stats.followers]];
  for(const [id,value] of vals)if(Number.isSafeInteger(value)&&$(id))$(id).textContent=value.toLocaleString('en-US');
+ const starCount=stats.starsReceivedOnPublicRepositories??stats.starsOnNonForkRepositories;
+ const starPanel=$('#stat-stars-panel');if(starPanel)starPanel.hidden=!(Number.isSafeInteger(starCount)&&starCount>0);
  if($('#stat-status'))$('#stat-status').textContent=status;
 }
 async function init(){
@@ -108,8 +110,8 @@ async function init(){
    official.push(...batch);if(batch.length<100)break;
   }
   official=official.filter(r=>r.owner?.login===LOGIN&&r.private===false);
-  const stars=official.filter(r=>!r.fork).reduce((sum,r)=>sum+(r.stargazers_count||0),0);
-  updateStats({publicRepositories:user.public_repos,followers:user.followers,starsOnNonForkRepositories:stars},'LIVE');
+  const stars=official.reduce((sum,r)=>sum+(r.stargazers_count||0),0);
+  updateStats({publicRepositories:user.public_repos,followers:user.followers,starsReceivedOnPublicRepositories:stars},'LIVE');
   show(official,featured,'LIVE GITHUB API');
  }catch(error){console.warn('GitHub API unavailable; keeping verified cached project list:',error.message);}
 }

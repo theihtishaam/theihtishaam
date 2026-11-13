@@ -17,7 +17,7 @@ I’m **Ihtisham Ahmad**. I build business applications with **C# and .NET**, we
 Start with **Agent Shadow Brain**, **ProcureGuard AI**, or **ExactWork Skills**—my featured projects. Every public repository on this account appears below. New repositories join the grid after the next successful daily refresh.
 
 <!-- AUTO_PUBLIC_PROJECTS_START -->
-**5 public repositories · refreshed 2026-11-13**
+**6 public repositories · refreshed 2026-11-13**
 
 <table>
 <tr>
@@ -29,8 +29,8 @@ Start with **Agent Shadow Brain**, **ProcureGuard AI**, or **ExactWork Skills**�
 <td width="50%" valign="top"><a href="https://github.com/theihtishaam/CiviTwin"><img src="./assets/repos/CiviTwin.svg" width="100%" alt="CivicTwin Δ: Compare tax and regulatory scenarios with typed rules, recorded evidence, and explicit assumptions."></a><br><a href="https://github.com/theihtishaam/CiviTwin"><b>CiviTwin</b> ↗</a></td>
 </tr>
 <tr>
+<td width="50%" valign="top"><a href="https://github.com/theihtishaam/omni-skills-forge"><img src="./assets/repos/omni-skills-forge.svg" width="100%" alt="omni-skills-forge: Public repository"></a><br><a href="https://github.com/theihtishaam/omni-skills-forge"><b>omni-skills-forge</b> ↗</a></td>
 <td width="50%" valign="top"><a href="https://github.com/theihtishaam/theihtishaam"><img src="./assets/repos/theihtishaam.svg" width="100%" alt="GitHub Profile: My public projects, languages, websites, and links. Repository cards and avatar refresh automatically."></a><br><a href="https://github.com/theihtishaam/theihtishaam"><b>theihtishaam</b> ↗</a></td>
-<td width="50%"></td>
 </tr>
 </table>
 
@@ -124,9 +124,19 @@ An enterprise tax and regulatory scenario planning prototype that connects typed
 
 <a href="./data/github-stats.json"><img src="./assets/statistics.svg" width="100%" alt="Public GitHub repository, star, follower and language counts with their refresh date"></a>
 
+<!-- AUTO_RECEIVED_STARS_START -->
+
+<!-- AUTO_RECEIVED_STARS_END -->
+
 <a href="./data/npm-metrics.json"><img src="./assets/npm-milestone.svg" width="100%" alt="Cumulative Agent Shadow Brain npm downloads with the reporting date"></a>
 
-<sub>Counts refresh daily from public sources. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
+<!-- AUTO_NPM_PACKAGES_START -->
+<a href="https://www.npmjs.com/package/omni-skills-forge"><img src="./assets/npm-packages/b21uaS1za2lsbHMtZm9yZ2U.svg" width="100%" alt="omni-skills-forge: 140,122 total npm downloads through 2026-11-12"></a>
+
+[**omni-skills-forge →**](https://www.npmjs.com/package/omni-skills-forge) · **140,122 downloads** · 896 in the last 30 days · [GitHub repository](https://github.com/theihtishaam/omni-skills-forge)
+<!-- AUTO_NPM_PACKAGES_END -->
+
+<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh daily from public sources. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
 
 ---
 

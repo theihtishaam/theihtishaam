@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "maintainer": "theihtisham",
+  "threshold": 1000,
+  "refreshedAt": "2026-11-13T11:09:31.417Z",
+  "discoveryComplete": true,
+  "packages": [
+    {
+      "name": "@theihtisham/agent-shadow-brain",
+      "description": "Local memory, focused skills, and a visual context workspace for coding agents. Explore memories, build project-scoped context, and control briefings across Codex, Claude Code, OpenCode, and DeepSeek Harness.",
+      "version": "7.1.3",
+      "deprecated": null,
+      "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
+      "repository": "git+https://github.com/ihtishaam-dev/agent-shadow-brain.git",
+      "downloads": 6030,
+      "last30Days": 819,
+      "coverageStart": "2026-04-10",
+      "coverageEnd": "2026-11-12",
+      "completeSinceCreation": true,
+      "refreshedAt": "2026-11-13T11:09:29.415Z",
+      "status": "verified",
+      "receipts": [
+        {
+          "downloads": 6030,
+          "start": "2026-04-10",
+          "end": "2026-11-12",
+          "package": "@theihtisham/agent-shadow-brain"
+        }
+      ]
+    },
+    {
+      "name": "omni-skills-forge",
+      "description": "50,000+ expert AI agent skills for Claude Code, Kilo, Cline, Opencode, Cursor & Windsurf — visual dashboard, single-click install, doctor, export",
+      "version": "2.1.1",
+      "deprecated": null,
+      "url": "https://www.npmjs.com/package/omni-skills-forge",
+      "repository": "git+https://github.com/theihtisham/omni-skills-forge.git",
+      "downloads": 140122,
+      "last30Days": 896,
+      "coverageStart": "2026-04-12",
+      "coverageEnd": "2026-11-12",
+      "completeSinceCreation": true,
+      "refreshedAt": "2026-11-13T11:09:30.290Z",
+      "status": "verified",
+      "receipts": [
+        {
+          "downloads": 140122,
+          "start": "2026-04-12",
+          "end": "2026-11-12",
+          "package": "omni-skills-forge"
+        }
+      ]
+    },
+    {
+      "name": "@theihtisham/omni-skills-forge",
+      "description": "50,000+ expert AI agent skills for Claude Code, Kilo, Cline, Opencode, Cursor & Windsurf — visual dashboard, single-click install, doctor, export",
+      "version": "2.1.1",
+      "deprecated": null,
+      "url": "https://www.npmjs.com/package/@theihtisham/omni-skills-forge",
+      "repository": "git+https://github.com/theihtisham/omni-skills-forge.git",
+      "downloads": 187,
+      "last30Days": 12,
+      "coverageStart": "2026-04-14",
+      "coverageEnd": "2026-11-12",
+      "completeSinceCreation": true,
+      "refreshedAt": "2026-11-13T11:09:31.417Z",
+      "status": "verified",
+      "receipts": [
+        {
+          "downloads": 187,
+          "start": "2026-04-14",
+          "end": "2026-11-12",
+          "package": "@theihtisham/omni-skills-forge"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

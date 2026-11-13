@@ -1,16 +1,17 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-13T10:47:30.963Z",
-  "officialRepositoryCount": 5,
+  "refreshedAt": "2026-11-13T11:09:31.887Z",
+  "officialRepositoryCount": 6,
   "featuredExternalProjects": 0,
-  "repositoryCount": 5,
+  "repositoryCount": 6,
   "repositories": [
     {
       "name": "agents-brain",
       "url": "https://github.com/theihtishaam/agents-brain",
       "description": "Shared local memory and a live graphical workspace for coding agents. PDF knowledge, scoped context, MCP collaboration, project skills, and reviewed lessons.",
       "language": "TypeScript",
+      "stars": 0,
       "sourceOwner": "theihtishaam",
       "pushedAt": "2026-11-13T10:46:50Z",
       "fork": false,
@@ -21,6 +22,7 @@
       "url": "https://github.com/theihtishaam/Procure-guard-ai",
       "description": "Red team Ai System",
       "language": "Python",
+      "stars": 0,
       "sourceOwner": "theihtishaam",
       "pushedAt": "2026-11-13T10:13:02Z",
       "fork": false,
@@ -31,6 +33,7 @@
       "url": "https://github.com/theihtishaam/exactwork-skills",
       "description": "Portable AI agent skills for Claude Code, Codex, OpenCode and DeepSeek Harness. Focused execution, traceable context, and evidence-checked project learning with rollback",
       "language": "Python",
+      "stars": 0,
       "sourceOwner": "theihtishaam",
       "pushedAt": "2026-11-13T10:40:52Z",
       "fork": false,
@@ -41,8 +44,20 @@
       "url": "https://github.com/theihtishaam/CiviTwin",
       "description": "Enterprise Tax Calculation system",
       "language": "TypeScript",
+      "stars": 0,
       "sourceOwner": "theihtishaam",
       "pushedAt": "2026-11-13T10:12:49Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "omni-skills-forge",
+      "url": "https://github.com/theihtishaam/omni-skills-forge",
+      "description": null,
+      "language": null,
+      "stars": 0,
+      "sourceOwner": "theihtishaam",
+      "pushedAt": "2026-11-13T11:03:19Z",
       "fork": false,
       "archived": false
     },
@@ -51,8 +66,9 @@
       "url": "https://github.com/theihtishaam/theihtishaam",
       "description": null,
       "language": "JavaScript",
+      "stars": 0,
       "sourceOwner": "theihtishaam",
-      "pushedAt": "2026-11-13T10:47:16Z",
+      "pushedAt": "2026-11-13T10:47:31Z",
       "fork": false,
       "archived": false
     }

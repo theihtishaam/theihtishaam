@@ -86,6 +86,8 @@ tabs.forEach((tab,i)=>{
   if(stats.package!=='@theihtisham/agent-shadow-brain')throw new Error('Unexpected package');
   if(!Number.isFinite(stats.downloads)||stats.downloads<0)throw new Error('Invalid count');
   count.textContent=Math.floor(stats.downloads).toLocaleString('en-US');
+  const badge=document.getElementById('npm-milestone-label');
+  if(badge){const tier=[[1e9,'B'],[1e6,'M'],[1e3,'K']].find(([unit])=>stats.downloads>=unit);badge.textContent=tier?Math.floor(stats.downloads/tier[0])+tier[1]+'+':String(stats.downloads);}
   const date=document.getElementById('npm-downloads-date');
   if(date&&/^\d{4}-\d{2}-\d{2}$/.test(stats.coverageEnd||'')){
    date.textContent='Verified through '+stats.coverageEnd+' · not unique users';

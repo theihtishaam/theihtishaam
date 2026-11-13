@@ -39,7 +39,9 @@ export function projectGrid(repositories, date) {
     const url=repo.html_url || repo.url;
     if(!/^[\w.-]+$/.test(repo.name) || !/^https:\/\/github\.com\/[\w-]+\/[\w.-]+\/?$/.test(url || ''))throw Error('Unexpected public repository name or URL');
     const label=highlights[repo.name]?.title || repo.name;
-    return `<td width="50%" valign="top"><a href="${xml(url)}"><img src="./assets/repos/${encodeURIComponent(repo.name)}.svg" width="100%" alt="${xml(label+': '+(highlights[repo.name]?.description || repo.description || 'Public repository'))}"></a><br><a href="${xml(url)}"><b>${xml(repo.name)}</b> ↗</a></td>`;
+    const stars=repo.stargazers_count??repo.stars;
+    const count=Number.isSafeInteger(stars)&&stars>0?` · ★ ${stars.toLocaleString('en-US')}`:'';
+    return `<td width="50%" valign="top"><a href="${xml(url)}"><img src="./assets/repos/${encodeURIComponent(repo.name)}.svg" width="100%" alt="${xml(label+': '+(highlights[repo.name]?.description || repo.description || 'Public repository'))}"></a><br><a href="${xml(url)}"><b>${xml(repo.name)}</b> ↗</a>${count}</td>`;
   });
   const rows=[];
   for(let i=0;i<cards.length;i+=2)rows.push('<tr>\n'+cards.slice(i,i+2).join('\n')+(i+1===cards.length?'\n<td width="50%"></td>':'')+'\n</tr>');
