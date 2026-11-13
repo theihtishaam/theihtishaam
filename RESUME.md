@@ -6,7 +6,7 @@
 
 ## Engineering focus
 
-- Full-stack engineering with C#, .NET, Angular, SQL Server, PHP/Laravel and modern web technologies
+- Full-stack engineering with C#, .NET, Angular, SQL Server, React, WPF and Python
 - Python and TypeScript software tools, AI-assisted workflows and agent integrations
 - Web platforms, public information discovery, scheduled data processing and automation
 

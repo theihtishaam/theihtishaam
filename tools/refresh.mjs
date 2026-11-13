@@ -1,5 +1,6 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
+import {projectCard,projectGrid,projectOrder} from './project-grid.mjs';
 const login='theihtishaam';
 const headers={'Accept':'application/vnd.github+json','User-Agent':'github-profile-refresh','X-GitHub-Api-Version':'2022-11-28'};
 if(process.env.GITHUB_TOKEN)headers.Authorization='Bearer '+process.env.GITHUB_TOKEN;
@@ -81,21 +82,10 @@ async function publishReadmeProjects(official,featured,date){
  const current=await readFile('README.md','utf8');
  const start=current.indexOf(before),end=current.indexOf(after);
  if(start<0||end<=start){console.warn('Auto project README markers missing; preserving README');return;}
- const trim=s=>clean(short(String(s||'Public software project'),132)).replace(/\s+/g,' ').trim();
- const bullet=r=>{
-  const name=trim(r.name),url=r.html_url||r.url;
-  if(!/^https:\/\/github\.com\/[\w-]+\/[\w.-]+\/?$/.test(url||''))return '';
-  const lang=trim(r.language||'Source code');
-  return '- **['+name+']('+url+')** — '+lang+' · '+trim(r.description)+'\n';
- };
- const shown=official.slice(0,50);
- const region=before+'\n<details open>\n<summary><b>✦ AUTO-SYNC PROJECT INDEX · LAST VERIFIED '+date.slice(0,10)+'</b></summary>\n\n'+
- '**Official public projects — [@theihtishaam](https://github.com/theihtishaam?tab=repositories)**\n\n'+
- (shown.length?shown.map(bullet).join(''):'New public repositories created under this account will automatically appear here after the next profile refresh.\n')+
- (official.length>shown.length?'\n**'+(official.length-shown.length)+' more official projects** in the complete directory.\n':'')+
- (featured.length?'\n**Additional featured projects**\n\n':'')+
- featured.map(bullet).join('')+
- '\n[**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)\n\n</details>\n'+after;
+ const repositories=[...official,...featured];
+ const grid=projectGrid(repositories,date);
+ for(const repo of repositories)await put('assets/repos/'+repo.name+'.svg',projectCard(repo));
+ const region=before+'\n'+grid+after;
  const next=current.slice(0,start)+region+current.slice(end+after.length);
  await put('README.md',next);
 }
@@ -104,7 +94,7 @@ async function main(){
  const [u,raw,featured]=await Promise.all([api('/users/'+login),repos(),selectedPublicProjects()]);
  if(u.login!==login)throw Error('Unexpected account');
  const all=raw.filter(r=>r.owner?.login===login&&!r.private);
- const official=all.filter(r=>r.name!==login).sort((a,b)=>(b.pushed_at||b.updated_at||'').localeCompare(a.pushed_at||a.updated_at||'')||a.name.localeCompare(b.name));
+ const official=[...all].sort(projectOrder);
  const display=[...official,...featured.filter(r=>!official.some(p=>p.name.toLowerCase()===r.name.toLowerCase()))];
  const date=new Date().toISOString();
  const summary={schemaVersion:2,login,refreshedAt:date,publicRepositories:u.public_repos,officialProjectCount:official.length,featuredFromPreviousAccount:display.length-official.length,followers:u.followers,starsOnNonForkRepositories:all.filter(r=>!r.fork).reduce((n,r)=>n+(r.stargazers_count||0),0),source:'https://api.github.com/users/'+login};

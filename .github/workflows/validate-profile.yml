@@ -33,6 +33,6 @@ jobs:
           node --check docs/case.js
           node --check tools/refresh.mjs
       - name: Smoke-test interactive project catalogue and workflow tabs
-        run: node --test tools/portfolio-ui.test.mjs
+        run: node --test tools/portfolio-ui.test.mjs tools/project-grid.test.mjs
       - name: Check profile graphics, links and JSON
         run: python3 tools/validate_profile.py

@@ -12,7 +12,7 @@ from xml.etree import ElementTree as ET
 
 root = Path(__file__).resolve().parent.parent
 errors = []
-svg_files = sorted((root / "assets").glob("*.svg"))
+svg_files = sorted((root / "assets").rglob("*.svg"))
 if not svg_files:
     errors.append("No SVG assets found")
 for file in svg_files:
@@ -45,7 +45,7 @@ for path in ["data/public-projects.json", "data/github-stats.json"]:
     except (OSError, json.JSONDecodeError) as exc:
         errors.append(f"{path}: {exc}")
 html = (root / "docs/index.html").read_text(encoding="utf-8")
-for section in ["id=\"work\"", "id=\"journey\"", "id=\"sites\"", "id=\"contact\""]:
+for section in ["id=\"work\"", "id=\"stack\"", "id=\"sites\"", "id=\"contact\""]:
     if section not in html:
         errors.append(f"Missing site section: {section}")
 # Check local links and image paths across the Pages site and all case studies.
@@ -156,10 +156,8 @@ else:
     for item in json.loads((root / "data/public-projects.json").read_text(encoding="utf-8")).get("repositories", []):
         if item.get("sourceOwner") != "theihtishaam":
             continue
-        if f"https://github.com/theihtishaam/{item.get('name')}" not in auto and len(auto) < 200000:
-            # The README list intentionally caps at 50; the markdown directory has the complete set.
-            if auto.count("**[") < 50:
-                errors.append(f"Official public repository absent from README catalogue: {item.get('name')}")
+        if f"https://github.com/theihtishaam/{item.get('name')}" not in auto:
+            errors.append(f"Official public repository absent from README catalogue: {item.get('name')}")
 
 for err in errors:
     print("ERROR", err)

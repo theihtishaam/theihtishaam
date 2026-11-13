@@ -1,11 +1,21 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-13T10:21:08.397Z",
-  "officialRepositoryCount": 4,
+  "refreshedAt": "2026-11-13T10:40:53.831Z",
+  "officialRepositoryCount": 5,
   "featuredExternalProjects": 0,
-  "repositoryCount": 4,
+  "repositoryCount": 5,
   "repositories": [
+    {
+      "name": "agents-brain",
+      "url": "https://github.com/theihtishaam/agents-brain",
+      "description": "Shared local memory and a live graphical workspace for coding agents. PDF knowledge, scoped context, MCP collaboration, project skills, and reviewed lessons.",
+      "language": "TypeScript",
+      "sourceOwner": "theihtishaam",
+      "pushedAt": "2026-11-13T10:23:52Z",
+      "fork": false,
+      "archived": false
+    },
     {
       "name": "Procure-guard-ai",
       "url": "https://github.com/theihtishaam/Procure-guard-ai",
@@ -13,6 +23,16 @@
       "language": "Python",
       "sourceOwner": "theihtishaam",
       "pushedAt": "2026-11-13T10:13:02Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "exactwork-skills",
+      "url": "https://github.com/theihtishaam/exactwork-skills",
+      "description": "Portable AI agent skills for Claude Code, Codex, OpenCode and DeepSeek Harness. Focused execution, traceable context, and evidence-checked project learning with rollback",
+      "language": "Python",
+      "sourceOwner": "theihtishaam",
+      "pushedAt": "2026-11-13T10:40:52Z",
       "fork": false,
       "archived": false
     },
@@ -27,22 +47,12 @@
       "archived": false
     },
     {
-      "name": "agents-brain",
-      "url": "https://github.com/theihtishaam/agents-brain",
-      "description": "Shared local memory and a live graphical workspace for coding agents. PDF knowledge, scoped context, MCP collaboration, project skills, and reviewed lessons.",
-      "language": "TypeScript",
+      "name": "theihtishaam",
+      "url": "https://github.com/theihtishaam/theihtishaam",
+      "description": null,
+      "language": "JavaScript",
       "sourceOwner": "theihtishaam",
-      "pushedAt": "2026-11-13T10:09:24Z",
-      "fork": false,
-      "archived": false
-    },
-    {
-      "name": "exactwork-skills",
-      "url": "https://github.com/theihtishaam/exactwork-skills",
-      "description": "Portable AI agent skills for Claude Code, Codex, OpenCode and DeepSeek Harness. Focused execution, traceable context, and evidence-checked project learning with rollback",
-      "language": "Python",
-      "sourceOwner": "theihtishaam",
-      "pushedAt": "2026-11-13T09:26:09Z",
+      "pushedAt": "2026-11-13T10:21:09Z",
       "fork": false,
       "archived": false
     }

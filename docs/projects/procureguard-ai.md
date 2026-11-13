@@ -10,6 +10,10 @@
 
 </div>
 
+## Hackathon recognition
+
+**Category winner — Best Use of AI/ML API, 2026 Band of Agents Hackathon.** Built with Team Purrwolf. [Organizer announcement](https://www.linkedin.com/posts/lablab-ai_meet-the-ai-that-can-veto-its-own-approval-activity-7487495363164233728-iQSx).
+
 ## What problem does it solve?
 
 Vendor diligence across specialist agents, red-team challenges and human approval. The project is documented and published in its [source repository](https://github.com/theihtishaam/Procure-guard-ai), which remains the authoritative reference for its latest behavior and setup.
