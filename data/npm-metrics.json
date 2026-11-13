@@ -2,11 +2,11 @@
   "schemaVersion": 2,
   "package": "@theihtisham/agent-shadow-brain",
   "sourceRepo": "theihtishaam/agents-brain",
-  "refreshedAt": "2026-11-13T10:05:44.523Z",
+  "refreshedAt": "2026-11-13T10:46:49.286Z",
   "coverageStart": "2026-04-10",
-  "coverageEnd": "2026-11-11",
-  "downloads": 5951,
-  "last30Days": 825,
+  "coverageEnd": "2026-11-12",
+  "downloads": 6030,
+  "last30Days": 819,
   "source": "https://github.com/theihtishaam/agents-brain/blob/main/docs/STATS.md",
   "note": "Package downloads are not unique users; the date refers to the latest complete reporting day."
 }
