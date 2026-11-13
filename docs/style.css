@@ -130,5 +130,6 @@ main{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.mobile-menu-inner a,.back-to-top{transition:none!important}}
 
 /* Keep decorative orbital paths inside the mobile hero, and preserve readable branding. */
+.hero{overflow:clip}
 .hero-visual{overflow:hidden}
 @media(max-width:600px){.hero-index{left:auto;right:auto;max-width:100%;letter-spacing:1px}.spotlight{display:none}}
