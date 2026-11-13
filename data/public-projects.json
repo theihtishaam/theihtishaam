@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-13T11:25:42.059Z",
+  "refreshedAt": "2026-11-13T11:28:26.434Z",
   "officialRepositoryCount": 6,
   "featuredExternalProjects": 0,
   "repositoryCount": 6,
@@ -14,7 +14,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T09:23:01Z",
-      "pushedAt": "2026-11-13T10:46:50Z",
+      "pushedAt": "2026-11-13T11:27:42Z",
       "fork": false,
       "archived": false
     },
@@ -26,7 +26,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T10:09:05Z",
-      "pushedAt": "2026-11-13T10:13:02Z",
+      "pushedAt": "2026-11-13T11:27:13Z",
       "fork": false,
       "archived": false
     },
@@ -38,7 +38,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T09:06:49Z",
-      "pushedAt": "2026-11-13T11:17:45Z",
+      "pushedAt": "2026-11-13T11:27:15Z",
       "fork": false,
       "archived": false
     },
@@ -50,7 +50,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T10:10:06Z",
-      "pushedAt": "2026-11-13T10:12:49Z",
+      "pushedAt": "2026-11-13T11:27:11Z",
       "fork": false,
       "archived": false
     },
@@ -58,11 +58,11 @@
       "name": "omni-skills-forge",
       "url": "https://github.com/theihtishaam/omni-skills-forge",
       "description": null,
-      "language": null,
+      "language": "JavaScript",
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T11:03:18Z",
-      "pushedAt": "2026-11-13T11:03:19Z",
+      "pushedAt": "2026-11-13T11:26:44Z",
       "fork": false,
       "archived": false
     },
@@ -74,7 +74,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-11T20:24:13Z",
-      "pushedAt": "2026-11-13T11:11:34Z",
+      "pushedAt": "2026-11-13T11:28:16Z",
       "fork": false,
       "archived": false
     }
