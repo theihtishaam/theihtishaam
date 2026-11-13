@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-13T11:28:26.434Z",
+  "refreshedAt": "2026-11-13T11:33:58.566Z",
   "officialRepositoryCount": 6,
   "featuredExternalProjects": 0,
   "repositoryCount": 6,
@@ -57,7 +57,7 @@
     {
       "name": "omni-skills-forge",
       "url": "https://github.com/theihtishaam/omni-skills-forge",
-      "description": null,
+      "description": "Searchable Markdown skill catalog for coding agents: 50,009 files across 28 categories, with a CLI, dashboard, installation and export tools.",
       "language": "JavaScript",
       "stars": 0,
       "sourceOwner": "theihtishaam",
@@ -74,7 +74,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-11T20:24:13Z",
-      "pushedAt": "2026-11-13T11:28:16Z",
+      "pushedAt": "2026-11-13T11:28:27Z",
       "fork": false,
       "archived": false
     }
