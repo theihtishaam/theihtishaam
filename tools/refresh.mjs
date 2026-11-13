@@ -24,13 +24,13 @@ function markdown(all,date){
  s+='## Official public repositories: @'+login+'\n\n';
  if(!official.length)s+='There are no additional public project repositories beyond this profile repository yet.\n\n';
  for(const r of official){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||r.language||'Public project',180))+'\n';}
- s+='\n## Featured public AI projects: @ihtishaam-dev\n\n';
+ if(featured.length)s+='\n## Featured public AI projects: @ihtishaam-dev\n\n';
  for(const r of featured){s+='- **['+clean(r.name)+']('+r.html_url+')** — '+clean(short(r.description||'Featured AI engineering project',180))+'\n';}
- return s+'\nThe featured CivicTwin and ProcureGuard repositories are hosted under @ihtishaam-dev. Private repositories are not displayed.\n';
+ return s+'\nThe copied CivicTwin and ProcureGuard repositories retain their source commit history. Private repositories are not displayed.\n';
 }
 async function avatar(u){if(!/^https:\/\/avatars\.githubusercontent\.com\/u\/\d+(\?v=\d+)?$/.test(u.avatar_url))throw Error('Unexpected avatar URL');const r=await fetch(u.avatar_url,{headers:{'User-Agent':'github-profile-refresh'},signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Avatar HTTP '+r.status);const type=(r.headers.get('content-type')||'').split(';')[0];if(!['image/png','image/jpeg','image/webp'].includes(type))throw Error('Unsupported avatar type');const b=Buffer.from(await r.arrayBuffer());if(b.length<100||b.length>3000000)throw Error('Bad avatar size');return 'data:'+type+';base64,'+b.toString('base64');}
 async function selectedPublicProjects(){
- const names=['Civic-Twins','procureguard-ai-band-agents'];
+ const names=[];
  return (await Promise.all(names.map(async name=>{
    try{const data=await api('/repos/ihtishaam-dev/'+encodeURIComponent(name));return data.private?null:data;}
    catch(err){console.warn('Using known public link for '+name,err.message);return {name,html_url:'https://github.com/ihtishaam-dev/'+name,description:'Featured AI engineering project',language:null,owner:{login:'ihtishaam-dev'}};}
@@ -93,7 +93,7 @@ async function publishReadmeProjects(official,featured,date){
  '**Official public projects — [@theihtishaam](https://github.com/theihtishaam?tab=repositories)**\n\n'+
  (shown.length?shown.map(bullet).join(''):'New public repositories created under this account will automatically appear here after the next profile refresh.\n')+
  (official.length>shown.length?'\n**'+(official.length-shown.length)+' more official projects** in the complete directory.\n':'')+
- '\n**Featured open-source projects from previous account — [@ihtishaam-dev](https://github.com/ihtishaam-dev)**\n\n'+
+ (featured.length?'\n**Additional featured projects**\n\n':'')+
  featured.map(bullet).join('')+
  '\n[**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)\n\n</details>\n'+after;
  const next=current.slice(0,start)+region+current.slice(end+after.length);

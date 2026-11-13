@@ -6,13 +6,13 @@
 
 **A source-aware regulatory scenario model that surfaces rules, deltas and unknowns.**
 
-[Source code](https://github.com/ihtishaam-dev/Civic-Twins) · [Open public prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) · [Documentation](https://github.com/ihtishaam-dev/Civic-Twins/blob/main/README.md)
+[Source code](https://github.com/theihtishaam/CiviTwin) · [Open public prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) · [Documentation](https://github.com/theihtishaam/CiviTwin/blob/main/README.md)
 
 </div>
 
 ## What problem does it solve?
 
-A source-aware regulatory scenario model that surfaces rules, deltas and unknowns. The project is documented and published in its [source repository](https://github.com/ihtishaam-dev/Civic-Twins), which remains the authoritative reference for its latest behavior and setup.
+A source-aware regulatory scenario model that surfaces rules, deltas and unknowns. The project is documented and published in its [source repository](https://github.com/theihtishaam/CiviTwin), which remains the authoritative reference for its latest behavior and setup.
 
 ## What it includes
 
@@ -37,7 +37,7 @@ React · TypeScript · Vite · Tailwind CSS · Typed rule evaluation
 
 ## Getting started
 
-For full setup and configuration, use the project's [official README](https://github.com/ihtishaam-dev/Civic-Twins#readme). A short starting point from the project documentation is:
+For full setup and configuration, use the project's [official README](https://github.com/theihtishaam/CiviTwin#readme). A short starting point from the project documentation is:
 
 ```bash
 npm install && npm run dev
@@ -47,8 +47,8 @@ npm install && npm run dev
 
 This is a prototype and not an authoritative legal compliance service.
 
-**Ownership:** Project code remains under `ihtishaam-dev`; this case study is hosted in the official `theihtishaam` profile repository. No transfer of Git history has been completed.
+**Ownership:** The project has been copied to `theihtishaam` with its original commit history preserved.
 
 ---
 
-[View source](https://github.com/ihtishaam-dev/Civic-Twins) · [Open public prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) · [Back to profile](../../README.md)
+[View source](https://github.com/theihtishaam/CiviTwin) · [Open public prototype](https://de2ryot975yrukt7xh4gymb1q.nativelyai.app/twin/) · [Back to profile](../../README.md)

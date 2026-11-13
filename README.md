@@ -51,8 +51,8 @@ flowchart LR
 
 | Project | What it does | Explore |
 |:--|:--|:--|
-| **ProcureGuard AI** | Multi-agent procurement review with evidence, challenge, and human approval. **Best Use of AI/ML API**, 2026 Band of Agents Hackathon, Team Purrwolf. | [Code](https://github.com/ihtishaam-dev/procureguard-ai-band-agents) · [Demo video](https://youtu.be/KhKxOJJEYho) |
-| **CivicTwin Δ** | Enterprise tax and regulatory scenario planning, with recorded rules and evidence. Public prototype. | [Code](https://github.com/ihtishaam-dev/Civic-Twins) · [Case study](./docs/projects/civic-twin.md) |
+| **ProcureGuard AI** | Multi-agent procurement review with evidence, challenge, and human approval. **Best Use of AI/ML API**, 2026 Band of Agents Hackathon, Team Purrwolf. | [Code](https://github.com/theihtishaam/Procure-guard-ai) · [Demo video](https://youtu.be/KhKxOJJEYho) |
+| **CivicTwin Δ** | Enterprise tax and regulatory scenario planning, with recorded rules and evidence. Public prototype. | [Code](https://github.com/theihtishaam/CiviTwin) · [Case study](./docs/projects/civic-twin.md) |
 | **Job Opportunity** | Jobs, internships, scholarships, and fellowships in one public information platform. | [Website](https://jobopportunity.info/) |
 | **DealVorio** | Deals, coupons, and learning offers with source information. | [Website](https://dealvorio.com/) |
 
@@ -91,13 +91,10 @@ New public repositories on this account appear automatically after the next succ
 
 **Official public projects — [@theihtishaam](https://github.com/theihtishaam?tab=repositories)**
 
-- **[agents-brain](https://github.com/theihtishaam/agents-brain)** — TypeScript · Local project memory and context for AI coding tools. Agent Shadow Brain 7.1.4 development with a visual control-room design.
+- **[Procure-guard-ai](https://github.com/theihtishaam/Procure-guard-ai)** — Python · Red team Ai System
+- **[CiviTwin](https://github.com/theihtishaam/CiviTwin)** — TypeScript · Enterprise Tax Calculation system
+- **[agents-brain](https://github.com/theihtishaam/agents-brain)** — TypeScript · Shared local memory and a live graphical workspace for coding agents. PDF knowledge, scoped context, MCP collaboration, project ski…
 - **[exactwork-skills](https://github.com/theihtishaam/exactwork-skills)** — Python · Portable AI agent skills for Claude Code, Codex, OpenCode and DeepSeek Harness. Focused execution, traceable context, and evidence-…
-
-**Featured open-source projects from previous account — [@ihtishaam-dev](https://github.com/ihtishaam-dev)**
-
-- **[Civic-Twins](https://github.com/ihtishaam-dev/Civic-Twins)** — TypeScript · Public software project
-- **[procureguard-ai-band-agents](https://github.com/ihtishaam-dev/procureguard-ai-band-agents)** — Python · Multi-agent enterprise procurement approval on the Band platform - Band of Agents Hackathon Track 1
 
 [**Browse the complete public project directory**](./docs/PUBLIC_PROJECTS.md)
 

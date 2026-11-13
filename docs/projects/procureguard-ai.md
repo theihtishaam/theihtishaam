@@ -6,13 +6,13 @@
 
 **Vendor diligence across specialist agents, red-team challenges and human approval.**
 
-[Source code](https://github.com/ihtishaam-dev/procureguard-ai-band-agents) · [Watch demo video](https://youtu.be/KhKxOJJEYho) · [Documentation](https://github.com/ihtishaam-dev/procureguard-ai-band-agents/tree/main/docs)
+[Source code](https://github.com/theihtishaam/Procure-guard-ai) · [Watch demo video](https://youtu.be/KhKxOJJEYho) · [Documentation](https://github.com/theihtishaam/Procure-guard-ai/tree/main/docs)
 
 </div>
 
 ## What problem does it solve?
 
-Vendor diligence across specialist agents, red-team challenges and human approval. The project is documented and published in its [source repository](https://github.com/ihtishaam-dev/procureguard-ai-band-agents), which remains the authoritative reference for its latest behavior and setup.
+Vendor diligence across specialist agents, red-team challenges and human approval. The project is documented and published in its [source repository](https://github.com/theihtishaam/Procure-guard-ai), which remains the authoritative reference for its latest behavior and setup.
 
 ## What it includes
 
@@ -33,7 +33,7 @@ These are images published in the project source repository.
 
 | Workspace view | Detailed view |
 |:--:|:--:|
-| <img src="https://raw.githubusercontent.com/ihtishaam-dev/procureguard-ai-band-agents/main/output/playwright/procureguard-live-dashboard.png" width="440" alt="PROCUREGUARD AI product view"> | <img src="https://raw.githubusercontent.com/ihtishaam-dev/procureguard-ai-band-agents/main/output/playwright/procureguard-handoff-map-final.png" width="440" alt="PROCUREGUARD AI second product view"> |
+| <img src="https://raw.githubusercontent.com/theihtishaam/Procure-guard-ai/main/output/playwright/procureguard-live-dashboard.png" width="440" alt="PROCUREGUARD AI product view"> | <img src="https://raw.githubusercontent.com/theihtishaam/Procure-guard-ai/main/output/playwright/procureguard-handoff-map-final.png" width="440" alt="PROCUREGUARD AI second product view"> |
 
 ## Technology
 
@@ -41,7 +41,7 @@ Python · FastAPI · Band SDK · LangGraph / CrewAI / Pydantic AI integrations
 
 ## Getting started
 
-For full setup and configuration, use the project's [official README](https://github.com/ihtishaam-dev/procureguard-ai-band-agents#readme). A short starting point from the project documentation is:
+For full setup and configuration, use the project's [official README](https://github.com/theihtishaam/Procure-guard-ai#readme). A short starting point from the project documentation is:
 
 ```bash
 uv sync && uv run python -m app.main
@@ -51,8 +51,8 @@ uv sync && uv run python -m app.main
 
 The application documents local simulated runs alongside separately identified live Band runs. Demonstration artifacts are not assurances of third-party compliance.
 
-**Ownership:** Project code remains under `ihtishaam-dev`; this case study is hosted in the official `theihtishaam` profile repository. No transfer of Git history has been completed.
+**Ownership:** The project has been copied to `theihtishaam` with its original commit history preserved.
 
 ---
 
-[View source](https://github.com/ihtishaam-dev/procureguard-ai-band-agents) · [Watch demo video](https://youtu.be/KhKxOJJEYho) · [Back to profile](../../README.md)
+[View source](https://github.com/theihtishaam/Procure-guard-ai) · [Watch demo video](https://youtu.be/KhKxOJJEYho) · [Back to profile](../../README.md)
