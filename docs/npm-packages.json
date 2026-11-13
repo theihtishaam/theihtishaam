@@ -2,22 +2,22 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-13T11:33:58.187Z",
+  "refreshedAt": "2026-11-13T12:00:07.756Z",
   "discoveryComplete": true,
   "packages": [
     {
       "name": "@theihtisham/agent-shadow-brain",
       "description": "Local memory, focused skills, and a visual context workspace for coding agents. Explore memories, build project-scoped context, and control briefings across Codex, Claude Code, OpenCode, and DeepSeek Harness.",
-      "version": "7.1.3",
+      "version": "7.1.4",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
-      "repository": "git+https://github.com/ihtishaam-dev/agent-shadow-brain.git",
+      "repository": "git+https://github.com/theihtishaam/agents-brain.git",
       "downloads": 6030,
       "last30Days": 819,
       "coverageStart": "2026-04-10",
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:33:57.370Z",
+      "refreshedAt": "2026-11-13T12:00:05.764Z",
       "status": "verified",
       "receipts": [
         {
@@ -30,17 +30,17 @@
     },
     {
       "name": "omni-skills-forge",
-      "description": "50,000+ expert AI agent skills for Claude Code, Kilo, Cline, Opencode, Cursor & Windsurf — visual dashboard, single-click install, doctor, export",
-      "version": "2.1.1",
+      "description": "50,009 Markdown skill files across 28 categories, with search, a local dashboard, installation, diagnostics and export tools.",
+      "version": "2.1.2",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
-      "repository": "git+https://github.com/theihtisham/omni-skills-forge.git",
+      "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
       "downloads": 140122,
       "last30Days": 896,
       "coverageStart": "2026-04-12",
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:33:57.582Z",
+      "refreshedAt": "2026-11-13T12:00:05.971Z",
       "status": "verified",
       "receipts": [
         {
@@ -64,7 +64,7 @@
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
       "refreshedAt": "2026-11-13T11:33:58.013Z",
-      "status": "verified",
+      "status": "last-known",
       "receipts": [
         {
           "downloads": 187,
@@ -76,6 +76,10 @@
     }
   ],
   "errors": [
+    {
+      "package": "@theihtisham/omni-skills-forge",
+      "message": "Public npm API HTTP 404"
+    },
     {
       "package": "@theihtisham/exactwork-skills",
       "message": "Public npm API HTTP 404"
