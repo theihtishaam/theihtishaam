@@ -1,8 +1,10 @@
 <div align="center">
 
+[![Follow Ihtisham on GitHub](https://img.shields.io/badge/Follow-Ihtisham%20on%20GitHub-181717?logo=github&logoColor=white)](https://github.com/theihtishaam)
+
 <img src="./assets/hero-lab.svg" width="100%" alt="Ihtisham Ahmad — C#, Python, TypeScript; Agent Brain, ProcureGuard, and ExactWork">
 
-[**All repositories**](#public-repositories) · [**Featured work**](#featured-work) · [**Languages & tools**](#languages--tools) · [**Websites**](#websites) · [**Connect**](#find-me-online)
+[**Featured projects**](#featured-projects) · [**Latest repositories**](#latest-repositories) · [**All repositories**](#public-repositories) · [**Popular on npm**](#popular-on-npm) · [**Languages & tools**](#languages--tools) · [**Websites**](#websites) · [**Connect**](#find-me-online)
 
 </div>
 
@@ -12,9 +14,19 @@ I’m **Ihtisham Ahmad**. I build business applications with **C# and .NET**, we
 
 <sub>My photo refreshes automatically from GitHub. The scanner is a decorative animation.</sub>
 
+## Latest repositories
+
+The three newest public repositories, ordered by the creation time reported by GitHub.
+
+<!-- AUTO_LATEST_REPOSITORIES_START -->
+- <a href="https://github.com/theihtishaam/omni-skills-forge"><b>Omni Skills Forge</b></a> · Created 2026-11-13 — Search, inspect, and copy Markdown coding-agent skills by category, tag, and difficulty.
+- <a href="https://github.com/theihtishaam/CiviTwin"><b>CivicTwin Δ</b></a> · Created 2026-11-13 — Compare tax and regulatory scenarios with typed rules, recorded evidence, and explicit assumptions.
+- <a href="https://github.com/theihtishaam/Procure-guard-ai"><b>ProcureGuard AI</b></a> · Created 2026-11-13 — Eight specialist agents, evidence, adversarial review, and human approval for vendor decisions.
+<!-- AUTO_LATEST_REPOSITORIES_END -->
+
 ## Public repositories
 
-Start with **Agent Shadow Brain**, **ProcureGuard AI**, or **ExactWork Skills**—my featured projects. Every public repository on this account appears below. New repositories join the grid after the next successful daily refresh.
+Every public repository on this account appears below. New repositories join the grid after the next successful daily refresh.
 
 <!-- AUTO_PUBLIC_PROJECTS_START -->
 **6 public repositories · refreshed 2026-11-13**
@@ -29,7 +41,7 @@ Start with **Agent Shadow Brain**, **ProcureGuard AI**, or **ExactWork Skills**�
 <td width="50%" valign="top"><a href="https://github.com/theihtishaam/CiviTwin"><img src="./assets/repos/CiviTwin.svg" width="100%" alt="CivicTwin Δ: Compare tax and regulatory scenarios with typed rules, recorded evidence, and explicit assumptions."></a><br><a href="https://github.com/theihtishaam/CiviTwin"><b>CiviTwin</b> ↗</a></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/omni-skills-forge"><img src="./assets/repos/omni-skills-forge.svg" width="100%" alt="omni-skills-forge: Public repository"></a><br><a href="https://github.com/theihtishaam/omni-skills-forge"><b>omni-skills-forge</b> ↗</a></td>
+<td width="50%" valign="top"><a href="https://github.com/theihtishaam/omni-skills-forge"><img src="./assets/repos/omni-skills-forge.svg" width="100%" alt="Omni Skills Forge: Search, inspect, and copy Markdown coding-agent skills by category, tag, and difficulty."></a><br><a href="https://github.com/theihtishaam/omni-skills-forge"><b>omni-skills-forge</b> ↗</a></td>
 <td width="50%" valign="top"><a href="https://github.com/theihtishaam/theihtishaam"><img src="./assets/repos/theihtishaam.svg" width="100%" alt="GitHub Profile: My public projects, languages, websites, and links. Repository cards and avatar refresh automatically."></a><br><a href="https://github.com/theihtishaam/theihtishaam"><b>theihtishaam</b> ↗</a></td>
 </tr>
 </table>
@@ -37,7 +49,7 @@ Start with **Agent Shadow Brain**, **ProcureGuard AI**, or **ExactWork Skills**�
 [Browse on GitHub](https://github.com/theihtishaam?tab=repositories) · [Project directory](./docs/PUBLIC_PROJECTS.md)
 <!-- AUTO_PUBLIC_PROJECTS_END -->
 
-## Featured work
+## Featured projects
 
 ### Agent Shadow Brain · shared context for coding agents
 
@@ -95,6 +107,16 @@ An enterprise tax and regulatory scenario planning prototype that connects typed
 
 [**Open CivicTwin →**](https://github.com/theihtishaam/CiviTwin) · [Illustrated case study](./docs/projects/civic-twin.md)
 
+### Omni Skills Forge · Markdown skill catalog for coding agents
+
+<a href="https://github.com/theihtishaam/omni-skills-forge"><img src="./assets/omni-skills-forge-banner.svg" width="100%" alt="Omni Skills Forge, a Markdown skill catalog for coding agents"></a>
+
+Search by keyword, category, tag, or difficulty. Inspect the source and copy selected skills to an explicit directory. The CLI also generates a local catalog and exports the registry.
+
+[**Open Omni Skills Forge →**](https://github.com/theihtishaam/omni-skills-forge) · [Category index](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/CATEGORIES.md) · [npm package](https://www.npmjs.com/package/omni-skills-forge)
+
+<a href="https://github.com/theihtishaam/omni-skills-forge"><img src="https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/assets/project-stats.svg" width="100%" alt="Omni Skills Forge downloads, category paths, and skill files from the npm and catalog refresh"></a>
+
 ## Languages & tools
 
 <img src="./assets/toolkit.svg" width="100%" alt="C#, .NET, WPF, Angular, React; Python, Flask, Pandas and SQL; TypeScript, Node.js and MCP">
@@ -127,6 +149,8 @@ An enterprise tax and regulatory scenario planning prototype that connects typed
 <!-- AUTO_RECEIVED_STARS_START -->
 
 <!-- AUTO_RECEIVED_STARS_END -->
+
+## Popular on npm
 
 <a href="./data/npm-metrics.json"><img src="./assets/npm-milestone.svg" width="100%" alt="Cumulative Agent Shadow Brain npm downloads with the reporting date"></a>
 

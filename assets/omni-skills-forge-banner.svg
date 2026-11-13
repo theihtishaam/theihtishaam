@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+  <title id="title">Omni Skills Forge</title>
+  <desc id="desc">Find and inspect Markdown skills, then copy selected files to a chosen directory.</desc>
+  <defs>
+    <linearGradient id="base" x2="1" y2="1"><stop stop-color="#090f20"/><stop offset="1" stop-color="#15223a"/></linearGradient>
+    <radialGradient id="heat" cx=".82" cy=".63" r=".58"><stop stop-color="#98531d" stop-opacity=".59"/><stop offset="1" stop-color="#5d341b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hot" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#9f551e"/><stop offset=".55" stop-color="#fbc66d"/><stop offset="1" stop-color="#fff1c1"/></linearGradient>
+    <linearGradient id="face" x2="1" y2="1"><stop stop-color="#344768"/><stop offset="1" stop-color="#111e34"/></linearGradient>
+    <clipPath id="frame"><rect width="1280" height="380" rx="16"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="380" fill="url(#base)"/>
+    <rect width="1280" height="380" fill="url(#heat)"/>
+    <path d="M708 380 1052 0h228v380Z" fill="#11192e" opacity=".38"/>
+    <g fill="none" stroke="#688eb8" stroke-opacity=".27" stroke-width="1.3">
+      <path d="M768 302 1021 142l258 155M748 329 1021 156l258 157M727 356 1021 171l258 160"/>
+      <path d="M796 306 1021 442M847 274 1115 438M898 242 1210 433M949 210l330 199"/>
+    </g>
+    <g stroke-linejoin="round">
+      <path d="M895 147 1021 75l153 88-126 72Z" fill="url(#face)" stroke="#7194bd" stroke-width="2"/>
+      <path d="M895 147v51l153 88v-51Z" fill="#1a2842" stroke="#465e83" stroke-width="2"/>
+      <path d="M1048 235v51l126-72v-51Z" fill="#263553" stroke="#5d7397" stroke-width="2"/>
+      <path d="M875 176 1021 92l174 100-147 84Z" fill="none" stroke="url(#hot)" stroke-width="2.6"/>
+      <path d="M875 176v34l173 100v-34M1048 310l147-84v-34" fill="none" stroke="#ebad62" stroke-width="2" stroke-opacity=".63"/>
+      <path d="M964 153l52-30 78 45-52 30Z" fill="#0e182e" stroke="#79d8f9" stroke-width="1.7"/>
+      <path d="M1009 144l-14 8 17 10m46-3 15 9-15 9m-31-2 18-28" fill="none" stroke="#a6eaff" stroke-linecap="round" stroke-width="3.3"/>
+      <path d="M933 188l63 36m-44-48 15 9m123-2 22-12m-38 35 42-24" fill="none" stroke="#7793b5" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g fill="#f5c981">
+      <circle cx="907" cy="119" r="3"/><circle cx="962" cy="73" r="2.4"/><circle cx="1093" cy="88" r="2.7"/><circle cx="1154" cy="112" r="2"/><circle cx="1186" cy="152" r="2.5"/>
+    </g>
+    <g fill="none" stroke="#f1b961" stroke-linecap="round" stroke-opacity=".75" stroke-width="1.8">
+      <path d="M898 96l-12-11m49-4 3-12m179 26 11-13m48 43 18-4M927 241l-12 8m274 2 13 8"/>
+    </g>
+    <path d="M56 52h50" stroke="#f2ba69" stroke-width="4" stroke-linecap="round"/>
+    <g font-family="Segoe UI,Arial,sans-serif">
+      <text x="52" y="132" fill="#f6f8ff" font-size="75" font-weight="750" letter-spacing="-1.9">Omni Skills Forge</text>
+      <text x="56" y="190" fill="#b8dcf0" font-size="32" font-weight="550">Markdown skills for coding agents</text>
+      <path d="M56 232H737" stroke="#7390b3" stroke-opacity=".44"/>
+      <g fill="#f8ce8d" font-size="37" font-weight="720"><text x="56" y="297">Find</text><text x="294" y="297">Inspect</text><text x="524" y="297">Copy</text></g>
+      <g fill="#bed1e7" font-size="24" font-weight="540"><text x="56" y="332">search the catalog</text><text x="294" y="332">read the skill</text><text x="524" y="332">choose a directory</text></g>
+    </g>
+  </g>
+  <rect x=".75" y=".75" width="1278.5" height="378.5" rx="15" fill="none" stroke="#7798be" stroke-opacity=".46" stroke-width="1.5"/>
+</svg>

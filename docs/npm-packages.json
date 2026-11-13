@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-13T11:11:33.113Z",
+  "refreshedAt": "2026-11-13T11:25:41.501Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -17,7 +17,7 @@
       "coverageStart": "2026-04-10",
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:11:32.264Z",
+      "refreshedAt": "2026-11-13T11:25:39.446Z",
       "status": "verified",
       "receipts": [
         {
@@ -40,7 +40,7 @@
       "coverageStart": "2026-04-12",
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:11:32.679Z",
+      "refreshedAt": "2026-11-13T11:25:40.180Z",
       "status": "verified",
       "receipts": [
         {
@@ -63,7 +63,7 @@
       "coverageStart": "2026-04-14",
       "coverageEnd": "2026-11-12",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:11:33.113Z",
+      "refreshedAt": "2026-11-13T11:25:41.328Z",
       "status": "verified",
       "receipts": [
         {
@@ -75,5 +75,10 @@
       ]
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "package": "@theihtisham/exactwork-skills",
+      "message": "Public npm API HTTP 404"
+    }
+  ]
 }

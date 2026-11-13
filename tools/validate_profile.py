@@ -159,6 +159,21 @@ else:
         if f"https://github.com/theihtishaam/{item.get('name')}" not in auto:
             errors.append(f"Official public repository absent from README catalogue: {item.get('name')}")
 
+latest_start = "<!-- AUTO_LATEST_REPOSITORIES_START -->"
+latest_end = "<!-- AUTO_LATEST_REPOSITORIES_END -->"
+if readme.count(latest_start) != 1 or readme.count(latest_end) != 1:
+    errors.append("README requires one pair of latest repository markers")
+else:
+    latest = readme.split(latest_start, 1)[1].split(latest_end, 1)[0]
+    latest_names = re.findall(r'href="https://github\.com/theihtishaam/([^"/]+)"', latest)
+    snapshot = json.loads((root / "data/public-projects.json").read_text(encoding="utf-8"))
+    official = [repo for repo in snapshot.get("repositories", [])
+                if repo.get("sourceOwner") == "theihtishaam" and repo.get("createdAt")]
+    official.sort(key=lambda repo: repo["name"].casefold())
+    official.sort(key=lambda repo: repo["createdAt"], reverse=True)
+    if latest_names != [repo["name"] for repo in official[:3]]:
+        errors.append("Latest repositories differ from the public creation-date order")
+
 for err in errors:
     print("ERROR", err)
 print(f"Validated {len(svg_files)} SVG assets, README links and portfolio sections")

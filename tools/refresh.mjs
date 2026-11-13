@@ -1,6 +1,6 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
-import {projectCard,projectGrid,projectOrder} from './project-grid.mjs';
+import {latestRepositories,latestRepositoryList,projectCard,projectGrid,projectOrder} from './project-grid.mjs';
 import {milestone,starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmCard,npmHighlights,packageAsset,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 const login='theihtishaam';
 const headers={'Accept':'application/vnd.github+json','User-Agent':'github-profile-refresh','X-GitHub-Api-Version':'2022-11-28'};
@@ -17,7 +17,7 @@ function statistics(u,all,date){const own=all.filter(r=>!r.fork),stars=starsSumm
 let v=start(1200,246,'GitHub activity updated '+date)+text(30,46,'// PUBLIC GITHUB TELEMETRY',19,'#72f7e3',750);
 fields.forEach(([label,value],i)=>{const step=1140/fields.length;let x=30+i*step;v+='<rect x="'+x+'" y="67" width="'+(step-20)+'" height="119" rx="12" fill="#152440" stroke="#526492"/>'+text(x+18,105,label,15,'#a8c5dc',650)+text(x+18,164,value,43,'#ffffff',800)+'<path d="M'+(x+18)+' 177h168" stroke="url(#a)" stroke-width="3"/>';});
 v+=text(32,224,'Top languages: '+short([...langs].sort((a,b)=>b[1]-a[1]).slice(0,5).map(x=>x[0]).join(' · ')||'Projects updating',72),15,'#bfd0ec');v+=text(965,224,'REFRESHED '+date.slice(0,10),14,'#7df4e8',700);return v+'</svg>';}
-function projectsSvg(all,date){const six=all.slice(0,6),h=100+Math.max(1,Math.ceil(six.length/3))*187;let v=start(1200,h,'Latest public repositories as of '+date)+text(30,45,'// RECENT PUBLIC PROJECTS',19,'#71f0e3',750)+text(968,45,'DAILY SYNC',15,'#baadff',700);
+function projectsSvg(all,date){const six=latestRepositories(all,6),h=100+Math.max(1,Math.ceil(six.length/3))*187;let v=start(1200,h,'Latest public repositories as of '+date)+text(30,45,'// RECENT PUBLIC PROJECTS',19,'#71f0e3',750)+text(968,45,'DAILY SYNC',15,'#baadff',700);
 six.forEach((r,i)=>{const x=30+(i%3)*394,y=70+Math.floor(i/3)*187;v+='<rect x="'+x+'" y="'+y+'" width="374" height="164" rx="13" fill="#182440" stroke="'+['#69e9ed','#a88eff','#ff91c9'][i%3]+'"/>'+text(x+17,y+35,short(r.name,25),23,'#fff',770)+text(x+17,y+70,short(r.description||'Public project',41),15,'#b4c4e1')+text(x+17,y+113,short(r.language||(r.fork?'Fork':'Project'),25),15,'#71f0e3',700)+text(x+17,y+146,'OWNER: '+String(r.owner?.login||login).toUpperCase(),13,'#b4c4e1');});if(!six.length)v+=text(30,132,'No public projects available yet',23);return v+'</svg>';}
 function markdown(all,date){
  let s='# Public repositories and featured work\n\nRefreshed '+date+'. Public project repositories under the official account are listed separately from featured public work in the previous account.\n\n';
@@ -95,14 +95,14 @@ async function main(){
  const date=new Date().toISOString();
  const receivedStars=starsSummary(all,login);
  const summary={schemaVersion:2,login,refreshedAt:date,publicRepositories:u.public_repos,officialProjectCount:official.length,featuredFromPreviousAccount:display.length-official.length,followers:u.followers,starsOnNonForkRepositories:all.filter(r=>!r.fork).reduce((n,r)=>n+r.stargazers_count,0),starsReceivedOnPublicRepositories:receivedStars.total,starBreakdown:receivedStars.repositories,starScope:'Public repositories owned by '+login+' including forks',source:'https://api.github.com/users/'+login};
- const data={schemaVersion:2,login,refreshedAt:date,officialRepositoryCount:official.length,featuredExternalProjects:display.length-official.length,repositoryCount:display.length,repositories:display.map(r=>({name:r.name,url:r.html_url,description:r.description,language:r.language,stars:r.stargazers_count,sourceOwner:r.owner?.login||login,pushedAt:r.pushed_at,fork:r.fork||false,archived:r.archived||false}))};
+ const data={schemaVersion:2,login,refreshedAt:date,officialRepositoryCount:official.length,featuredExternalProjects:display.length-official.length,repositoryCount:display.length,repositories:display.map(r=>({name:r.name,url:r.html_url,description:r.description,language:r.language,stars:r.stargazers_count,sourceOwner:r.owner?.login||login,createdAt:r.created_at,pushedAt:r.pushed_at,fork:r.fork||false,archived:r.archived||false}))};
  await put('data/github-stats.json',JSON.stringify(summary,null,2)+'\n');
  await put('docs/github-stats.json',JSON.stringify(summary,null,2)+'\n');
  await put('data/public-projects.json',JSON.stringify(data,null,2)+'\n');
  await put('docs/public-projects.json',JSON.stringify(data,null,2)+'\n');
  await put('assets/statistics.svg',statistics(u,all,date));
  await replaceReadmeRegion('AUTO_RECEIVED_STARS',starsMarkdown(receivedStars));
- await put('assets/recent-projects.svg',projectsSvg(display,date));
+ await put('assets/recent-projects.svg',projectsSvg(official,date));
  await put('docs/PUBLIC_PROJECTS.md',markdown(display,date));
  try{
   let t=await readFile('assets/face-scan.template.svg','utf8');
@@ -110,6 +110,7 @@ async function main(){
   await put('assets/face-scan.svg',t.replaceAll('{{AVATAR_DATA_URI}}',await avatar(u)));
  }catch(e){console.warn('Avatar refresh failed; retaining last graphic:',e.message);}
  await publishReadmeProjects(official,display.filter(r=>!official.some(p=>p.name.toLowerCase()===r.name.toLowerCase())),date);
+ await replaceReadmeRegion('AUTO_LATEST_REPOSITORIES',latestRepositoryList(official));
  console.log('Refreshed '+official.length+' official public projects and '+(display.length-official.length)+' featured projects.');
 }
 main().catch(e=>{console.error(e);process.exitCode=1;});
