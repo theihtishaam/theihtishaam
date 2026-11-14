@@ -10,9 +10,21 @@
 
 I’m **Ihtisham Ahmad**. I build business applications with **C# and .NET**, web interfaces with **Angular and React**, and automation with **Python**. My open-source projects help coding agents use shared context, follow a practical working method, and produce results people can check.
 
-<img src="./assets/face-scan.svg" width="100%" alt="Ihtisham Ahmad, with my current GitHub photo and technology labels">
+## npm downloads
 
-<sub>My photo refreshes automatically from GitHub. The scanner is a decorative animation.</sub>
+
+<!-- AUTO_NPM_PACKAGES_START -->
+| Package | Total npm downloads | Through | Source |
+|:--|--:|:--|:--|
+| [Agent Shadow Brain](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) | **6,229** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-10:2026-11-13/@theihtisham/agent-shadow-brain) |
+| [Omni Skills Forge](https://www.npmjs.com/package/omni-skills-forge) | **140,381** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-12:2026-11-13/omni-skills-forge) |
+<!-- AUTO_NPM_PACKAGES_END -->
+
+<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh every two days from public npm data. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
+
+---
+
+**Have something useful to build?** [Find me on LinkedIn](https://www.linkedin.com/in/ihtishamdeveloper/) or [send an email](mailto:Theihtisham@outlook.com).
 
 ## Latest repositories
 
@@ -26,7 +38,7 @@ The three newest public repositories, ordered by the creation time reported by G
 
 ## Public repositories
 
-Every public repository on this account appears below. New repositories join the grid after the next successful daily refresh.
+Every public repository on this account appears below. New repositories join the grid after the next successful refresh (every two days).
 
 <!-- AUTO_PUBLIC_PROJECTS_START -->
 **6 public repositories · refreshed 2026-11-14**
@@ -154,18 +166,3 @@ Search by keyword, category, tag, or difficulty. Inspect the source and copy sel
 
 <!-- AUTO_RECEIVED_STARS_END -->
 
-## npm downloads
-
-
-<!-- AUTO_NPM_PACKAGES_START -->
-| Package | Total npm downloads | Through | Source |
-|:--|--:|:--|:--|
-| [Agent Shadow Brain](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) | **6,229** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-10:2026-11-13/@theihtisham/agent-shadow-brain) |
-| [Omni Skills Forge](https://www.npmjs.com/package/omni-skills-forge) | **140,381** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-12:2026-11-13/omni-skills-forge) |
-<!-- AUTO_NPM_PACKAGES_END -->
-
-<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh daily from public sources. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
-
----
-
-**Have something useful to build?** [Find me on LinkedIn](https://www.linkedin.com/in/ihtishamdeveloper/) or [send an email](mailto:Theihtisham@outlook.com).

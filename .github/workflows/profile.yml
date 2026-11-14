@@ -2,17 +2,7 @@ name: Refresh public GitHub profile
 on:
   workflow_dispatch:
   schedule:
-    - cron: '43 10 * * *'
-  push:
-    branches: [main]
-    paths:
-      - 'README.md'
-      - 'assets/face-scan.template.svg'
-      - 'assets/npm-milestone.template.svg'
-      - 'tools/refresh.mjs'
-      - 'tools/project-grid.mjs'
-      - 'tools/profile-metrics.mjs'
-      - '.github/workflows/profile.yml'
+    - cron: '43 10 */2 * *'
 permissions:
   contents: write
 concurrency:
