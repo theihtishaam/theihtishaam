@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-14T11:49:19.526Z",
+  "refreshedAt": "2026-11-14T11:58:31.143Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -17,7 +17,7 @@
       "coverageStart": "2026-04-10",
       "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:49:15.315Z",
+      "refreshedAt": "2026-11-14T11:58:30.098Z",
       "status": "verified",
       "receipts": [
         {
@@ -40,7 +40,7 @@
       "coverageStart": "2026-04-12",
       "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:49:16.632Z",
+      "refreshedAt": "2026-11-14T11:58:30.494Z",
       "status": "verified",
       "receipts": [
         {
@@ -63,7 +63,7 @@
       "coverageStart": "2026-11-13",
       "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:49:19.526Z",
+      "refreshedAt": "2026-11-14T11:58:31.143Z",
       "status": "verified",
       "receipts": [
         {
