@@ -14,13 +14,13 @@ I’m **Ihtisham Ahmad**. I build business applications with **C# and .NET**, we
 
 
 <!-- AUTO_NPM_PACKAGES_START -->
-| Package | Total npm downloads | Through | Source |
+| Project | Downloads | Counted through | Explore |
 |:--|--:|:--|:--|
-| [Agent Shadow Brain](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) | **6,229** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-10:2026-11-13/@theihtisham/agent-shadow-brain) |
-| [Omni Skills Forge](https://www.npmjs.com/package/omni-skills-forge) | **140,381** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-12:2026-11-13/omni-skills-forge) |
+| [**🧠 Agent Shadow Brain**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>Shared project memory for AI tools</sub> | [**6,229**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>total downloads</sub> | 2026-11-13 | [Open npm ↗](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |
+| [**🧩 Omni Skills Forge**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>Searchable skills for coding agents</sub> | [**140,381**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>total downloads</sub> | 2026-11-13 | [Open npm ↗](https://www.npmjs.com/package/omni-skills-forge) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |
 <!-- AUTO_NPM_PACKAGES_END -->
 
-<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh every two days from public npm data. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
+<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh every two days from public npm data. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-packages.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
 
 ---
 

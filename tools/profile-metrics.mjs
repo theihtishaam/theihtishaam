@@ -77,9 +77,10 @@ export function npmCard(p){
 export function npmHighlights(snapshot){
  const selected=[...snapshot.packages.filter(p=>p.name===PRIMARY_PACKAGE),...qualifiedPackages(snapshot)];
  const rows=selected.map(p=>{
-  const label=p.name===PRIMARY_PACKAGE?'Agent Shadow Brain':p.name==='omni-skills-forge'?'Omni Skills Forge':p.name;
-  const source=p.receipts?.length===1?`https://api.npmjs.org/downloads/point/${p.coverageStart}:${p.coverageEnd}/${p.name}`:'https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json';
-  return `| [${xml(label)}](${p.url}) | **${p.downloads.toLocaleString('en-US')}** | ${p.coverageEnd} | [npm data](${source})${p.status==='last-known'?' · Last verified':''} |`;
+  const label=p.name===PRIMARY_PACKAGE?'🧠 Agent Shadow Brain':p.name==='omni-skills-forge'?'🧩 Omni Skills Forge':'📦 '+p.name;
+  const detail=p.name===PRIMARY_PACKAGE?'Shared project memory for AI tools':p.name==='omni-skills-forge'?'Searchable skills for coding agents':'Public npm package';
+  const url='https://www.npmjs.com/package/'+p.name;
+  return `| [**${xml(label)}**](${url})<br><sub>${detail}</sub> | [**${p.downloads.toLocaleString('en-US')}**](${url})<br><sub>total downloads</sub> | ${p.coverageEnd}${p.status==='last-known'?'<br><sub>Last verified</sub>':''} | [Open npm ↗](${url}) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |`;
  });
- return '| Package | Total npm downloads | Through | Source |\n|:--|--:|:--|:--|\n'+rows.join('\n')+'\n';
+ return '| Project | Downloads | Counted through | Explore |\n|:--|--:|:--|:--|\n'+rows.join('\n')+'\n';
 }
