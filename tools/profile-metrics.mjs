@@ -75,6 +75,11 @@ export function npmCard(p){
  return svg;
 }
 export function npmHighlights(snapshot){
- const selected=qualifiedPackages(snapshot);
- return selected.map(p=>`\n<a href="${p.url}"><img src="./${packageAsset(p.name)}" width="100%" alt="${xml(p.name)}: ${p.downloads.toLocaleString('en-US')} total npm downloads through ${p.coverageEnd}"></a>\n\n[**${xml(p.name)} →**](${p.url}) · **${p.downloads.toLocaleString('en-US')} downloads** · ${p.last30Days.toLocaleString('en-US')} in the last 30 days${p.name==='omni-skills-forge'?' · [GitHub repository](https://github.com/theihtishaam/omni-skills-forge)':''}${p.deprecated?' · Deprecated':''}\n`).join('\n');
+ const selected=[...snapshot.packages.filter(p=>p.name===PRIMARY_PACKAGE),...qualifiedPackages(snapshot)];
+ const rows=selected.map(p=>{
+  const label=p.name===PRIMARY_PACKAGE?'Agent Shadow Brain':p.name==='omni-skills-forge'?'Omni Skills Forge':p.name;
+  const source=p.receipts?.length===1?`https://api.npmjs.org/downloads/point/${p.coverageStart}:${p.coverageEnd}/${p.name}`:'https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json';
+  return `| [${xml(label)}](${p.url}) | **${p.downloads.toLocaleString('en-US')}** | ${p.coverageEnd} | [npm data](${source})${p.status==='last-known'?' · Last verified':''} |`;
+ });
+ return '| Package | Total npm downloads | Through | Source |\n|:--|--:|:--|:--|\n'+rows.join('\n')+'\n';
 }

@@ -1,7 +1,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {latestRepositories,latestRepositoryList,projectCard,projectGrid,projectOrder} from './project-grid.mjs';
-import {milestone,starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmCard,npmHighlights,packageAsset,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmHighlights,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 const login='theihtishaam';
 const headers={'Accept':'application/vnd.github+json','User-Agent':'github-profile-refresh','X-GitHub-Api-Version':'2022-11-28'};
 if(process.env.GITHUB_TOKEN)headers.Authorization='Bearer '+process.env.GITHUB_TOKEN;
@@ -48,16 +48,17 @@ async function refreshNpm(){
   const primary=catalog.packages.find(p=>p.name===PRIMARY_PACKAGE);
   if(!primary)throw Error('No verified primary npm package; retaining previous assets');
   const snapshot={schemaVersion:2,package:primary.name,sourceRepo:'theihtishaam/agents-brain',refreshedAt:primary.refreshedAt,coverageStart:primary.coverageStart,coverageEnd:primary.coverageEnd,downloads:primary.downloads,last30Days:primary.last30Days,source:'https://api.npmjs.org/downloads/point/',status:primary.status,note:'Package downloads are not unique users; each snapshot retains its reporting date.'};
-  const svgTemplate=await readFile('assets/npm-milestone.template.svg','utf8');
-  if(!['{{TOTAL}}','{{COVERAGE_END}}','{{MILESTONE}}'].every(v=>svgTemplate.includes(v)))throw Error('Missing milestone SVG placeholder');
-  const svg=svgTemplate.replaceAll('{{TOTAL}}',primary.downloads.toLocaleString('en-US')).replaceAll('{{COVERAGE_END}}',primary.coverageEnd).replaceAll('{{MILESTONE}}',milestone(primary.downloads));
-  await put('assets/npm-milestone.svg',svg);await put('docs/assets/npm-milestone.svg',svg);
-  for(const p of qualifiedPackages(catalog))await put(packageAsset(p.name),npmCard(p));
   for(const folder of ['data','docs']){
    await put(folder+'/npm-metrics.json',JSON.stringify(snapshot,null,2)+'\n');
    await put(folder+'/npm-packages.json',JSON.stringify(catalog,null,2)+'\n');
   }
   await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog));
+  try {
+   const stats=await get('https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/docs/catalog-stats.json');
+   if(!Number.isSafeInteger(stats.skillFiles)||stats.skillFiles<0||!Number.isSafeInteger(stats.categoryPaths)||stats.categoryPaths<0)throw Error('Invalid catalog counts');
+   await replaceReadmeRegion('AUTO_OMNI_CATALOG',`**${stats.skillFiles.toLocaleString('en-US')} skill files · ${stats.categoryPaths} categories.** [Catalog counts](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/catalog-stats.json).`);
+  } catch(error) {console.warn('Retaining last verified catalog counts:',error.message);}
+
   console.log('Npm packages verified: '+catalog.packages.length+'; additional 1,000+ highlights: '+qualifiedPackages(catalog).length);
   for(const error of catalog.errors)console.warn(error.package+': '+error.message);
  }catch(e){console.warn('Npm refresh skipped; preserving last verified snapshot:',e.message);}

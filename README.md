@@ -4,7 +4,7 @@
 
 <img src="./assets/hero-lab.svg" width="100%" alt="Ihtisham Ahmad — C#, Python, TypeScript; Agent Brain, ProcureGuard, and ExactWork">
 
-[**Featured projects**](#featured-projects) · [**Latest repositories**](#latest-repositories) · [**All repositories**](#public-repositories) · [**Popular on npm**](#popular-on-npm) · [**Languages & tools**](#languages--tools) · [**Websites**](#websites) · [**Connect**](#find-me-online)
+[**Featured projects**](#featured-projects) · [**Latest repositories**](#latest-repositories) · [**All repositories**](#public-repositories) · [**npm downloads**](#npm-downloads) · [**Languages & tools**](#languages--tools) · [**Websites**](#websites) · [**Connect**](#find-me-online)
 
 </div>
 
@@ -29,7 +29,7 @@ The three newest public repositories, ordered by the creation time reported by G
 Every public repository on this account appears below. New repositories join the grid after the next successful daily refresh.
 
 <!-- AUTO_PUBLIC_PROJECTS_START -->
-**6 public repositories · refreshed 2026-11-13**
+**6 public repositories · refreshed 2026-11-14**
 
 <table>
 <tr>
@@ -115,7 +115,11 @@ Search by keyword, category, tag, or difficulty. Inspect the source and copy sel
 
 [**Open Omni Skills Forge →**](https://github.com/theihtishaam/omni-skills-forge) · [Category index](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/CATEGORIES.md) · [npm package](https://www.npmjs.com/package/omni-skills-forge)
 
-<a href="https://github.com/theihtishaam/omni-skills-forge"><img src="https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/assets/project-stats.svg" width="100%" alt="Omni Skills Forge downloads, category paths, and skill files from the npm and catalog refresh"></a>
+<!-- AUTO_OMNI_CATALOG_START -->
+**50,009 skill files · 28 categories.** [Catalog counts](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/catalog-stats.json).
+<!-- AUTO_OMNI_CATALOG_END -->
+
+[Total npm downloads](#npm-downloads)
 
 ## Languages & tools
 
@@ -150,14 +154,14 @@ Search by keyword, category, tag, or difficulty. Inspect the source and copy sel
 
 <!-- AUTO_RECEIVED_STARS_END -->
 
-## Popular on npm
+## npm downloads
 
-<a href="./data/npm-metrics.json"><img src="./assets/npm-milestone.svg" width="100%" alt="Cumulative Agent Shadow Brain npm downloads with the reporting date"></a>
 
 <!-- AUTO_NPM_PACKAGES_START -->
-<a href="https://www.npmjs.com/package/omni-skills-forge"><img src="./assets/npm-packages/b21uaS1za2lsbHMtZm9yZ2U.svg" width="100%" alt="omni-skills-forge: 140,122 total npm downloads through 2026-11-12"></a>
-
-[**omni-skills-forge →**](https://www.npmjs.com/package/omni-skills-forge) · **140,122 downloads** · 896 in the last 30 days · [GitHub repository](https://github.com/theihtishaam/omni-skills-forge)
+| Package | Total npm downloads | Through | Source |
+|:--|--:|:--|:--|
+| [Agent Shadow Brain](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) | **6,229** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-10:2026-11-13/@theihtisham/agent-shadow-brain) |
+| [Omni Skills Forge](https://www.npmjs.com/package/omni-skills-forge) | **140,381** | 2026-11-13 | [npm data](https://api.npmjs.org/downloads/point/2026-04-12:2026-11-13/omni-skills-forge) |
 <!-- AUTO_NPM_PACKAGES_END -->
 
 <sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh daily from public sources. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-metrics.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>

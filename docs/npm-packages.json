@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-13T12:00:07.756Z",
+  "refreshedAt": "2026-11-14T11:49:19.526Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -12,18 +12,18 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
       "repository": "git+https://github.com/theihtishaam/agents-brain.git",
-      "downloads": 6030,
-      "last30Days": 819,
+      "downloads": 6229,
+      "last30Days": 1018,
       "coverageStart": "2026-04-10",
-      "coverageEnd": "2026-11-12",
+      "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T12:00:05.764Z",
+      "refreshedAt": "2026-11-14T11:49:15.315Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 6030,
+          "downloads": 6229,
           "start": "2026-04-10",
-          "end": "2026-11-12",
+          "end": "2026-11-13",
           "package": "@theihtisham/agent-shadow-brain"
         }
       ]
@@ -35,54 +35,45 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
       "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
-      "downloads": 140122,
-      "last30Days": 896,
+      "downloads": 140381,
+      "last30Days": 1155,
       "coverageStart": "2026-04-12",
-      "coverageEnd": "2026-11-12",
+      "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T12:00:05.971Z",
+      "refreshedAt": "2026-11-14T11:49:16.632Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 140122,
+          "downloads": 140381,
           "start": "2026-04-12",
-          "end": "2026-11-12",
+          "end": "2026-11-13",
           "package": "omni-skills-forge"
         }
       ]
     },
     {
-      "name": "@theihtisham/omni-skills-forge",
-      "description": "50,000+ expert AI agent skills for Claude Code, Kilo, Cline, Opencode, Cursor & Windsurf — visual dashboard, single-click install, doctor, export",
-      "version": "2.1.1",
+      "name": "@theihtisham/exactwork-skills",
+      "description": "Portable agent skills with a local installer for Claude Code, Codex, OpenCode, DeepSeek Harness and other supported tools.",
+      "version": "0.2.1",
       "deprecated": null,
-      "url": "https://www.npmjs.com/package/@theihtisham/omni-skills-forge",
-      "repository": "git+https://github.com/theihtisham/omni-skills-forge.git",
-      "downloads": 187,
-      "last30Days": 12,
-      "coverageStart": "2026-04-14",
-      "coverageEnd": "2026-11-12",
+      "url": "https://www.npmjs.com/package/@theihtisham/exactwork-skills",
+      "repository": "git+https://github.com/theihtishaam/exactwork-skills.git",
+      "downloads": 244,
+      "last30Days": 244,
+      "coverageStart": "2026-11-13",
+      "coverageEnd": "2026-11-13",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-13T11:33:58.013Z",
-      "status": "last-known",
+      "refreshedAt": "2026-11-14T11:49:19.526Z",
+      "status": "verified",
       "receipts": [
         {
-          "downloads": 187,
-          "start": "2026-04-14",
-          "end": "2026-11-12",
-          "package": "@theihtisham/omni-skills-forge"
+          "downloads": 244,
+          "start": "2026-11-13",
+          "end": "2026-11-13",
+          "package": "@theihtisham/exactwork-skills"
         }
       ]
     }
   ],
-  "errors": [
-    {
-      "package": "@theihtisham/omni-skills-forge",
-      "message": "Public npm API HTTP 404"
-    },
-    {
-      "package": "@theihtisham/exactwork-skills",
-      "message": "Public npm API HTTP 404"
-    }
-  ]
+  "errors": []
 }

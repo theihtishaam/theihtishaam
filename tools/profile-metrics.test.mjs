@@ -26,7 +26,7 @@ test('1,000-download highlights exclude the primary card and packages below the 
  const p=(name,downloads)=>({name,downloads,completeSinceCreation:true,coverageEnd:'2026-11-12',last30Days:20,url:'https://www.npmjs.com/package/'+name,status:'verified'});
  const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),{...p('incomplete',5000),completeSinceCreation:false}]};
  assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified']);
- assert.match(npmHighlights(snapshot),/1,000 downloads/);assert.doesNotMatch(npmHighlights(snapshot),/small|incomplete/);
+ assert.match(npmHighlights(snapshot),/\*\*1,000\*\*/);assert.doesNotMatch(npmHighlights(snapshot),/<img|!\[/);assert.doesNotMatch(npmHighlights(snapshot),/small|incomplete/);
  assert.doesNotMatch(npmCard({...p('safe',1000),description:'<script>alert(1)</script>'}),/<script>/);
 });
 test('discovery verifies ownership and retains dated data on download API failure',async()=>{
