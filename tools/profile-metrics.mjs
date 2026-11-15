@@ -75,12 +75,35 @@ export function npmCard(p){
  return svg;
 }
 export function npmHighlights(snapshot){
- const selected=[...snapshot.packages.filter(p=>p.name===PRIMARY_PACKAGE),...qualifiedPackages(snapshot)];
+ const featured=[PRIMARY_PACKAGE,'@theihtisham/exactwork-skills','omni-skills-forge'];
+ const packages=snapshot.packages.filter(p=>p.completeSinceCreation===true&&
+  (featured.includes(p.name)||p.downloads>=DOWNLOAD_THRESHOLD));
+ const selected=[
+  ...featured.map(name=>packages.find(p=>p.name===name)).filter(Boolean),
+  ...packages.filter(p=>!featured.includes(p.name))
+ ];
  const rows=selected.map(p=>{
-  const label=p.name===PRIMARY_PACKAGE?'🧠 Agent Shadow Brain':p.name==='omni-skills-forge'?'🧩 Omni Skills Forge':'📦 '+p.name;
-  const detail=p.name===PRIMARY_PACKAGE?'Shared project memory for AI tools':p.name==='omni-skills-forge'?'Searchable skills for coding agents':'Public npm package';
-  const url='https://www.npmjs.com/package/'+p.name;
-  return `| [**${xml(label)}**](${url})<br><sub>${detail}</sub> | [**${p.downloads.toLocaleString('en-US')}**](${url})<br><sub>total downloads</sub> | ${p.coverageEnd}${p.status==='last-known'?'<br><sub>Last verified</sub>':''} | [Open npm ↗](${url}) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |`;
+  const name=p.name;
+  const label=name===PRIMARY_PACKAGE?'🧠 Agent Shadow Brain':
+   name==='@theihtisham/exactwork-skills'?'🛠️ ExactWork Skills':
+   name==='omni-skills-forge'?'🧩 Omni Skills Forge':'📦 '+name;
+  const detail=name===PRIMARY_PACKAGE?'Persistent shared memory for AI agents':
+   name==='@theihtisham/exactwork-skills'?'Portable skills for coding agents':
+   name==='omni-skills-forge'?'Discover and install agent skills':'Open-source npm package';
+  const color=name===PRIMARY_PACKAGE?'00D9FF':
+   name==='@theihtisham/exactwork-skills'?'A855F7':
+   name==='omni-skills-forge'?'22C55E':'6366F1';
+  const packageUrl='https://www.npmjs.com/package/'+name;
+  const badgeUrl='https://img.shields.io/npm/dt/'+encodeURIComponent(name)+
+   '?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color='+color+'&labelColor=111827';
+  const badge='<a href="'+packageUrl+'"><img src="'+badgeUrl+'" alt="Total npm downloads for '+xml(name)+'" /></a>';
+  const githubRepo=name===PRIMARY_PACKAGE?'agents-brain':
+   name==='@theihtisham/exactwork-skills'?'exactwork-skills':
+   name==='omni-skills-forge'?'omni-skills-forge':null;
+  const repoLink=githubRepo?' · [GitHub ↗](https://github.com/theihtishaam/'+githubRepo+')':'';
+  return '| [**'+xml(label)+'**]('+packageUrl+')<br><sub>'+detail+'</sub> | '+badge+
+   ' | '+p.coverageEnd+(p.status==='last-known'?'<br><sub>Last verified</sub>':'')+
+   ' | [npm ↗]('+packageUrl+')'+repoLink+' |';
  });
- return '| Project | Downloads | Counted through | Explore |\n|:--|--:|:--|:--|\n'+rows.join('\n')+'\n';
+ return '| ✨ Project | 📥 Live total downloads | 📅 Snapshot through | 🔗 Explore |\n|:--|:--|:--|:--|\n'+rows.join('\n')+'\n';
 }
