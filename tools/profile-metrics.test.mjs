@@ -25,7 +25,7 @@ test('lifetime download windows cover every date exactly once',()=>{
 test('featured packages always appear and live npm badges show all-time downloads',()=>{
  const p=(name,downloads)=>({name,downloads,completeSinceCreation:true,coverageEnd:'2026-11-12',last30Days:20,url:'https://www.npmjs.com/package/'+name,status:'verified'});
  const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),p('@theihtisham/exactwork-skills',244),p('omni-skills-forge',140381),{...p('incomplete',5000),completeSinceCreation:false}]};
- assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified']);
+ assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified','omni-skills-forge']);
  const markdown=npmHighlights(snapshot);
  for(const id of ['%40theihtisham%2Fagent-shadow-brain','%40theihtisham%2Fexactwork-skills','omni-skills-forge','qualified']){
   assert.ok(markdown.includes('npm/dt/'+id),'Missing live npm badge: '+id);
