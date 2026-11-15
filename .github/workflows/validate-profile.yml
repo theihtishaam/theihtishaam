@@ -1,15 +1,8 @@
 name: Validate GitHub portfolio
 
+# Manual only. npm download badges update independently through Shields.io.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - README.md
-      - 'assets/**'
-      - 'docs/**'
-      - 'tools/**'
-      - '.github/workflows/validate-profile.yml'
 
 permissions:
   contents: read
