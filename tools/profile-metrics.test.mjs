@@ -22,11 +22,16 @@ test('lifetime download windows cover every date exactly once',()=>{
  }
  assert.throws(()=>periods('2026-02-30','2026-03-01'));
 });
-test('1,000-download highlights exclude the primary card and packages below the threshold',()=>{
+test('featured packages always appear and live npm badges show all-time downloads',()=>{
  const p=(name,downloads)=>({name,downloads,completeSinceCreation:true,coverageEnd:'2026-11-12',last30Days:20,url:'https://www.npmjs.com/package/'+name,status:'verified'});
- const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),{...p('incomplete',5000),completeSinceCreation:false}]};
+ const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),p('@theihtisham/exactwork-skills',244),p('omni-skills-forge',140381),{...p('incomplete',5000),completeSinceCreation:false}]};
  assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified']);
- assert.match(npmHighlights(snapshot),/\*\*1,000\*\*/);assert.doesNotMatch(npmHighlights(snapshot),/<img|!\[/);assert.doesNotMatch(npmHighlights(snapshot),/small|incomplete/);
+ const markdown=npmHighlights(snapshot);
+ assert.match(markdown,/npm\\/dt\\/%40theihtisham%2Fagent-shadow-brain/);
+ assert.match(markdown,/npm\\/dt\\/%40theihtisham%2Fexactwork-skills/);
+ assert.match(markdown,/npm\\/dt\\/omni-skills-forge/);
+ assert.match(markdown,/npm\\/dt\\/qualified/);
+ assert.doesNotMatch(markdown,/\\*\\*6,030\\*\\*|\\*\\*1,000\\*\\*|small|incomplete/);
  assert.doesNotMatch(npmCard({...p('safe',1000),description:'<script>alert(1)</script>'}),/<script>/);
 });
 test('discovery verifies ownership and retains dated data on download API failure',async()=>{
