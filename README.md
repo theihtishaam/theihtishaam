@@ -14,13 +14,14 @@ I’m **Ihtisham Ahmad**. I build business applications with **C# and .NET**, we
 
 
 <!-- AUTO_NPM_PACKAGES_START -->
-| Project | Downloads | Counted through | Explore |
-|:--|--:|:--|:--|
-| [**🧠 Agent Shadow Brain**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>Shared project memory for AI tools</sub> | [**6,229**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>total downloads</sub> | 2026-11-13 | [Open npm ↗](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |
-| [**🧩 Omni Skills Forge**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>Searchable skills for coding agents</sub> | [**140,381**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>total downloads</sub> | 2026-11-13 | [Open npm ↗](https://www.npmjs.com/package/omni-skills-forge) · [Count record](https://github.com/theihtishaam/theihtishaam/blob/main/data/npm-packages.json) |
+| ✨ Project | 📥 Live total downloads | 📅 Snapshot through | 🔗 Explore |
+|:--|:--|:--|:--|
+| [**🧠 Agent Shadow Brain**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>Persistent shared memory for AI agents</sub> | <a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fagent-shadow-brain?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=00D9FF&labelColor=111827" alt="Total npm downloads for @theihtisham/agent-shadow-brain" /></a> | 2026-11-13 | [npm ↗](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) · [GitHub ↗](https://github.com/theihtishaam/agents-brain) |
+| [**🛠️ ExactWork Skills**](https://www.npmjs.com/package/@theihtisham/exactwork-skills)<br><sub>Portable skills for coding agents</sub> | <a href="https://www.npmjs.com/package/@theihtisham/exactwork-skills"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fexactwork-skills?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=A855F7&labelColor=111827" alt="Total npm downloads for @theihtisham/exactwork-skills" /></a> | 2026-11-13 | [npm ↗](https://www.npmjs.com/package/@theihtisham/exactwork-skills) · [GitHub ↗](https://github.com/theihtishaam/exactwork-skills) |
+| [**🧩 Omni Skills Forge**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>Discover and install agent skills</sub> | <a href="https://www.npmjs.com/package/omni-skills-forge"><img src="https://img.shields.io/npm/dt/omni-skills-forge?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=22C55E&labelColor=111827" alt="Total npm downloads for omni-skills-forge" /></a> | 2026-11-13 | [npm ↗](https://www.npmjs.com/package/omni-skills-forge) · [GitHub ↗](https://github.com/theihtishaam/omni-skills-forge) |
 <!-- AUTO_NPM_PACKAGES_END -->
 
-<sub>Packages maintained by my npm account appear here automatically at 1,000 cumulative downloads. Counts refresh every two days from public npm data. npm downloads are package download events, not unique users. [Sources and dates](./data/npm-packages.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
+<sub>Featured packages stay visible at every download count. All-time npm badges refresh automatically through Shields.io (subject to caching); dated count snapshots update every two days. Downloads are not unique users. [Count records](./data/npm-packages.json) · [Refresh workflow](./.github/workflows/profile.yml).</sub>
 
 ---
 
