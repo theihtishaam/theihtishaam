@@ -1,8 +1,7 @@
 name: Refresh public GitHub profile
+# No automatic refresh. Dynamic npm badges do not require GitHub Actions.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '43 10 */2 * *'
 permissions:
   contents: write
 concurrency:
