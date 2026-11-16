@@ -66,7 +66,7 @@ Every public repository on this account appears below. New repositories join the
 
 ### Agent Shadow Brain · shared context for coding agents
 
-<a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/agent-brain-feature.svg" width="100%" alt="Agent Shadow Brain workflow: add knowledge, assemble context, collaborate, and review outcomes"></a>
+<a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/agent-brain-runtime.png" width="100%" alt="Agent Shadow Brain memory graph and control room dashboard"></a>
 
 Bring project knowledge into one local workspace. Import text or PDFs, review memories, assemble task context, and inspect stored relationships and recorded tool activity in a graphical portal. Workspace skills stay with their project.
 
