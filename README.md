@@ -66,7 +66,7 @@ Every public repository on this account appears below. New repositories join the
 
 ### Agent Shadow Brain · shared context for coding agents
 
-<a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/agent-brain-runtime.png" width="100%" alt="Agent Shadow Brain memory graph and control room dashboard"></a>
+<a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/agent-brain-control-room.png" width="100%" alt="Agent Shadow Brain — Synthetic Memory Graph Fixture and multi-agent memory control room"></a>
 
 Bring project knowledge into one local workspace. Import text or PDFs, review memories, assemble task context, and inspect stored relationships and recorded tool activity in a graphical portal. Workspace skills stay with their project.
 
@@ -74,9 +74,6 @@ Bring project knowledge into one local workspace. Import text or PDFs, review me
 
 [**Open Agent Shadow Brain →**](https://github.com/theihtishaam/agents-brain#readme) · [Visual guide](https://github.com/theihtishaam/agents-brain/blob/main/docs/VISUAL_GUIDE_v7.1.4.md) · [npm package](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) · [Features and limits](https://github.com/theihtishaam/agents-brain/blob/main/docs/FEATURES_AND_LIMITS.md)
 
-![Agent Shadow Brain running with real document relationships and recorded local MCP calls](./assets/agent-brain-runtime.gif)
-
-<sub>Recorded in the working portal with 74 imported sections from the project's public documentation and actual local MCP calls. This is an isolated documentation workspace.</sub>
 
 ### ProcureGuard AI · hackathon category winner
 
