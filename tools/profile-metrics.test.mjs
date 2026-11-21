@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,recentDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 test('download milestones advance at each threshold without rounding up',()=>{
  for(const [value,label] of [[0,'0'],[999,'999'],[1000,'1K+'],[6030,'6K+'],[9999,'9K+'],[140122,'140K+'],[999999,'999K+'],[1000000,'1M+']])assert.equal(milestone(value),label);
  assert.throws(()=>milestone(-1));assert.throws(()=>milestone(NaN));
@@ -50,4 +50,19 @@ test('discovery verifies ownership and retains dated data on download API failur
  assert.equal(result.packages.length,2);assert.equal(result.packages[0].downloads,6030);
  const retained=result.packages.find(p=>p.name==='future-package');assert.equal(retained.status,'last-known');assert.equal(retained.coverageEnd,'2026-11-10');
  assert.equal(result.errors.length,1);assert.ok(!result.packages.some(p=>p.name==='unrelated'));
+});
+
+test('the thirty-day comparison uses one reporting window and never treats missing data as zero', () => {
+  const common = {completeSinceCreation: true, downloads: 1200, recentStart: '2026-10-22', recentEnd: '2026-11-20'};
+  const rows = [
+    {...common, name:'first', last30Days:200},
+    {...common, name:'zero', last30Days:0},
+    {...common, name:'older', recentStart:'2026-10-21', recentEnd:'2026-11-19', last30Days:900},
+    {...common, name:'unknown'}
+  ];
+  const svg = recentDownloadsChart({packages:rows});
+  assert.match(svg, /first 200, zero 0/);
+  assert.match(svg, /2026-10-22 — 2026-11-20/);
+  assert.doesNotMatch(svg, /older|unknown/);
+  assert.equal(recentDownloadsChart({packages:[]}), null);
 });

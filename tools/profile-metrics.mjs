@@ -13,9 +13,11 @@ export function starsSummary(repositories,login){
  if(rows.some(r=>!Number.isSafeInteger(r.stargazers_count)||r.stargazers_count<0))throw Error('Missing or invalid GitHub star count; retain last verified snapshot');
  return {total:rows.reduce((n,r)=>n+r.stargazers_count,0),repositories:rows.map(r=>({name:r.name,url:r.html_url,stars:r.stargazers_count})).sort((a,b)=>b.stars-a.stars||a.name.localeCompare(b.name))};
 }
-export function starsMarkdown(summary){
- if(!summary.total)return '';
- return `### Stars received\n\n**${summary.total.toLocaleString('en-US')} total stars** across public repositories owned by [@theihtishaam](https://github.com/theihtishaam).\n\n| Project | Stars |\n|:--|--:|\n`+summary.repositories.filter(r=>r.stars>0).map(r=>`| [${xml(r.name)}](${r.url}) | ${r.stars.toLocaleString('en-US')} |`).join('\n')+'\n';
+export function starsMarkdown(summary) {
+  if (!summary.total) return '';
+  const entries = summary.repositories.filter(repo => repo.stars > 0).map(repo =>
+    '<a href="' + xml(repo.url) + '">' + xml(repo.name) + '</a> · ★ ' + repo.stars.toLocaleString('en-US'));
+  return '<p><b>★ ' + summary.total.toLocaleString('en-US') + ' total stars</b> &nbsp; ' + entries.join(' &nbsp; / &nbsp; ') + '</p>';
 }
 export function periods(start,end){
  const valid=s=>/^\d{4}-\d{2}-\d{2}$/.test(s)&&Number.isFinite(Date.parse(s))&&new Date(s).toISOString().slice(0,10)===s;
@@ -55,7 +57,7 @@ export async function collectNpmPackages(get,previous={packages:[]}){
    const recent=await get(endpoint+'last-month/'+encodeURIComponent(name));
    if(recent.package!==name||!countValid(recent.downloads)||(Date.parse(recent.end)-Date.parse(recent.start))/DAY!==29)throw Error('Invalid 30-day download receipt');
    const version=metadata['dist-tags']?.latest;
-   packages.push({name,description:metadata.description||'',version:version||null,deprecated:metadata.versions?.[version]?.deprecated||null,url:'https://www.npmjs.com/package/'+name,repository:metadata.repository?.url||null,downloads,last30Days:recent.downloads,coverageStart:created,coverageEnd:latestDay.end,completeSinceCreation:true,refreshedAt:new Date().toISOString(),status:'verified',receipts});
+   packages.push({name,description:metadata.description||'',version:version||null,deprecated:metadata.versions?.[version]?.deprecated||null,url:'https://www.npmjs.com/package/'+name,repository:metadata.repository?.url||null,downloads,last30Days:recent.downloads,recentStart:recent.start,recentEnd:recent.end,coverageStart:created,coverageEnd:latestDay.end,completeSinceCreation:true,refreshedAt:new Date().toISOString(),status:'verified',receipts});
   }catch(error){
    errors.push({package:name,message:error.message});
    const old=previous.packages?.find(p=>p.name===name&&p.completeSinceCreation===true&&countValid(p.downloads));
@@ -74,36 +76,60 @@ export function npmCard(p){
  svg+=`<path d="M38 231H1162" stroke="#26354b"/><text x="38" y="267" fill="#a8bcd8" font-size="16">${xml(p.version?'v'+p.version+' · ':'')}Through ${p.coverageEnd} · ${p.status==='last-known'?'Last verified snapshot':'Public npm data'}</text><text x="932" y="267" fill="#7dd3fc" font-size="17">VIEW PACKAGE ↗</text></g></svg>`;
  return svg;
 }
-export function npmHighlights(snapshot){
- const featured=[PRIMARY_PACKAGE,'@theihtisham/exactwork-skills','omni-skills-forge'];
- const packages=snapshot.packages.filter(p=>p.completeSinceCreation===true&&
-  (featured.includes(p.name)||p.downloads>=DOWNLOAD_THRESHOLD));
- const selected=[
-  ...featured.map(name=>packages.find(p=>p.name===name)).filter(Boolean),
-  ...packages.filter(p=>!featured.includes(p.name))
- ];
- const rows=selected.map(p=>{
-  const name=p.name;
-  const label=name===PRIMARY_PACKAGE?'🧠 Agent Shadow Brain':
-   name==='@theihtisham/exactwork-skills'?'🛠️ ExactWork Skills':
-   name==='omni-skills-forge'?'🧩 Omni Skills Forge':'📦 '+name;
-  const detail=name===PRIMARY_PACKAGE?'Persistent shared memory for AI agents':
-   name==='@theihtisham/exactwork-skills'?'Portable skills for coding agents':
-   name==='omni-skills-forge'?'Discover and install agent skills':'Open-source npm package';
-  const color=name===PRIMARY_PACKAGE?'00D9FF':
-   name==='@theihtisham/exactwork-skills'?'A855F7':
-   name==='omni-skills-forge'?'22C55E':'6366F1';
-  const packageUrl='https://www.npmjs.com/package/'+name;
-  const badgeUrl='https://img.shields.io/npm/dt/'+encodeURIComponent(name)+
-   '?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color='+color+'&labelColor=111827';
-  const badge='<a href="'+packageUrl+'"><img src="'+badgeUrl+'" alt="Total npm downloads for '+xml(name)+'" /></a>';
-  const githubRepo=name===PRIMARY_PACKAGE?'agents-brain':
-   name==='@theihtisham/exactwork-skills'?'exactwork-skills':
-   name==='omni-skills-forge'?'omni-skills-forge':null;
-  const repoLink=githubRepo?' · [GitHub ↗](https://github.com/theihtishaam/'+githubRepo+')':'';
-  return '| [**'+xml(label)+'**]('+packageUrl+')<br><sub>'+detail+'</sub> | '+badge+
-   ' | '+p.coverageEnd+(p.status==='last-known'?'<br><sub>Last verified</sub>':'')+
-   ' | [npm ↗]('+packageUrl+')'+repoLink+' |';
- });
- return '| ✨ Project | 📥 Live total downloads | 📅 Snapshot through | 🔗 Explore |\n|:--|:--|:--|:--|\n'+rows.join('\n')+'\n';
+const packageLabels = new Map([
+  [PRIMARY_PACKAGE, ['Agent Shadow Brain', '1848A6']],
+  ['omni-skills-forge', ['Omni Skills Forge', 'A63827']],
+  ['@theihtisham/exactwork-skills', ['ExactWork Skills', '435D3B']]
+]);
+
+function visiblePackages(snapshot) {
+  const eligible = snapshot.packages.filter(pkg => pkg.completeSinceCreation === true &&
+    (packageLabels.has(pkg.name) || pkg.downloads >= DOWNLOAD_THRESHOLD));
+  const known = [...packageLabels.keys()].map(name => eligible.find(pkg => pkg.name === name)).filter(Boolean);
+  return [...known, ...eligible.filter(pkg => !packageLabels.has(pkg.name))];
+}
+
+// Compare only reports for the same observed 30-day window.
+export function recentDownloadsChart(snapshot) {
+  const candidates = visiblePackages(snapshot).filter(pkg => pkg.recentStart && pkg.recentEnd &&
+    Number.isSafeInteger(pkg.last30Days) && pkg.last30Days >= 0);
+  if (!candidates.length) return null;
+  const latest = candidates.reduce((a, b) => a.recentEnd >= b.recentEnd ? a : b);
+  const rows = candidates.filter(pkg => pkg.recentStart === latest.recentStart && pkg.recentEnd === latest.recentEnd)
+    .sort((a, b) => b.last30Days - a.last30Days || a.name.localeCompare(b.name)).slice(0, 6);
+  const height = 119 + rows.length * 65;
+  const maximum = Math.max(1, ...rows.map(pkg => pkg.last30Days));
+  const labels = rows.map(pkg => [packageLabels.get(pkg.name)?.[0] || pkg.name, pkg.last30Days]);
+  const legend = labels.map(([name, count]) => name + ' ' + count.toLocaleString('en-US')).join(', ');
+  const bars = labels.map(([name, value], index) => {
+    const y = 120 + index * 65;
+    const safeName = name.length > 30 ? name.slice(0, 29) + '…' : name;
+    return '<g><text x="26" y="' + y + '" fill="#fff3dc" font-size="23">' + xml(safeName) +
+      '</text><text x="614" y="' + y + '" text-anchor="end" fill="#fff3dc" font-weight="700" font-size="23">' +
+      value.toLocaleString('en-US') + '</text><rect x="26" y="' + (y+9) + '" width="588" height="10" fill="#384c61"/>' +
+      '<rect x="26" y="' + (y+9) + '" width="' + (588*value/maximum).toFixed(2) + '" height="10" fill="' +
+      ['#ffc66d','#b8d8f6','#ffc1a7'][index % 3] + '"/></g>';
+  });
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="' + height + '" viewBox="0 0 640 ' + height +
+    '" role="img" aria-labelledby="t d"><title id="t">Downloads over 30 days</title><desc id="d">' +
+    xml(latest.recentStart + ' through ' + latest.recentEnd + '. ' + legend) + '</desc><rect width="640" height="' +
+    height + '" fill="#13283e"/><g font-family="Arial,sans-serif"><text x="26" y="45" font-size="32" font-weight="700" fill="#fff3dc">Downloads over 30 days</text>' +
+    '<text x="26" y="72" font-size="18" fill="#d3dded">' + xml(latest.recentStart + ' — ' + latest.recentEnd) +
+    '</text>' + bars.join('') + '</g></svg>';
+}
+
+export function npmHighlights(snapshot) {
+  const packages = visiblePackages(snapshot);
+  const badges = packages.map(pkg => {
+    const [title, color] = packageLabels.get(pkg.name) || [pkg.name, '1848A6'];
+    const url = 'https://www.npmjs.com/package/' + pkg.name;
+    const badge = 'https://img.shields.io/npm/dt/' + encodeURIComponent(pkg.name) +
+      '?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=' + encodeURIComponent(title) +
+      '&amp;labelColor=172c41&amp;color=' + color;
+    return '<a href="' + xml(url) + '"><img src="' + badge + '" alt="All-time npm downloads for ' + xml(pkg.name) + '"></a>';
+  });
+  const chart = recentDownloadsChart(snapshot) ?
+    '<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/last-30-days.svg" alt="Downloads over the last reported 30 days. Open the source records for exact figures."></a>\n\n' : '';
+  return chart + (badges.length ? '**All-time downloads**\n\n<p>\n' + badges.join('\n') + '\n</p>' :
+    'Package totals will appear when npm reports downloads.');
 }

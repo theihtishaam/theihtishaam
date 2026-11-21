@@ -1,134 +1,128 @@
-<h1 align="center"><img src="./assets/ihtisham-studio.webp" width="100%" alt="Ihtisham Ahmad · Software developer"></h1>
+<h1><img src="./assets/folio/ihtisham.webp" width="100%" alt="Ihtisham Ahmad · Software developer"></h1>
 
-I build business software in C# and .NET, automate workflows with Python, and make tools for coding agents. My projects range from tracing a vendor decision back to its evidence to helping a player find one missing collectible on a map of Leonida.
+I write business software in **C# and .NET**, build web interfaces, and automate work with **Python**. Here you can explore the tools I build for coding agents, see how my team reviews procurement evidence, or plan a route through Leonida in my game atlas.
 
-[Featured projects](#featured-projects) · [npm downloads](#npm-downloads) · [All repositories](#public-repositories) · [Languages & tools](#languages--tools) · [Contact](#websites--contact) · [LinkedIn](https://www.linkedin.com/in/ihtishamdeveloper/)
+[Projects](#public-repositories) · [Packages on npm](#npm-downloads) · [Languages and tools](#languages--tools) · [Websites](#websites) · [Contact](#contact)
 
-## Featured projects
+<a name="featured-projects"></a>
 
+## Public repositories
+
+<!-- AUTO_PUBLIC_PROJECTS_START -->
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/agents-brain"><img width="100%" src="./assets/gallery-memory.svg" alt="Sessions, shared project memory, and handoff"></a>
+<a href="https://github.com/theihtishaam/agents-brain"><img width="100%" src="./assets/repos/agents-brain.svg" alt="Agent Shadow Brain"></a>
 <h3><a href="https://github.com/theihtishaam/agents-brain">Agent Shadow Brain</a></h3>
-<p>Pick up a project in another coding tool with its saved decisions, sources, and next step.</p>
-<p><a href="https://raw.githubusercontent.com/theihtishaam/agents-brain/v7.25.0/docs/assets/7.25.0-agent-traffic.gif">Brain Hub recording</a></p>
+<p>Save a decision or a handoff in one coding tool and pick it up in another. The Brain Hub shows recorded exchanges in the workspace.</p>
+<p><sub>TypeScript · <a href="https://raw.githubusercontent.com/theihtishaam/agents-brain/v7.25.0/docs/assets/7.25.0-agent-traffic.gif">Watch the Brain Hub recording</a></sub></p>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/Procure-guard-ai"><img width="100%" src="./assets/gallery-procurement.svg" alt="Procurement evidence, review, and approval"></a>
+<a href="https://github.com/theihtishaam/Procure-guard-ai"><img width="100%" src="./assets/repos/Procure-guard-ai.svg" alt="ProcureGuard AI"></a>
 <h3><a href="https://github.com/theihtishaam/Procure-guard-ai">ProcureGuard AI</a></h3>
-<p>Eight specialist agents review vendor evidence before a human signs off. Team Purrwolf won <b>Best Use of AI/ML API</b> at the 2026 Band of Agents Hackathon.</p>
-<p><a href="https://youtu.be/KhKxOJJEYho">Watch the demo</a> · <a href="https://www.linkedin.com/posts/lablab-ai_meet-the-ai-that-can-veto-its-own-approval-activity-7487495363164233728-iQSx">Award</a></p>
+<p>Eight specialist agents check vendor evidence before human signoff. Team Purrwolf won Best Use of AI/ML API at the 2026 Band of Agents Hackathon.</p>
+<p><sub>Python · <a href="https://youtu.be/KhKxOJJEYho">Watch the demo</a> · <a href="https://www.linkedin.com/posts/lablab-ai_meet-the-ai-that-can-veto-its-own-approval-activity-7487495363164233728-iQSx">Award announcement</a></sub></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker"><img width="100%" src="https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/v0.1.3/docs/quickstart/cover.webp" alt="GTA 6 Loot Map, an illustrated Leonida field guide"></a>
+<a href="https://github.com/theihtishaam/exactwork-skills"><img width="100%" src="./assets/repos/exactwork-skills.svg" alt="ExactWork Skills"></a>
+<h3><a href="https://github.com/theihtishaam/exactwork-skills">ExactWork Skills</a> · ★ 2</h3>
+<p>Six portable skills for execution, research, review, handoff, context, and learning. Choose the instructions a project needs.</p>
+<p><sub>Python · <a href="./docs/projects/exactwork-skills.md">Explore the six skills</a></sub></p>
+</td>
+<td width="50%" valign="top">
+<a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker"><img width="100%" src="./assets/repos/GTA-6-Interactive-Map-and-Loot-Tracker.svg" alt="GTA 6 Loot Map"></a>
 <h3><a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker">GTA 6 Loot Map</a></h3>
-<p>Pick a collectible, plan a route across Leonida, and keep an offline checklist. The atlas includes <b>176 mission entries</b> and 88 mission start waypoints.</p>
-<p><a href="https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/v0.1.3/docs/quickstart/reward-map.webp">View the atlas</a> · <a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker#readme">Player guide</a></p>
-</td>
-<td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/omni-skills-forge"><img width="100%" src="https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/v2.3.2/assets/omni-collection-cover.webp" alt="50,000+ agent skill files in Omni Skills Forge"></a>
-<h3><a href="https://github.com/theihtishaam/omni-skills-forge">Omni Skills Forge</a></h3>
-<p>Find a skill for the project you have open. Switch a whole category on or off, or combine a few relevant files into one workspace skill.</p>
-<p><a href="https://github.com/theihtishaam/omni-skills-forge#open-it-in-your-project">Dashboard guide</a> · <a href="https://www.npmjs.com/package/omni-skills-forge">npm</a></p>
+<p>Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal.</p>
+<p><sub>Python · <a href="https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/v0.1.3/docs/quickstart/reward-map.webp">See the atlas</a> · <a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker#readme">Player guide</a></sub></p>
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/exactwork-skills"><img width="100%" src="./assets/gallery-exactwork.svg" alt="Scope, verify, and hand off agent work"></a>
-<h3><a href="https://github.com/theihtishaam/exactwork-skills">ExactWork Skills</a></h3>
-<p>Six portable skills for research, review, context, handoff, learning, and delivery. Pick the ones that fit a project.</p>
-<p><a href="./docs/projects/exactwork-skills.md">How the skills fit together</a></p>
+<a href="https://github.com/theihtishaam/omni-skills-forge"><img width="100%" src="./assets/repos/omni-skills-forge.svg" alt="Omni Skills Forge"></a>
+<h3><a href="https://github.com/theihtishaam/omni-skills-forge">Omni Skills Forge</a></h3>
+<p>Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill.</p>
+<p><sub>JavaScript · <a href="https://github.com/theihtishaam/omni-skills-forge#open-it-in-your-project">Dashboard walkthrough</a></sub></p>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/theihtishaam/CiviTwin"><img width="100%" src="./assets/gallery-civic.svg" alt="Compare tax scenarios, applied rules, and results"></a>
+<a href="https://github.com/theihtishaam/CiviTwin"><img width="100%" src="./assets/repos/CiviTwin.svg" alt="CivicTwin Δ"></a>
 <h3><a href="https://github.com/theihtishaam/CiviTwin">CivicTwin Δ</a></h3>
-<p>An enterprise tax and regulatory planning prototype. Change an assumption and trace which rules and outcomes change with it.</p>
-<p><a href="./docs/projects/civic-twin.md">Illustrated case study</a></p>
+<p>Change an assumption in a tax scenario, then trace the rules, evidence, and results in this enterprise planning prototype.</p>
+<p><sub>TypeScript · <a href="./docs/projects/civic-twin.md">Read the case study</a></sub></p>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+<a href="https://github.com/theihtishaam/theihtishaam"><img align="left" width="32%" hspace="10" src="./assets/repos/theihtishaam.svg" alt="GitHub Profile"></a>
+<h3><a href="https://github.com/theihtishaam/theihtishaam">GitHub Profile</a></h3>
+<p>The artwork, repository index, and public-data tools behind this profile.</p>
+<p><sub>JavaScript</sub></p>
 </td>
 </tr>
 </table>
 
-**Omni Skills Forge catalog**
+7 public repositories · Updated 2026-11-21 · [Browse on GitHub](https://github.com/theihtishaam?tab=repositories) · [Project directory](./docs/PUBLIC_PROJECTS.md)
+<!-- AUTO_PUBLIC_PROJECTS_END -->
+
+## npm downloads
+
+<!-- AUTO_NPM_PACKAGES_START -->
+<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/last-30-days.svg" alt="Downloads over the last reported 30 days. Open the source records for exact figures."></a>
+
+**All-time downloads**
+
+<p>
+<a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fagent-shadow-brain?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=Agent%20Shadow%20Brain&amp;labelColor=172c41&amp;color=1848A6" alt="All-time npm downloads for @theihtisham/agent-shadow-brain"></a>
+<a href="https://www.npmjs.com/package/omni-skills-forge"><img src="https://img.shields.io/npm/dt/omni-skills-forge?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=Omni%20Skills%20Forge&amp;labelColor=172c41&amp;color=A63827" alt="All-time npm downloads for omni-skills-forge"></a>
+<a href="https://www.npmjs.com/package/@theihtisham/exactwork-skills"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fexactwork-skills?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=ExactWork%20Skills&amp;labelColor=172c41&amp;color=435D3B" alt="All-time npm downloads for @theihtisham/exactwork-skills"></a>
+</p>
+<!-- AUTO_NPM_PACKAGES_END -->
+
+The chart uses npm’s reported 30-day window. Each badge links to its package and shows a cached all-time total. [Download records](./data/npm-packages.json)
+
+**Inside Omni Skills Forge**
 
 <!-- AUTO_OMNI_CATALOG_START -->
 **50,009 skill files · 28 categories.** [Catalog counts](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/catalog-stats.json).
 <!-- AUTO_OMNI_CATALOG_END -->
 
-## npm downloads
+## Languages & tools
 
-<!-- AUTO_NPM_PACKAGES_START -->
-| ✨ Project | 📥 Live total downloads | 📅 Snapshot through | 🔗 Explore |
-|:--|:--|:--|:--|
-| [**🧠 Agent Shadow Brain**](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain)<br><sub>Persistent shared memory for AI agents</sub> | <a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fagent-shadow-brain?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=00D9FF&labelColor=111827" alt="Total npm downloads for @theihtisham/agent-shadow-brain" /></a> | 2026-11-20 | [npm ↗](https://www.npmjs.com/package/@theihtisham/agent-shadow-brain) · [GitHub ↗](https://github.com/theihtishaam/agents-brain) |
-| [**🛠️ ExactWork Skills**](https://www.npmjs.com/package/@theihtisham/exactwork-skills)<br><sub>Portable skills for coding agents</sub> | <a href="https://www.npmjs.com/package/@theihtisham/exactwork-skills"><img src="https://img.shields.io/npm/dt/%40theihtisham%2Fexactwork-skills?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=A855F7&labelColor=111827" alt="Total npm downloads for @theihtisham/exactwork-skills" /></a> | 2026-11-20 | [npm ↗](https://www.npmjs.com/package/@theihtisham/exactwork-skills) · [GitHub ↗](https://github.com/theihtishaam/exactwork-skills) |
-| [**🧩 Omni Skills Forge**](https://www.npmjs.com/package/omni-skills-forge)<br><sub>Discover and install agent skills</sub> | <a href="https://www.npmjs.com/package/omni-skills-forge"><img src="https://img.shields.io/npm/dt/omni-skills-forge?style=for-the-badge&logo=npm&logoColor=white&label=ALL-TIME%20DOWNLOADS&color=22C55E&labelColor=111827" alt="Total npm downloads for omni-skills-forge" /></a> | 2026-11-20 | [npm ↗](https://www.npmjs.com/package/omni-skills-forge) · [GitHub ↗](https://github.com/theihtishaam/omni-skills-forge) |
-<!-- AUTO_NPM_PACKAGES_END -->
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/folio/toolkit-mobile.svg">
+  <img src="./assets/folio/toolkit.svg" width="100%" alt="Business applications with C#, .NET, ASP.NET MVC, WPF, REST APIs, SQL Server and IIS. Web interfaces with TypeScript, JavaScript, Angular, React, HTML and CSS. Data work with Python, Flask, Pandas, NumPy, PostgreSQL and MySQL. Agent tools and deployment with Node.js, MCP, Git, GitHub Actions, Azure and AWS.">
+</picture>
 
-The badges show all-time package downloads. npm and Shields cache their totals.
+## Websites
 
-## Public repositories
+<img src="./assets/folio/websites.webp" width="100%" alt="A software workshop, a public opportunity board, and a shop illustrate my three websites.">
 
-<!-- AUTO_PUBLIC_PROJECTS_START -->
-**8 public repositories · refreshed 2026-11-21**
+- [**Ababil Technology**](https://ababiltechnology.com/) builds business software and provides technology services.
+- [**Job Opportunity**](https://jobopportunity.info/) brings jobs, internships, scholarships, and fellowships into one place.
+- [**DealVorio**](https://dealvorio.com/) collects deals, coupons, and learning offers.
 
-<table>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/agents-brain"><img src="./assets/repos/agents-brain.svg" width="100%" alt="Agent Shadow Brain: Shared local knowledge, scoped context, PDF imports, and a visual workspace for coding agents."></a><br><a href="https://github.com/theihtishaam/agents-brain"><b>Agent Shadow Brain</b> ↗</a></td>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/Procure-guard-ai"><img src="./assets/repos/Procure-guard-ai.svg" width="100%" alt="ProcureGuard AI: Eight specialist agents, evidence, adversarial review, and human approval for vendor decisions."></a><br><a href="https://github.com/theihtishaam/Procure-guard-ai"><b>ProcureGuard AI</b> ↗</a></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/exactwork-skills"><img src="./assets/repos/exactwork-skills.svg" width="100%" alt="ExactWork Skills: Six portable Agent Skills for focused work, research, review, handoff, context, and learning."></a><br><a href="https://github.com/theihtishaam/exactwork-skills"><b>ExactWork Skills</b> ↗</a> · ★ 2</td>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker"><img src="./assets/repos/GTA-6-Interactive-Map-and-Loot-Tracker.svg" width="100%" alt="GTA 6 Loot Map: Plan a route across Leonida, find mission rewards, and keep an offline field journal."></a><br><a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker"><b>GTA 6 Loot Map</b> ↗</a></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/CiviTwin"><img src="./assets/repos/CiviTwin.svg" width="100%" alt="CivicTwin Δ: Compare tax and regulatory scenarios with typed rules, recorded evidence, and explicit assumptions."></a><br><a href="https://github.com/theihtishaam/CiviTwin"><b>CivicTwin Δ</b> ↗</a></td>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/omni-skills-forge"><img src="./assets/repos/omni-skills-forge.svg" width="100%" alt="Omni Skills Forge: Search, inspect, and copy Markdown coding-agent skills by category, tag, and difficulty."></a><br><a href="https://github.com/theihtishaam/omni-skills-forge"><b>Omni Skills Forge</b> ↗</a></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/GTA6-Map-Loot"><img src="./assets/repos/GTA6-Map-Loot.svg" width="100%" alt="GTA6-Map-Loot: GTA 6 interactive map and loot tracker for Leonida. Find heists and collectibles, review bounty reports, plan GPS routes, and export progress. Built by The Ihtisham."></a><br><a href="https://github.com/theihtishaam/GTA6-Map-Loot"><b>GTA6-Map-Loot</b> ↗</a></td>
-<td width="50%" valign="top"><a href="https://github.com/theihtishaam/theihtishaam"><img src="./assets/repos/theihtishaam.svg" width="100%" alt="GitHub Profile: My public projects, languages, websites, and links."></a><br><a href="https://github.com/theihtishaam/theihtishaam"><b>GitHub Profile</b> ↗</a></td>
-</tr>
-</table>
-
-[Browse on GitHub](https://github.com/theihtishaam?tab=repositories) · [Project directory](./docs/PUBLIC_PROJECTS.md)
-<!-- AUTO_PUBLIC_PROJECTS_END -->
-
-### Latest repositories
+## Repository activity
 
 <!-- AUTO_LATEST_REPOSITORIES_START -->
-- <a href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker"><b>GTA 6 Loot Map</b></a> · Created 2026-11-21 — Plan a route across Leonida, find mission rewards, and keep an offline field journal.
-- <a href="https://github.com/theihtishaam/GTA6-Map-Loot"><b>GTA6-Map-Loot</b></a> · Created 2026-11-21 — GTA 6 interactive map and loot tracker for Leonida. Find heists and collectibles, review bounty reports, plan GPS routes, and export…
-- <a href="https://github.com/theihtishaam/omni-skills-forge"><b>Omni Skills Forge</b></a> · Created 2026-11-13 — Search, inspect, and copy Markdown coding-agent skills by category, tag, and difficulty.
+<img src="./assets/recent-projects.svg" width="100%" alt="GTA 6 Loot Map, created 2026-11-21. Omni Skills Forge, created 2026-11-13. CivicTwin Δ, created 2026-11-13">
+
+<a title="Created 2026-11-21 · Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal." href="https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker">GTA 6 Loot Map</a> · <a title="Created 2026-11-13 · Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill." href="https://github.com/theihtishaam/omni-skills-forge">Omni Skills Forge</a> · <a title="Created 2026-11-13 · Change an assumption in a tax scenario, then trace the rules, evidence, and results in this enterprise planning prototype." href="https://github.com/theihtishaam/CiviTwin">CivicTwin Δ</a>
 <!-- AUTO_LATEST_REPOSITORIES_END -->
 
 <!-- AUTO_RECEIVED_STARS_START -->
-### Stars received
-
-**2 total stars** across public repositories owned by [@theihtishaam](https://github.com/theihtishaam).
-
-| Project | Stars |
-|:--|--:|
-| [exactwork-skills](https://github.com/theihtishaam/exactwork-skills) | 2 |
+<p><b>★ 2 total stars</b> &nbsp; <a href="https://github.com/theihtishaam/exactwork-skills">exactwork-skills</a> · ★ 2</p>
 <!-- AUTO_RECEIVED_STARS_END -->
 
-## Languages & tools
+<a name="websites--contact"></a>
 
-| What I build | Tools I use |
-| --- | --- |
-| Business applications and APIs | C#, .NET, ASP.NET MVC, WPF, REST |
-| Web interfaces | TypeScript, JavaScript, Angular, React, HTML, CSS |
-| Data and automation | Python, Flask, Pandas, NumPy, SQL Server, MySQL, PostgreSQL |
-| Agent tools and deployment | Node.js, MCP, Git, GitHub Actions, Azure, AWS, IIS |
+## Contact
 
-## Websites & contact
-
-| Website | What you’ll find |
-| --- | --- |
-| [Ababil Technology](https://ababiltechnology.com/) | Business software and technology services |
-| [Job Opportunity](https://jobopportunity.info/) | Jobs, scholarships, internships, and fellowships |
-| [DealVorio](https://dealvorio.com/) | Deals, coupons, and learning offers |
-
-[LinkedIn](https://www.linkedin.com/in/ihtishamdeveloper/) · [GitHub](https://github.com/theihtishaam) · [X](https://x.com/theihtishaam) · [Instagram](https://www.instagram.com/theihtishaam) · [npm](https://www.npmjs.com/~theihtisham) · [Email](mailto:Theihtisham@outlook.com)
+<p>
+  <a href="https://www.linkedin.com/in/ihtishamdeveloper/"><img src="./assets/folio/contact-linkedin.svg" width="122" alt="Ihtisham on LinkedIn"></a>
+  <a href="mailto:Theihtisham@outlook.com"><img src="./assets/folio/contact-email.svg" width="122" alt="Email Ihtisham"></a>
+  <a href="https://github.com/theihtishaam"><img src="./assets/folio/contact-github.svg" width="122" alt="GitHub profile"></a>
+  <a href="https://www.npmjs.com/~theihtisham"><img src="./assets/folio/contact-npm.svg" width="122" alt="npm profile"></a>
+  <a href="https://www.instagram.com/theihtishaam"><img src="./assets/folio/contact-instagram.svg" width="122" alt="Instagram profile"></a>
+  <a href="https://x.com/theihtishaam"><img src="./assets/folio/contact-x.svg" width="122" alt="X profile"></a>
+</p>

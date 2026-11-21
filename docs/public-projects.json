@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-21T16:41:26.575Z",
-  "officialRepositoryCount": 8,
+  "refreshedAt": "2026-11-21T17:02:59.038Z",
+  "officialRepositoryCount": 7,
   "featuredExternalProjects": 0,
-  "repositoryCount": 8,
+  "repositoryCount": 7,
   "repositories": [
     {
       "name": "agents-brain",
@@ -55,18 +55,6 @@
       "archived": false
     },
     {
-      "name": "CiviTwin",
-      "url": "https://github.com/theihtishaam/CiviTwin",
-      "description": "Enterprise Tax Calculation system",
-      "language": "TypeScript",
-      "stars": 0,
-      "sourceOwner": "theihtishaam",
-      "createdAt": "2026-11-13T10:10:06Z",
-      "pushedAt": "2026-11-13T11:27:11Z",
-      "fork": false,
-      "archived": false
-    },
-    {
       "name": "omni-skills-forge",
       "url": "https://github.com/theihtishaam/omni-skills-forge",
       "description": "Searchable Markdown skill catalog for coding agents: 50,009 files across 28 categories, with a CLI, dashboard, installation and export tools.",
@@ -79,14 +67,14 @@
       "archived": false
     },
     {
-      "name": "GTA6-Map-Loot",
-      "url": "https://github.com/theihtishaam/GTA6-Map-Loot",
-      "description": "GTA 6 interactive map and loot tracker for Leonida. Find heists and collectibles, review bounty reports, plan GPS routes, and export progress. Built by The Ihtisham.",
-      "language": null,
+      "name": "CiviTwin",
+      "url": "https://github.com/theihtishaam/CiviTwin",
+      "description": "Enterprise Tax Calculation system",
+      "language": "TypeScript",
       "stars": 0,
       "sourceOwner": "theihtishaam",
-      "createdAt": "2026-11-21T10:51:06Z",
-      "pushedAt": "2026-11-21T10:51:08Z",
+      "createdAt": "2026-11-13T10:10:06Z",
+      "pushedAt": "2026-11-13T11:27:11Z",
       "fork": false,
       "archived": false
     },
@@ -98,7 +86,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-11T20:24:13Z",
-      "pushedAt": "2026-11-16T09:16:37Z",
+      "pushedAt": "2026-11-21T16:44:31Z",
       "fork": false,
       "archived": false
     }

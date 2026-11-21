@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="341" viewBox="0 0 852 341" role="img" aria-labelledby="t d">
+<title id="t">Languages and tools</title><desc id="d">Business applications. ASP.NET MVC and WPF. REST APIs, SQL Server and IIS. Web interfaces. TypeScript and JavaScript. Angular, React, HTML and CSS. Data and automation. Python, Flask, Pandas and NumPy. PostgreSQL and MySQL. Agent tools and delivery. Node.js, MCP and GitHub Actions. Azure, AWS and Git.</desc>
+<rect width="852" height="341" rx="8" fill="#162c42"/>
+<g transform="translate(16 16)">
+  <rect width="398" height="144" rx="7" fill="#f2ce85"/>
+  <g fill="#142a3f" font-family="Arial,sans-serif">
+    <text x="17" y="42" font-size="26" font-weight="700" letter-spacing="-.8">Business applications</text>
+    <text x="18" y="87" font-size="19">ASP.NET MVC and WPF</text>
+    <text x="18" y="114" font-size="19">REST APIs, SQL Server and IIS</text>
+  </g>
+  <g transform="translate(345 10) rotate(7 20 20)" stroke="#182c42" stroke-width="2">
+    <rect x="2" y="5" width="39" height="39" rx="7" fill="#162b40"/><rect width="39" height="39" rx="7" fill="#fff3dd"/>
+    <text x="19.5" y="25" stroke="none" fill="#152d44" font-size="18" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">C#</text>
+  </g>
+</g>
+<g transform="translate(438 16)">
+  <rect width="398" height="144" rx="7" fill="#b8d8f0"/>
+  <g fill="#142a3f" font-family="Arial,sans-serif">
+    <text x="17" y="42" font-size="26" font-weight="700" letter-spacing="-.8">Web interfaces</text>
+    <text x="18" y="87" font-size="19">TypeScript and JavaScript</text>
+    <text x="18" y="114" font-size="19">Angular, React, HTML and CSS</text>
+  </g>
+  <g transform="translate(345 10) rotate(7 20 20)" stroke="#182c42" stroke-width="2">
+    <rect x="2" y="5" width="39" height="39" rx="7" fill="#162b40"/><rect width="39" height="39" rx="7" fill="#fff3dd"/>
+    <text x="19.5" y="25" stroke="none" fill="#152d44" font-size="18" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">TS</text>
+  </g>
+</g>
+<g transform="translate(16 177)">
+  <rect width="398" height="144" rx="7" fill="#b7d2bb"/>
+  <g fill="#142a3f" font-family="Arial,sans-serif">
+    <text x="17" y="42" font-size="26" font-weight="700" letter-spacing="-.8">Data and automation</text>
+    <text x="18" y="87" font-size="19">Python, Flask, Pandas and NumPy</text>
+    <text x="18" y="114" font-size="19">PostgreSQL and MySQL</text>
+  </g>
+  <g transform="translate(345 10) rotate(7 20 20)" stroke="#182c42" stroke-width="2">
+    <rect x="2" y="5" width="39" height="39" rx="7" fill="#162b40"/><rect width="39" height="39" rx="7" fill="#fff3dd"/>
+    <text x="19.5" y="25" stroke="none" fill="#152d44" font-size="18" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">Py</text>
+  </g>
+</g>
+<g transform="translate(438 177)">
+  <rect width="398" height="144" rx="7" fill="#f5b6a3"/>
+  <g fill="#142a3f" font-family="Arial,sans-serif">
+    <text x="17" y="42" font-size="26" font-weight="700" letter-spacing="-.8">Agent tools and delivery</text>
+    <text x="18" y="87" font-size="19">Node.js, MCP and GitHub Actions</text>
+    <text x="18" y="114" font-size="19">Azure, AWS and Git</text>
+  </g>
+  <g transform="translate(345 10) rotate(7 20 20)" stroke="#182c42" stroke-width="2">
+    <rect x="2" y="5" width="39" height="39" rx="7" fill="#162b40"/><rect width="39" height="39" rx="7" fill="#fff3dd"/>
+    <text x="19.5" y="25" stroke="none" fill="#152d44" font-size="13" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle">MCP</text>
+  </g>
+</g>
+</svg>
