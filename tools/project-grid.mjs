@@ -1,11 +1,12 @@
 const xml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
 const highlights = {
+  'GTA-6-Interactive-Map-and-Loot-Tracker': {title:'GTA 6 Loot Map',label:'FEATURED · INTERACTIVE GAME ATLAS',color:'#ffb692',description:'Plan a route across Leonida, find mission rewards, and keep an offline field journal.',language:'Interactive maps · Local-first tools',rank:2.5},
   'agents-brain': {title:'Agent Shadow Brain',label:'FEATURED · SHARED AGENT MEMORY',color:'#7dd3fc',description:'Shared local knowledge, scoped context, PDF imports, and a visual workspace for coding agents.',language:'TypeScript · Node.js · MCP',rank:0},
   'Procure-guard-ai': {title:'ProcureGuard AI',label:'FEATURED · HACKATHON CATEGORY WINNER',color:'#fcd34d',description:'Eight specialist agents, evidence, adversarial review, and human approval for vendor decisions.',language:'Python · Band · Agent frameworks',rank:1},
   'exactwork-skills': {title:'ExactWork Skills',label:'FEATURED · PROJECT-LOCAL SKILLS',color:'#9ecbfa',description:'Six portable Agent Skills for focused work, research, review, handoff, context, and learning.',language:'Markdown skills · Python helpers',rank:2},
   'CiviTwin': {title:'CivicTwin Δ',label:'ENTERPRISE TAX & REGULATORY SCENARIOS',color:'#c7bcf0',description:'Compare tax and regulatory scenarios with typed rules, recorded evidence, and explicit assumptions.',language:'TypeScript',rank:3},
   'omni-skills-forge': {title:'Omni Skills Forge',label:'MARKDOWN SKILL CATALOG',color:'#f5c77e',description:'Search, inspect, and copy Markdown coding-agent skills by category, tag, and difficulty.',language:'JavaScript · npm CLI',rank:4},
-  'theihtishaam': {title:'GitHub Profile',label:'PROFILE · PUBLIC PROJECT DIRECTORY',color:'#b8c8df',description:'My public projects, languages, websites, and links. Repository cards and avatar refresh automatically.',language:'Profile · Visual portfolio',rank:999},
+  'theihtishaam': {title:'GitHub Profile',label:'PROFILE · PUBLIC PROJECT DIRECTORY',color:'#b8c8df',description:'My public projects, languages, websites, and links.',language:'Profile · Visual portfolio',rank:999},
 };
 export const projectOrder = (a,b) => (highlights[a.name]?.rank ?? 100) - (highlights[b.name]?.rank ?? 100) || (b.pushed_at || b.pushedAt || '').localeCompare(a.pushed_at || a.pushedAt || '') || a.name.localeCompare(b.name);
 const createdTime = repo => Date.parse(repo.created_at ?? repo.createdAt);
@@ -63,7 +64,7 @@ export function projectGrid(repositories, date) {
     const label=highlights[repo.name]?.title || repo.name;
     const stars=repo.stargazers_count??repo.stars;
     const count=Number.isSafeInteger(stars)&&stars>0?` · ★ ${stars.toLocaleString('en-US')}`:'';
-    return `<td width="50%" valign="top"><a href="${xml(url)}"><img src="./assets/repos/${encodeURIComponent(repo.name)}.svg" width="100%" alt="${xml(label+': '+(highlights[repo.name]?.description || repo.description || 'Public repository'))}"></a><br><a href="${xml(url)}"><b>${xml(repo.name)}</b> ↗</a>${count}</td>`;
+    return `<td width="50%" valign="top"><a href="${xml(url)}"><img src="./assets/repos/${encodeURIComponent(repo.name)}.svg" width="100%" alt="${xml(label+': '+(highlights[repo.name]?.description || repo.description || 'Public repository'))}"></a><br><a href="${xml(url)}"><b>${xml(label)}</b> ↗</a>${count}</td>`;
   });
   const rows=[];
   for(let i=0;i<cards.length;i+=2)rows.push('<tr>\n'+cards.slice(i,i+2).join('\n')+(i+1===cards.length?'\n<td width="50%"></td>':'')+'\n</tr>');

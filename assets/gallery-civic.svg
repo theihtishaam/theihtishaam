@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200" role="img" aria-labelledby="title desc">
+  <title id="title">Tax scenarios</title><desc id="desc">Compare choices, apply recorded rules, and inspect the result.</desc>
+  <defs><radialGradient id="light" cx=".58" cy=".3" r=".8"><stop stop-color="#a1df9e" stop-opacity=".16"/><stop offset="1" stop-color="#a1df9e" stop-opacity="0"/></radialGradient><pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r=".8" fill="#a1df9e" opacity=".16"/></pattern></defs>
+  <rect width="600" height="200" rx="12" fill="#102922"/><rect width="600" height="200" rx="12" fill="url(#light)"/><rect width="600" height="200" rx="12" fill="url(#dots)"/>
+  <g fill="none" stroke="#a1df9e" opacity=".7" stroke-width="1.5"><path d="M134 89h129m-7-4 7 4-7 4m81-4h127m-7-4 7 4-7 4"/><path d="M135 96h88m116 0h87" opacity=".32"/></g>
+  <g transform="translate(100 89)" fill="none" stroke="#a1df9e"><circle r="38" fill="#102922" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M-20 0h10c14 0 8-15 24-15h6M-10 0c14 0 8 15 24 15h6"/><circle cx="-23" cy="0" r="4"/><circle cx="22" cy="-15" r="4"/><circle cx="22" cy="15" r="4"/></g></g>
+  <text x="100" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Scenarios</text>
+  <g transform="translate(300 89)" fill="none" stroke="#a1df9e"><circle r="38" fill="#102922" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M0 -21v43M-15 22h30M-24 -11h48m-18 0-8 17h16zM-15 -11l-8 17h16z"/></g></g>
+  <text x="300" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Rules</text>
+  <g transform="translate(500 89)" fill="none" stroke="#a1df9e"><circle r="38" fill="#102922" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M-23 -21v42h47M-14 13v-11h7v11M0 13v-23h7v23M14 13v-33h7v33"/></g></g>
+  <text x="500" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Results</text>
+</svg>

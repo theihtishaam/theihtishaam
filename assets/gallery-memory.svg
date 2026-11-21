@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200" role="img" aria-labelledby="title desc">
+  <title id="title">Shared project memory</title><desc id="desc">Three coding tools can work from the same project context.</desc>
+  <defs><radialGradient id="light" cx=".58" cy=".3" r=".8"><stop stop-color="#8ee5da" stop-opacity=".16"/><stop offset="1" stop-color="#8ee5da" stop-opacity="0"/></radialGradient><pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r=".8" fill="#8ee5da" opacity=".16"/></pattern></defs>
+  <rect width="600" height="200" rx="12" fill="#0b2028"/><rect width="600" height="200" rx="12" fill="url(#light)"/><rect width="600" height="200" rx="12" fill="url(#dots)"/>
+  <g fill="none" stroke="#8ee5da" opacity=".7" stroke-width="1.5"><path d="M134 89h129m-7-4 7 4-7 4m81-4h127m-7-4 7 4-7 4"/><path d="M135 96h88m116 0h87" opacity=".32"/></g>
+  <g transform="translate(100 89)" fill="none" stroke="#8ee5da"><circle r="38" fill="#0b2028" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="-19" cy="8" r="6"/><circle cx="1" cy="-16" r="7"/><circle cx="18" cy="13" r="8"/><path d="m-15 3 12-13m7 0 10 16m-27 3 22 4"/></g></g>
+  <text x="100" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Agent sessions</text>
+  <g transform="translate(300 89)" fill="none" stroke="#8ee5da"><circle r="38" fill="#0b2028" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="-17" y="-17" width="34" height="34" rx="4"/><rect x="-9" y="-9" width="18" height="18" rx="2"/><path d="M-10 -24v6M0 -24v6M10 -24v6M-10 18v6M0 18v6M10 18v6M-24 -10h6M-24 0h6M-24 10h6M18 -10h6M18 0h6M18 10h6"/></g></g>
+  <text x="300" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Project memory</text>
+  <g transform="translate(500 89)" fill="none" stroke="#8ee5da"><circle r="38" fill="#0b2028" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M-25 -7h39m-8-8 8 8-8 8M25 8h-39m8-8-8 8 8 8"/></g></g>
+  <text x="500" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Handoff</text>
+</svg>

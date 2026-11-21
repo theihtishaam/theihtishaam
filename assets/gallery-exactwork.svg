@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200" viewBox="0 0 600 200" role="img" aria-labelledby="title desc">
+  <title id="title">A project workflow</title><desc id="desc">Scope a task, verify the change, then hand off the work.</desc>
+  <defs><radialGradient id="light" cx=".58" cy=".3" r=".8"><stop stop-color="#b6b6ff" stop-opacity=".16"/><stop offset="1" stop-color="#b6b6ff" stop-opacity="0"/></radialGradient><pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r=".8" fill="#b6b6ff" opacity=".16"/></pattern></defs>
+  <rect width="600" height="200" rx="12" fill="#171d33"/><rect width="600" height="200" rx="12" fill="url(#light)"/><rect width="600" height="200" rx="12" fill="url(#dots)"/>
+  <g fill="none" stroke="#b6b6ff" opacity=".7" stroke-width="1.5"><path d="M134 89h129m-7-4 7 4-7 4m81-4h127m-7-4 7 4-7 4"/><path d="M135 96h88m116 0h87" opacity=".32"/></g>
+  <g transform="translate(100 89)" fill="none" stroke="#b6b6ff"><circle r="38" fill="#171d33" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="-21" y="-22" width="42" height="44" rx="5"/><path d="M-11 -10h21M-11 0h20M-11 10h13"/></g></g>
+  <text x="100" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Scope</text>
+  <g transform="translate(300 89)" fill="none" stroke="#b6b6ff"><circle r="38" fill="#171d33" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M0 -24l23 9v16c0 11-11 20-23 27-12-7-23-16-23-27v-16z"/><path d="m-10 0 7 7L12 -9"/></g></g>
+  <text x="300" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Verify</text>
+  <g transform="translate(500 89)" fill="none" stroke="#b6b6ff"><circle r="38" fill="#171d33" stroke-opacity=".8"/><circle r="45" stroke-opacity=".2"/><g stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M-25 -7h39m-8-8 8 8-8 8M25 8h-39m8-8-8 8 8 8"/></g></g>
+  <text x="500" y="163" font-size="19" font-family="Segoe UI,Arial,sans-serif" fill="#fff7e8" font-weight="600" text-anchor="middle">Handoff</text>
+</svg>

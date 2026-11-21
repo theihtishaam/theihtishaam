@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "login": "theihtishaam",
-  "refreshedAt": "2026-11-14T11:58:31.967Z",
-  "officialRepositoryCount": 6,
+  "refreshedAt": "2026-11-21T16:41:26.575Z",
+  "officialRepositoryCount": 8,
   "featuredExternalProjects": 0,
-  "repositoryCount": 6,
+  "repositoryCount": 8,
   "repositories": [
     {
       "name": "agents-brain",
@@ -14,7 +14,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T09:23:01Z",
-      "pushedAt": "2026-11-13T17:44:05Z",
+      "pushedAt": "2026-11-21T14:11:16Z",
       "fork": false,
       "archived": false
     },
@@ -35,10 +35,22 @@
       "url": "https://github.com/theihtishaam/exactwork-skills",
       "description": "Portable AI agent skills for Claude Code, Codex, OpenCode and DeepSeek Harness. Focused execution, traceable context, and evidence-checked project learning with rollback",
       "language": "Python",
-      "stars": 0,
+      "stars": 2,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T09:06:49Z",
-      "pushedAt": "2026-11-13T11:27:15Z",
+      "pushedAt": "2026-11-15T11:41:11Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "GTA-6-Interactive-Map-and-Loot-Tracker",
+      "url": "https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker",
+      "description": "GTA 6 Loot Map by theihtishaam. An open-source interactive Leonida map and loot tracker with character GPS, heists, collectibles, community bounty discovery and offline field cards.",
+      "language": "Python",
+      "stars": 0,
+      "sourceOwner": "theihtishaam",
+      "createdAt": "2026-11-21T11:02:34Z",
+      "pushedAt": "2026-11-21T13:48:33Z",
       "fork": false,
       "archived": false
     },
@@ -62,7 +74,19 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-13T11:03:18Z",
-      "pushedAt": "2026-11-14T11:58:28Z",
+      "pushedAt": "2026-11-21T16:13:00Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "GTA6-Map-Loot",
+      "url": "https://github.com/theihtishaam/GTA6-Map-Loot",
+      "description": "GTA 6 interactive map and loot tracker for Leonida. Find heists and collectibles, review bounty reports, plan GPS routes, and export progress. Built by The Ihtisham.",
+      "language": null,
+      "stars": 0,
+      "sourceOwner": "theihtishaam",
+      "createdAt": "2026-11-21T10:51:06Z",
+      "pushedAt": "2026-11-21T10:51:08Z",
       "fork": false,
       "archived": false
     },
@@ -74,7 +98,7 @@
       "stars": 0,
       "sourceOwner": "theihtishaam",
       "createdAt": "2026-11-11T20:24:13Z",
-      "pushedAt": "2026-11-14T11:58:13Z",
+      "pushedAt": "2026-11-16T09:16:37Z",
       "fork": false,
       "archived": false
     }

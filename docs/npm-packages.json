@@ -2,51 +2,51 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-14T11:58:31.143Z",
+  "refreshedAt": "2026-11-21T16:41:25.641Z",
   "discoveryComplete": true,
   "packages": [
     {
       "name": "@theihtisham/agent-shadow-brain",
-      "description": "Local memory, focused skills, and a visual context workspace for coding agents. Explore memories, build project-scoped context, and control briefings across Codex, Claude Code, OpenCode, and DeepSeek Harness.",
-      "version": "7.1.4",
+      "description": "Local project memory for coding agents. Share cited context, recover interrupted work, and resume a saved session across Codex, Claude Code, OpenCode, and other MCP clients.",
+      "version": "7.25.0",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
       "repository": "git+https://github.com/theihtishaam/agents-brain.git",
-      "downloads": 6229,
-      "last30Days": 1018,
+      "downloads": 6924,
+      "last30Days": 1636,
       "coverageStart": "2026-04-10",
-      "coverageEnd": "2026-11-13",
+      "coverageEnd": "2026-11-20",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:58:30.098Z",
+      "refreshedAt": "2026-11-21T16:41:21.226Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 6229,
+          "downloads": 6924,
           "start": "2026-04-10",
-          "end": "2026-11-13",
+          "end": "2026-11-20",
           "package": "@theihtisham/agent-shadow-brain"
         }
       ]
     },
     {
       "name": "omni-skills-forge",
-      "description": "50,009 Markdown skill files across 28 categories, with search, a local dashboard, installation, diagnostics and export tools.",
-      "version": "2.1.2",
+      "description": "50,009 Markdown skill files for coding agents across 28 categories. Find relevant skills by task and combine selected files into a reusable workspace skill.",
+      "version": "2.3.2",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
       "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
-      "downloads": 140381,
-      "last30Days": 1155,
+      "downloads": 146221,
+      "last30Days": 1956,
       "coverageStart": "2026-04-12",
-      "coverageEnd": "2026-11-13",
+      "coverageEnd": "2026-11-20",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:58:30.494Z",
+      "refreshedAt": "2026-11-21T16:41:22.558Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 140381,
+          "downloads": 146221,
           "start": "2026-04-12",
-          "end": "2026-11-13",
+          "end": "2026-11-20",
           "package": "omni-skills-forge"
         }
       ]
@@ -54,26 +54,31 @@
     {
       "name": "@theihtisham/exactwork-skills",
       "description": "Portable agent skills with a local installer for Claude Code, Codex, OpenCode, DeepSeek Harness and other supported tools.",
-      "version": "0.2.1",
+      "version": "0.2.3",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/exactwork-skills",
       "repository": "git+https://github.com/theihtishaam/exactwork-skills.git",
-      "downloads": 244,
-      "last30Days": 244,
+      "downloads": 687,
+      "last30Days": 687,
       "coverageStart": "2026-11-13",
-      "coverageEnd": "2026-11-13",
+      "coverageEnd": "2026-11-20",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-14T11:58:31.143Z",
+      "refreshedAt": "2026-11-21T16:41:24.570Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 244,
+          "downloads": 687,
           "start": "2026-11-13",
-          "end": "2026-11-13",
+          "end": "2026-11-20",
           "package": "@theihtisham/exactwork-skills"
         }
       ]
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "package": "gta6-loot-map",
+      "message": "Public npm API HTTP 404"
+    }
+  ]
 }
