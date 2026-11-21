@@ -99,9 +99,7 @@ The chart uses npm’s reported 30-day window. Each badge links to its package a
 <img src="./assets/folio/websites.webp" width="100%" alt="A software workshop, a public opportunity board, and a shop illustrate my three websites.">
 
 - [**Ababil Technology**](https://ababiltechnology.com/) builds business software and provides technology services.
-- [**Job Opportunity**](https://jobopportunity.info/) brings jobs, internships, scholarships, and fellowships into one place.
-- [**DealVorio**](https://dealvorio.com/) collects deals, coupons, and learning offers.
-
+-
 ## Repository activity
 
 <!-- AUTO_LATEST_REPOSITORIES_START -->
