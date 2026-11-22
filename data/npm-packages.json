@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-21T17:02:57.981Z",
+  "refreshedAt": "2026-11-22T09:38:29.820Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -12,20 +12,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
       "repository": "git+https://github.com/theihtishaam/agents-brain.git",
-      "downloads": 6924,
-      "last30Days": 1636,
-      "recentStart": "2026-10-22",
-      "recentEnd": "2026-11-20",
+      "downloads": 7083,
+      "last30Days": 1792,
+      "recentStart": "2026-10-23",
+      "recentEnd": "2026-11-21",
       "coverageStart": "2026-04-10",
-      "coverageEnd": "2026-11-20",
+      "coverageEnd": "2026-11-21",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-21T17:02:54.922Z",
+      "refreshedAt": "2026-11-22T09:38:24.765Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 6924,
+          "downloads": 7083,
           "start": "2026-04-10",
-          "end": "2026-11-20",
+          "end": "2026-11-21",
           "package": "@theihtisham/agent-shadow-brain"
         }
       ]
@@ -37,20 +37,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
       "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
-      "downloads": 146221,
-      "last30Days": 1956,
-      "recentStart": "2026-10-22",
-      "recentEnd": "2026-11-20",
+      "downloads": 146553,
+      "last30Days": 2255,
+      "recentStart": "2026-10-23",
+      "recentEnd": "2026-11-21",
       "coverageStart": "2026-04-12",
-      "coverageEnd": "2026-11-20",
+      "coverageEnd": "2026-11-21",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-21T17:02:55.781Z",
+      "refreshedAt": "2026-11-22T09:38:26.992Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 146221,
+          "downloads": 146553,
           "start": "2026-04-12",
-          "end": "2026-11-20",
+          "end": "2026-11-21",
           "package": "omni-skills-forge"
         }
       ]
@@ -62,29 +62,49 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/exactwork-skills",
       "repository": "git+https://github.com/theihtishaam/exactwork-skills.git",
-      "downloads": 687,
-      "last30Days": 687,
-      "recentStart": "2026-10-22",
-      "recentEnd": "2026-11-20",
+      "downloads": 693,
+      "last30Days": 693,
+      "recentStart": "2026-10-23",
+      "recentEnd": "2026-11-21",
       "coverageStart": "2026-11-13",
-      "coverageEnd": "2026-11-20",
+      "coverageEnd": "2026-11-21",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-21T17:02:56.919Z",
+      "refreshedAt": "2026-11-22T09:38:28.575Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 687,
+          "downloads": 693,
           "start": "2026-11-13",
-          "end": "2026-11-20",
+          "end": "2026-11-21",
           "package": "@theihtisham/exactwork-skills"
+        }
+      ]
+    },
+    {
+      "name": "gta6-loot-map",
+      "description": "GTA 6 Loot Map by theihtishaam. Explore Leonida, find loot and collectibles, plan GPS routes, and track community discoveries.",
+      "version": "0.1.1",
+      "deprecated": null,
+      "url": "https://www.npmjs.com/package/gta6-loot-map",
+      "repository": "git+https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker.git",
+      "downloads": 301,
+      "last30Days": 301,
+      "recentStart": "2026-10-23",
+      "recentEnd": "2026-11-21",
+      "coverageStart": "2026-11-21",
+      "coverageEnd": "2026-11-21",
+      "completeSinceCreation": true,
+      "refreshedAt": "2026-11-22T09:38:29.820Z",
+      "status": "verified",
+      "receipts": [
+        {
+          "downloads": 301,
+          "start": "2026-11-21",
+          "end": "2026-11-21",
+          "package": "gta6-loot-map"
         }
       ]
     }
   ],
-  "errors": [
-    {
-      "package": "gta6-loot-map",
-      "message": "Public npm API HTTP 404"
-    }
-  ]
+  "errors": []
 }

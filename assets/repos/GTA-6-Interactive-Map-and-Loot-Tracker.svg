@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="169" viewBox="0 0 520 169" role="img" aria-labelledby="title desc"><title id="title">GTA 6 Loot Map</title><desc id="desc">Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal.</desc><defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#152337" opacity=".23"/></pattern></defs><rect width="520" height="169" fill="#ff9b80"/><path d="M339 0h181v169H303z" fill="url(#dots)"/><g fill="#122337" font-family="Arial, sans-serif" font-size="50" letter-spacing="-2" font-weight="800"><text x="29" y="77">Leonida</text><text x="29" y="131">field atlas</text></g><g transform="translate(331 22)" stroke="#192b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 36 42-15 47 17 45-16v79l-45 16-47-17-42 15z" fill="#fff0ce"/><path d="m48 23 1 75m46-59v74" fill="none"/><path d="M18 85c15-21 39 1 57-20s45-16 58-23" stroke="#587ec0" fill="none"/><path d="M82 6c-16 0-25 12-23 26 2 14 22 36 23 36s22-24 23-37C107 17 97 6 82 6Z" fill="#ec6437"/><circle cx="82" cy="28" r="7" fill="#fff0ce"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
+    <title id="title">GTA 6 Loot Map</title><desc id="desc">Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal.</desc>
+    <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
+    <rect width="520" height="160" fill="#182035"/>
+    <path d="M324 0h196v160H294z" fill="url(#grid)"/>
+    <path d="M25 24h24" stroke="#ff9b80" stroke-width="3"/>
+    <g fill="#f8f4ea" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="600" letter-spacing="-1.6">
+      <text x="24" y="74">Leonida</text><text x="24" y="119" fill="#ff9b80">field atlas</text>
+    </g>
+    <g transform="translate(347 17)" fill="none" stroke="#ff9b80" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m7 27 35-12 39 15 40-14v80l-40 14-39-15-35 12zM42 18v75m39-62v76" opacity=".65"/><path d="m15 79 25-23 18 9 15-18 24 7 13-17" stroke-width="3"/><circle cx="15" cy="79" r="4"/><circle cx="110" cy="37" r="5"/></g>
+  </svg>

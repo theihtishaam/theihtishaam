@@ -78,6 +78,7 @@ export function npmCard(p){
 }
 const packageLabels = new Map([
   [PRIMARY_PACKAGE, ['Agent Shadow Brain', '1848A6']],
+  ['gta6-loot-map', ['GTA 6 Loot Map', '315852']],
   ['omni-skills-forge', ['Omni Skills Forge', 'A63827']],
   ['@theihtisham/exactwork-skills', ['ExactWork Skills', '435D3B']]
 ]);
@@ -120,16 +121,17 @@ export function recentDownloadsChart(snapshot) {
 
 export function npmHighlights(snapshot) {
   const packages = visiblePackages(snapshot);
-  const badges = packages.map(pkg => {
+  const gtaBadge = '<a href="https://www.npmjs.com/package/gta6-loot-map" title="Open GTA 6 Loot Map on npm"><img src="https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/download-stats/.github/badges/npm-downloads.svg" alt="GTA 6 Loot Map downloads over seven days and since launch"></a>';
+  const badges = packages.filter(pkg => pkg.name !== 'gta6-loot-map').map(pkg => {
     const [title, color] = packageLabels.get(pkg.name) || [pkg.name, '1848A6'];
     const url = 'https://www.npmjs.com/package/' + pkg.name;
     const badge = 'https://img.shields.io/npm/dt/' + encodeURIComponent(pkg.name) +
       '?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=' + encodeURIComponent(title) +
       '&amp;labelColor=172c41&amp;color=' + color;
-    return '<a href="' + xml(url) + '"><img src="' + badge + '" alt="All-time npm downloads for ' + xml(pkg.name) + '"></a>';
+    return '<a href="' + xml(url) + '" title="Open ' + xml(title) + ' on npm"><img src="' + badge + '" alt="npm downloads for ' + xml(pkg.name) + '"></a>';
   });
   const chart = recentDownloadsChart(snapshot) ?
-    '<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/last-30-days.svg" alt="Downloads over the last reported 30 days. Open the source records for exact figures."></a>\n\n' : '';
-  return chart + (badges.length ? '**All-time downloads**\n\n<p>\n' + badges.join('\n') + '\n</p>' :
-    'Package totals will appear when npm reports downloads.');
+    '\n\n<details><summary>Compare packages over 30 days</summary>\n\n<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/last-30-days.svg" alt="Downloads over the last reported 30 days. Open the source records for exact figures."></a>\n\n</details>' : '';
+  const otherPackages = badges.length ? '\n\n<p>\n' + badges.join('\n') + '\n</p>' : '';
+  return '**GTA 6 Loot Map**\n\n' + gtaBadge + otherPackages + chart;
 }

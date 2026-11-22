@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="169" viewBox="0 0 520 169" role="img" aria-labelledby="title desc"><title id="title">ExactWork Skills</title><desc id="desc">Six portable skills for execution, research, review, handoff, context, and learning. Choose the instructions a project needs.</desc><defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#152337" opacity=".23"/></pattern></defs><rect width="520" height="169" fill="#c9bfea"/><path d="M339 0h181v169H303z" fill="url(#dots)"/><g fill="#122337" font-family="Arial, sans-serif" font-size="50" letter-spacing="-2" font-weight="800"><text x="29" y="77">Agent</text><text x="29" y="131">workflows</text></g><g transform="translate(331 22)" stroke="#192b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><g fill="#fff4d9"><path d="m23 23 81-16 23 86-81 17z"/><path d="M33 21h88v90H33z"/><path d="M43 18h60l21 20v78H43Z"/><path d="M103 18v20h21M56 60h45M56 73h29" fill="none"/></g><circle cx="111" cy="94" r="26" fill="#9fbf9d"/><path d="m97 93 10 10 19-23" fill="none"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
+    <title id="title">ExactWork Skills</title><desc id="desc">Six portable skills for execution, research, review, handoff, context, and learning. Choose the instructions a project needs.</desc>
+    <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
+    <rect width="520" height="160" fill="#182035"/>
+    <path d="M324 0h196v160H294z" fill="url(#grid)"/>
+    <path d="M25 24h24" stroke="#c9bfea" stroke-width="3"/>
+    <g fill="#f8f4ea" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="600" letter-spacing="-1.6">
+      <text x="24" y="74">Agent</text><text x="24" y="119" fill="#c9bfea">workflows</text>
+    </g>
+    <g transform="translate(347 17)" fill="none" stroke="#c9bfea" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17h94v79H13zM25 35h8m10 0h42m-60 19h8m10 0h35m-53 18h8m10 0h23"/><circle cx="104" cy="92" r="18" fill="#182035"/><path d="m95 92 6 6 12-14"/></g>
+  </svg>

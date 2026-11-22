@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="169" viewBox="0 0 520 169" role="img" aria-labelledby="title desc"><title id="title">Agent Shadow Brain</title><desc id="desc">Save a decision or a handoff in one coding tool and pick it up in another. The Brain Hub shows recorded exchanges in the workspace.</desc><defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#152337" opacity=".23"/></pattern></defs><rect width="520" height="169" fill="#b1dacf"/><path d="M339 0h181v169H303z" fill="url(#dots)"/><g fill="#122337" font-family="Arial, sans-serif" font-size="50" letter-spacing="-2" font-weight="800"><text x="29" y="77">Shared</text><text x="29" y="131">memory</text></g><g transform="translate(331 22)" stroke="#192b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><g fill="#f7f0d8"><path d="M25 63C5 36 33 3 57 13c10-18 36-14 43 2 31-7 52 20 43 42 18 25-1 48-27 47-6 18-30 24-45 13-19 12-43 2-45-15C8 95 7 73 25 63Z"/><path d="M72 16v96m-28-80 15 14-9 21 14 21m39-55-14 16 16 19-12 21" fill="none"/></g><g fill="#f08049"><circle cx="44" cy="32" r="6"/><circle cx="50" cy="67" r="6"/><circle cx="104" cy="33" r="6"/><circle cx="104" cy="68" r="6"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
+    <title id="title">Agent Shadow Brain</title><desc id="desc">Save a decision or a handoff in one coding tool and pick it up in another. The Brain Hub shows recorded exchanges in the workspace.</desc>
+    <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
+    <rect width="520" height="160" fill="#182035"/>
+    <path d="M324 0h196v160H294z" fill="url(#grid)"/>
+    <path d="M25 24h24" stroke="#b1dacf" stroke-width="3"/>
+    <g fill="#f8f4ea" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="600" letter-spacing="-1.6">
+      <text x="24" y="74">Shared</text><text x="24" y="119" fill="#b1dacf">memory</text>
+    </g>
+    <g transform="translate(347 17)" fill="none" stroke="#b1dacf" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 38 60 12l49 26-49 25zM12 56l48 25 49-25M12 74l48 25 49-25"/><path d="M61 65v37l30 16h31" stroke-dasharray="3 5"/><circle cx="125" cy="118" r="4"/></g>
+  </svg>

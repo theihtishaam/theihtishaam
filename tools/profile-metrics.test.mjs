@@ -27,6 +27,9 @@ test('featured packages always appear and live npm badges show all-time download
  const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),p('@theihtisham/exactwork-skills',244),p('omni-skills-forge',140381),{...p('incomplete',5000),completeSinceCreation:false}]};
  assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified','omni-skills-forge']);
  const markdown=npmHighlights(snapshot);
+ assert.match(markdown, /GTA 6 Loot Map[\s\S]*download-stats\/\.github\/badges\/npm-downloads\.svg/);
+ assert.match(npmHighlights({packages:[]}), /npm-downloads\.svg/);
+ assert.match(recentDownloadsChart({packages:[{...p('gta6-loot-map',301),recentStart:'2026-10-23',recentEnd:'2026-11-21'}]}), /GTA 6 Loot Map 20/);
  for(const id of ['%40theihtisham%2Fagent-shadow-brain','%40theihtisham%2Fexactwork-skills','omni-skills-forge','qualified']){
   assert.ok(markdown.includes('npm/dt/'+id),'Missing live npm badge: '+id);
  }

@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="169" viewBox="0 0 520 169" role="img" aria-labelledby="title desc"><title id="title">Omni Skills Forge</title><desc id="desc">Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill.</desc><defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#152337" opacity=".23"/></pattern></defs><rect width="520" height="169" fill="#9dccf3"/><path d="M339 0h181v169H303z" fill="url(#dots)"/><g fill="#122337" font-family="Arial, sans-serif" font-size="50" letter-spacing="-2" font-weight="800"><text x="29" y="77">Skill</text><text x="29" y="131">library</text></g><g transform="translate(331 22)" stroke="#192b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><g fill="#f8edcd"><path d="m12 37 33-9 13 8 65-12 14 66-98 20z"/><path d="m20 28 32-4 12 9 61-6 9 68-98 9z"/><path d="M23 31h39l8 9h66v62H23z" fill="#ed7746"/></g><path d="M30 47h97l-7 61H23z" fill="#fff0c8"/><path d="m64 65-11 12 11 9m24-21 11 10-11 10m-9-22-7 25" fill="none"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
+    <title id="title">Omni Skills Forge</title><desc id="desc">Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill.</desc>
+    <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
+    <rect width="520" height="160" fill="#182035"/>
+    <path d="M324 0h196v160H294z" fill="url(#grid)"/>
+    <path d="M25 24h24" stroke="#9dccf3" stroke-width="3"/>
+    <g fill="#f8f4ea" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="600" letter-spacing="-1.6">
+      <text x="24" y="74">Skill</text><text x="24" y="119" fill="#9dccf3">library</text>
+    </g>
+    <g transform="translate(347 17)" fill="none" stroke="#9dccf3" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="m12 40 49-25 49 25-49 25zM12 59l49 25 49-25M12 77l49 25 49-25"/><path d="m44 41 9-5m3 12 11-16m8 7 7 3"/></g>
+  </svg>

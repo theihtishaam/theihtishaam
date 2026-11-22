@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="169" viewBox="0 0 520 169" role="img" aria-labelledby="title desc"><title id="title">ProcureGuard AI</title><desc id="desc">Eight specialist agents check vendor evidence before human signoff. Team Purrwolf won Best Use of AI/ML API at the 2026 Band of Agents Hackathon.</desc><defs><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#152337" opacity=".23"/></pattern></defs><rect width="520" height="169" fill="#ffb863"/><path d="M339 0h181v169H303z" fill="url(#dots)"/><g fill="#122337" font-family="Arial, sans-serif" font-size="50" letter-spacing="-2" font-weight="800"><text x="29" y="77">Vendor</text><text x="29" y="131">review</text></g><g transform="translate(331 22)" stroke="#192b3b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M34 22H8v13q0 31 38 34m70-47h25v14q0 29-36 33" fill="none"/><path d="M32 13h88l-7 43q-5 26-32 33v15h22v12H46v-12h22V89Q42 82 38 57Z" fill="#fff1b1"/><path d="m76 26 7 13 15 3-11 11 2 15-13-7-14 7 2-15-10-11 15-3Z" fill="#ea693b"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
+    <title id="title">ProcureGuard AI</title><desc id="desc">Eight specialist agents check vendor evidence before human signoff. Team Purrwolf won Best Use of AI/ML API at the 2026 Band of Agents Hackathon.</desc>
+    <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
+    <rect width="520" height="160" fill="#182035"/>
+    <path d="M324 0h196v160H294z" fill="url(#grid)"/>
+    <path d="M25 24h24" stroke="#ffb863" stroke-width="3"/>
+    <g fill="#f8f4ea" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="600" letter-spacing="-1.6">
+      <text x="24" y="74">Vendor</text><text x="24" y="119" fill="#ffb863">review</text>
+    </g>
+    <g transform="translate(347 17)" fill="none" stroke="#ffb863" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 24h23l24 35h30m-77 34h23l24-34m-47-1h47"/><circle cx="10" cy="24" r="5"/><circle cx="10" cy="58" r="5"/><circle cx="10" cy="93" r="5"/><path d="m100 35 24 10v19c0 12-11 22-24 30-12-8-23-18-23-30V45z"/><path d="m89 60 9 9 15-18"/></g>
+  </svg>
