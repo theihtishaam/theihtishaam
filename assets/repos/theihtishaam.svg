@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
-    <title id="title">GitHub Profile</title><desc id="desc">The artwork, repository index, and public-data tools behind this profile.</desc>
+    <title id="title">GitHub Profile</title><desc id="desc">The source for this gallery, including the repository index and the scripts that verify package downloads.</desc>
     <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
     <rect width="520" height="160" fill="#182035"/>
     <path d="M324 0h196v160H294z" fill="url(#grid)"/>

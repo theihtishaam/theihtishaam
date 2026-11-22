@@ -1,7 +1,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {projectsTimeline,latestRepositoryList,projectCard,projectGrid,projectOrder} from './project-grid.mjs';
-import {starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmHighlights,recentDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmHighlights,lifetimeDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 const login='theihtishaam';
 const headers={'Accept':'application/vnd.github+json','User-Agent':'github-profile-refresh','X-GitHub-Api-Version':'2022-11-28'};
 if(process.env.GITHUB_TOKEN)headers.Authorization='Bearer '+process.env.GITHUB_TOKEN;
@@ -50,8 +50,8 @@ async function refreshNpm(){
    await put(folder+'/npm-metrics.json',JSON.stringify(snapshot,null,2)+'\n');
    await put(folder+'/npm-packages.json',JSON.stringify(catalog,null,2)+'\n');
   }
-  const chart = recentDownloadsChart(catalog);
-  if (chart) await put('assets/npm-packages/last-30-days.svg', chart);
+  const chart = lifetimeDownloadsChart(catalog);
+  if (chart) await put('assets/npm-packages/lifetime.svg', chart);
   await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog));
   try {
    const stats=await get('https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/docs/catalog-stats.json');

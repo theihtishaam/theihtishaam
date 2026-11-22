@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,recentDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,lifetimeDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 test('download milestones advance at each threshold without rounding up',()=>{
  for(const [value,label] of [[0,'0'],[999,'999'],[1000,'1K+'],[6030,'6K+'],[9999,'9K+'],[140122,'140K+'],[999999,'999K+'],[1000000,'1M+']])assert.equal(milestone(value),label);
  assert.throws(()=>milestone(-1));assert.throws(()=>milestone(NaN));
@@ -22,20 +22,20 @@ test('lifetime download windows cover every date exactly once',()=>{
  }
  assert.throws(()=>periods('2026-02-30','2026-03-01'));
 });
-test('featured packages always appear and live npm badges show all-time downloads',()=>{
- const p=(name,downloads)=>({name,downloads,completeSinceCreation:true,coverageEnd:'2026-11-12',last30Days:20,url:'https://www.npmjs.com/package/'+name,status:'verified'});
- const snapshot={packages:[p(PRIMARY_PACKAGE,6030),p('small',999),p('qualified',1000),p('@theihtisham/exactwork-skills',244),p('omni-skills-forge',140381),{...p('incomplete',5000),completeSinceCreation:false}]};
- assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['qualified','omni-skills-forge']);
+test('featured packages and qualifying future packages use exact lifetime totals',()=>{
+ const p=(name,downloads)=>({name,downloads,completeSinceCreation:true,coverageEnd:'2026-11-21',last30Days:3});
+ const rows=[p(PRIMARY_PACKAGE,7083),p('gta6-loot-map',301),p('omni-skills-forge',146553),p('@theihtisham/exactwork-skills',693),p('future',1000),p('small',999),{...p('partial',8000),completeSinceCreation:false}];
+ const snapshot={packages:rows};
+ const chart=lifetimeDownloadsChart(snapshot);
+ assert.match(chart,/155,630/);
  const markdown=npmHighlights(snapshot);
- assert.match(markdown, /GTA 6 Loot Map[\s\S]*download-stats\/\.github\/badges\/npm-downloads\.svg/);
- assert.match(npmHighlights({packages:[]}), /npm-downloads\.svg/);
- assert.match(recentDownloadsChart({packages:[{...p('gta6-loot-map',301),recentStart:'2026-10-23',recentEnd:'2026-11-21'}]}), /GTA 6 Loot Map 20/);
- for(const id of ['%40theihtisham%2Fagent-shadow-brain','%40theihtisham%2Fexactwork-skills','omni-skills-forge','qualified']){
-  assert.ok(markdown.includes('npm/dt/'+id),'Missing live npm badge: '+id);
+ assert.match(markdown,/lifetime\.svg/);
+ for(const pkg of rows.slice(0,5)){
+   assert.ok(markdown.includes('www.npmjs.com/package/'+pkg.name));
+   assert.ok(markdown.includes(pkg.downloads.toLocaleString('en-US')));
  }
- for(const text of ['**6,030**','**1,000**','small','incomplete']){
-  assert.ok(!markdown.includes(text),'Unexpected static or excluded text: '+text);
- }
+ assert.doesNotMatch(markdown,/small|partial|last-30-days|npm\/dt|<details>/);
+ assert.deepEqual(qualifiedPackages(snapshot).map(p=>p.name),['omni-skills-forge','future']);
  assert.doesNotMatch(npmCard({...p('safe',1000),description:'<script>alert(1)</script>'}),/<script>/);
 });
 test('discovery verifies ownership and retains dated data on download API failure',async()=>{
@@ -55,17 +55,12 @@ test('discovery verifies ownership and retains dated data on download API failur
  assert.equal(result.errors.length,1);assert.ok(!result.packages.some(p=>p.name==='unrelated'));
 });
 
-test('the thirty-day comparison uses one reporting window and never treats missing data as zero', () => {
-  const common = {completeSinceCreation: true, downloads: 1200, recentStart: '2026-10-22', recentEnd: '2026-11-20'};
-  const rows = [
-    {...common, name:'first', last30Days:200},
-    {...common, name:'zero', last30Days:0},
-    {...common, name:'older', recentStart:'2026-10-21', recentEnd:'2026-11-19', last30Days:900},
-    {...common, name:'unknown'}
-  ];
-  const svg = recentDownloadsChart({packages:rows});
-  assert.match(svg, /first 200, zero 0/);
-  assert.match(svg, /2026-10-22 — 2026-11-20/);
-  assert.doesNotMatch(svg, /older|unknown/);
-  assert.equal(recentDownloadsChart({packages:[]}), null);
+test('lifetime rows keep their coverage date and distinguish reported zero from missing data',()=>{
+ const base={name:'gta6-loot-map',completeSinceCreation:true,coverageEnd:'2026-11-21'};
+ const rows=[{...base,downloads:0},{...base,name:PRIMARY_PACKAGE,downloads:200,coverageEnd:'2026-11-20',status:'last-known'},{...base,name:'omni-skills-forge',downloads:null}];
+ const svg=lifetimeDownloadsChart({packages:rows});
+ assert.match(svg,/Agent Shadow Brain: 200 through 2026-11-20/);
+ assert.match(svg,/GTA 6 Loot Map: 0 through 2026-11-21/);
+ assert.doesNotMatch(svg,/Omni Skills Forge|Across the/);
+ assert.equal(lifetimeDownloadsChart({packages:[]}),null);
 });

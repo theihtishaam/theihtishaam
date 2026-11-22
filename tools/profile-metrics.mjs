@@ -90,48 +90,49 @@ function visiblePackages(snapshot) {
   return [...known, ...eligible.filter(pkg => !packageLabels.has(pkg.name))];
 }
 
-// Compare only reports for the same observed 30-day window.
-export function recentDownloadsChart(snapshot) {
-  const candidates = visiblePackages(snapshot).filter(pkg => pkg.recentStart && pkg.recentEnd &&
-    Number.isSafeInteger(pkg.last30Days) && pkg.last30Days >= 0);
-  if (!candidates.length) return null;
-  const latest = candidates.reduce((a, b) => a.recentEnd >= b.recentEnd ? a : b);
-  const rows = candidates.filter(pkg => pkg.recentStart === latest.recentStart && pkg.recentEnd === latest.recentEnd)
-    .sort((a, b) => b.last30Days - a.last30Days || a.name.localeCompare(b.name)).slice(0, 6);
-  const height = 119 + rows.length * 65;
-  const maximum = Math.max(1, ...rows.map(pkg => pkg.last30Days));
-  const labels = rows.map(pkg => [packageLabels.get(pkg.name)?.[0] || pkg.name, pkg.last30Days]);
-  const legend = labels.map(([name, count]) => name + ' ' + count.toLocaleString('en-US')).join(', ');
-  const bars = labels.map(([name, value], index) => {
-    const y = 120 + index * 65;
-    const safeName = name.length > 30 ? name.slice(0, 29) + '…' : name;
-    return '<g><text x="26" y="' + y + '" fill="#fff3dc" font-size="23">' + xml(safeName) +
-      '</text><text x="614" y="' + y + '" text-anchor="end" fill="#fff3dc" font-weight="700" font-size="23">' +
-      value.toLocaleString('en-US') + '</text><rect x="26" y="' + (y+9) + '" width="588" height="10" fill="#384c61"/>' +
-      '<rect x="26" y="' + (y+9) + '" width="' + (588*value/maximum).toFixed(2) + '" height="10" fill="' +
-      ['#ffc66d','#b8d8f6','#ffc1a7'][index % 3] + '"/></g>';
+// Only receipts covering the entire lifetime qualify. Keep the date on each row
+// because npm can report different packages on different days.
+function lifetimePackages(snapshot) {
+  return visiblePackages(snapshot).filter(pkg => countValid(pkg.downloads) && /^\d{4}-\d{2}-\d{2}$/.test(pkg.coverageEnd))
+    .sort((a,b) => b.downloads - a.downloads || a.name.localeCompare(b.name));
+}
+
+export function lifetimeDownloadsChart(snapshot) {
+  const packages = lifetimePackages(snapshot);
+  if (!packages.length) return null;
+  const width = 680;
+  const combined = packages.reduce((count,pkg) => count + pkg.downloads,0);
+  const sameDay = packages.every(pkg => pkg.coverageEnd === packages[0].coverageEnd && pkg.status !== 'last-known');
+  const showSum = sameDay && countValid(combined) && !snapshot.errors?.length;
+  const start = showSum ? 157 : 90;
+  const height = start - 6 + packages.length * 67;
+  const total = showSum ? `<text x="28" y="89" font-size="44" font-weight="700" fill="#eefff9">${combined.toLocaleString('en-US')}</text><text x="28" y="112" font-size="15" fill="#b0c4d0">Across the ${packages.length} packages shown</text>` : '';
+  const palette = ['#85e3c9','#91baff','#edbd83','#e9a9c6'];
+  const desc = [];
+  const rows = packages.map((pkg,index) => {
+    const label = packageLabels.get(pkg.name)?.[0] || pkg.name;
+    const compact = label.length > 27 ? label.slice(0,26) + '…' : label;
+    const y = start + index * 67;
+    const value = pkg.downloads.toLocaleString('en-US');
+    desc.push(label + ': ' + value + ' through ' + pkg.coverageEnd);
+    return `<g><path d="M28 ${y-22}v31" stroke="${palette[index%palette.length]}" stroke-width="4"/>
+      <text x="46" y="${y}" font-size="23" fill="#f2f6ff">${xml(compact)}</text>
+      <text x="46" y="${y+19}" font-size="13" fill="#b0c4d0">Through ${xml(pkg.coverageEnd)}</text>
+      <text x="652" y="${y+4}" text-anchor="end" font-size="31" font-weight="700" fill="#eefff9">${value}</text></g>`;
   });
-  return '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="' + height + '" viewBox="0 0 640 ' + height +
-    '" role="img" aria-labelledby="t d"><title id="t">Downloads over 30 days</title><desc id="d">' +
-    xml(latest.recentStart + ' through ' + latest.recentEnd + '. ' + legend) + '</desc><rect width="640" height="' +
-    height + '" fill="#13283e"/><g font-family="Arial,sans-serif"><text x="26" y="45" font-size="32" font-weight="700" fill="#fff3dc">Downloads over 30 days</text>' +
-    '<text x="26" y="72" font-size="18" fill="#d3dded">' + xml(latest.recentStart + ' — ' + latest.recentEnd) +
-    '</text>' + bars.join('') + '</g></svg>';
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
+    <title id="title">Total npm downloads since launch</title><desc id="desc">${xml(desc.join('. '))}</desc>
+    <rect width="680" height="${height}" rx="14" fill="#101d29"/><g font-family="Arial,Helvetica,sans-serif">
+    <text x="28" y="34" font-size="16" font-weight="700" fill="#83e4c9">NPM  /  DOWNLOADS SINCE LAUNCH</text>
+    <path d="M28 50h624" stroke="#334959"/>${total}${rows.join('')}</g></svg>`;
 }
 
 export function npmHighlights(snapshot) {
-  const packages = visiblePackages(snapshot);
-  const gtaBadge = '<a href="https://www.npmjs.com/package/gta6-loot-map" title="Open GTA 6 Loot Map on npm"><img src="https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/download-stats/.github/badges/npm-downloads.svg" alt="GTA 6 Loot Map downloads over seven days and since launch"></a>';
-  const badges = packages.filter(pkg => pkg.name !== 'gta6-loot-map').map(pkg => {
-    const [title, color] = packageLabels.get(pkg.name) || [pkg.name, '1848A6'];
-    const url = 'https://www.npmjs.com/package/' + pkg.name;
-    const badge = 'https://img.shields.io/npm/dt/' + encodeURIComponent(pkg.name) +
-      '?style=for-the-badge&amp;logo=npm&amp;logoColor=white&amp;label=' + encodeURIComponent(title) +
-      '&amp;labelColor=172c41&amp;color=' + color;
-    return '<a href="' + xml(url) + '" title="Open ' + xml(title) + ' on npm"><img src="' + badge + '" alt="npm downloads for ' + xml(pkg.name) + '"></a>';
-  });
-  const chart = recentDownloadsChart(snapshot) ?
-    '\n\n<details><summary>Compare packages over 30 days</summary>\n\n<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/last-30-days.svg" alt="Downloads over the last reported 30 days. Open the source records for exact figures."></a>\n\n</details>' : '';
-  const otherPackages = badges.length ? '\n\n<p>\n' + badges.join('\n') + '\n</p>' : '';
-  return '**GTA 6 Loot Map**\n\n' + gtaBadge + otherPackages + chart;
+  const packages = lifetimePackages(snapshot);
+  if (!packages.length) return 'Lifetime download figures are awaiting a complete npm report.';
+  const label = pkg => packageLabels.get(pkg.name)?.[0] || pkg.name;
+  const alt = packages.map(pkg => label(pkg) + ' ' + pkg.downloads.toLocaleString('en-US') + ' through ' + pkg.coverageEnd).join(', ');
+  const links = packages.map(pkg => '<a href="https://www.npmjs.com/package/' + xml(pkg.name) + '">' + xml(label(pkg)) + '</a>');
+  return '<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/lifetime.svg" alt="' +
+    xml('Total npm downloads since launch: ' + alt) + '"></a>\n\n' + links.join(' · ');
 }

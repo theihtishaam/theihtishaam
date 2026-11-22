@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
-    <title id="title">ProcureGuard AI</title><desc id="desc">Eight specialist agents check vendor evidence before human signoff. Team Purrwolf won Best Use of AI/ML API at the 2026 Band of Agents Hackathon.</desc>
+    <title id="title">ProcureGuard AI</title><desc id="desc">Eight agents check a vendor submission before a person signs off. Team Purrwolf won Best Use of AI/ML API at the Band of Agents Hackathon.</desc>
     <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
     <rect width="520" height="160" fill="#182035"/>
     <path d="M324 0h196v160H294z" fill="url(#grid)"/>

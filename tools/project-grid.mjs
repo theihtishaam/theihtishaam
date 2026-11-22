@@ -3,42 +3,42 @@ import {xml} from './profile-metrics.mjs';
 // The display order is editorial. Unlisted repositories use public GitHub metadata.
 const projects = new Map([
   ['agents-brain', {
-    title: 'Agent Shadow Brain', subject: ['Shared', 'memory'], color: '#b1dacf', icon: 'memory',
+    title: 'Agent Shadow Brain', coverAlt: 'A luminous glass brain representing shared project memory', subject: ['Shared', 'memory'], color: '#b1dacf', icon: 'memory',
     description: 'Save a decision or a handoff in one coding tool and pick it up in another. The Brain Hub shows recorded exchanges in the workspace.',
-    links: [['Watch the Brain Hub recording', 'https://raw.githubusercontent.com/theihtishaam/agents-brain/v7.25.0/docs/assets/7.25.0-agent-traffic.gif']]
+    links: [['Recorded handoff', 'https://raw.githubusercontent.com/theihtishaam/agents-brain/v7.25.0/docs/assets/7.25.0-agent-traffic.gif']]
   }],
   ['Procure-guard-ai', {
-    title: 'ProcureGuard AI', subject: ['Vendor', 'review'], color: '#ffb863', icon: 'award',
-    description: 'Eight specialist agents check vendor evidence before human signoff. Team Purrwolf won Best Use of AI/ML API at the 2026 Band of Agents Hackathon.',
-    links: [['Watch the demo', 'https://youtu.be/KhKxOJJEYho'], ['Award announcement', 'https://www.linkedin.com/posts/lablab-ai_meet-the-ai-that-can-veto-its-own-approval-activity-7487495363164233728-iQSx']]
+    title: 'ProcureGuard AI', coverAlt: 'Best Use of AI/ML API award beside the ProcureGuard project cover', subject: ['Vendor', 'review'], color: '#ffb863', icon: 'award',
+    description: 'Eight agents check a vendor submission before a person signs off. Team Purrwolf won Best Use of AI/ML API at the Band of Agents Hackathon.',
+    links: [['Watch demo', 'https://youtu.be/KhKxOJJEYho'], ['See award', 'https://www.linkedin.com/posts/lablab-ai_meet-the-ai-that-can-veto-its-own-approval-activity-7487495363164233728-iQSx']]
   }],
   ['exactwork-skills', {
-    title: 'ExactWork Skills', subject: ['Agent', 'workflows'], color: '#c9bfea', icon: 'check',
+    title: 'ExactWork Skills', coverAlt: 'ExactWork’s sequence from understanding the task to verifying the result', subject: ['Agent', 'workflows'], color: '#c9bfea', icon: 'check',
     description: 'Six portable skills for execution, research, review, handoff, context, and learning. Choose the instructions a project needs.',
     links: [['Explore the six skills', './docs/projects/exactwork-skills.md']]
   }],
   ['GTA-6-Interactive-Map-and-Loot-Tracker', {
-    title: 'GTA 6 Loot Map', subject: ['Leonida', 'field atlas'], color: '#ff9b80', icon: 'map',
-    description: 'Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal.',
-    links: [['See the atlas', 'https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/v0.1.3/docs/quickstart/reward-map.webp'], ['Player guide', 'https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker#readme']]
+    title: 'GTA 6 Loot Map', coverAlt: 'GTA 6 Loot Map cover showing two travelers at a Leonida marina', subject: ['Leonida', 'field atlas'], color: '#ff9b80', icon: 'map',
+    description: 'Choose a mission, plan a route across Leonida, and keep an offline field journal of loot and collectibles.',
+    links: [['View map', 'https://raw.githubusercontent.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker/v0.1.3/docs/quickstart/reward-map.webp'], ['Player guide', 'https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker#readme']]
   }],
   ['omni-skills-forge', {
-    title: 'Omni Skills Forge', subject: ['Skill', 'library'], color: '#9dccf3', icon: 'catalog',
-    description: 'Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill.',
+    title: 'Omni Skills Forge', coverAlt: '50,000+ agent skills arranged as a color-coded catalog', subject: ['Skill', 'library'], color: '#9dccf3', icon: 'catalog',
+    description: 'Search 50,000+ agent skills by task, turn on the ones a workspace needs, or combine several into a project skill.',
     links: [['Dashboard walkthrough', 'https://github.com/theihtishaam/omni-skills-forge#open-it-in-your-project']]
   }],
   ['CiviTwin', {
-    title: 'CivicTwin Δ', subject: ['Tax', 'scenarios'], color: '#f2d382', icon: 'ledger',
+    title: 'CivicTwin Δ', coverAlt: 'Two model buildings represent a baseline and a changed tax scenario', subject: ['Tax', 'scenarios'], color: '#f2d382', icon: 'ledger',
     description: 'Change an assumption in a tax scenario, then trace the rules, evidence, and results in this enterprise planning prototype.',
     links: [['Read the case study', './docs/projects/civic-twin.md']]
   }],
   ['theihtishaam', {
-    title: 'GitHub Profile', subject: ['Portfolio', 'source'], color: '#b9cfe2', icon: 'portfolio',
-    description: 'The artwork, repository index, and public-data tools behind this profile.'
+    title: 'GitHub Profile', coverAlt: 'The source repository that builds this project gallery', subject: ['Portfolio', 'source'], color: '#b9cfe2', icon: 'portfolio',
+    description: 'The source for this gallery, including the repository index and the scripts that verify package downloads.'
   }]
 ]);
 
-const rank = new Map([...projects.keys()].map((name, index) => [name, index]));
+const rank = new Map(['agents-brain', 'GTA-6-Interactive-Map-and-Loot-Tracker', 'omni-skills-forge', 'Procure-guard-ai', 'exactwork-skills', 'CiviTwin'].map((name, index) => [name, index]));
 rank.set('theihtishaam', Infinity);
 export const projectOrder = (a, b) =>
   (rank.get(a.name) ?? 100) - (rank.get(b.name) ?? 100) ||
@@ -133,11 +133,11 @@ export function projectGrid(repositories, date) {
     const description = info.description || repo.description || 'Browse the files and project history on GitHub.';
     const links = (info.links || []).map(([label, href]) => '<a href="' + xml(href) + '">' + xml(label) + '</a>');
     const detail = [xml(repo.language || ''), ...links].filter(Boolean).join(' · ');
+    const cover = './assets/' + (info.coverAlt ? 'covers/' + encodeURIComponent(repo.name) + '.webp' : 'repos/' + encodeURIComponent(repo.name) + '.svg');
     const unpaired = index === repositories.length - 1 && index % 2 === 0;
     const cell = unpaired ? 'colspan="2"' : 'width="50%"';
     const thumbnail = unpaired ? 'align="left" width="32%" hspace="10"' : 'width="100%"';
-    return '<td ' + cell + ' valign="top">\n<a title="' + xml(description) + '" href="' + url + '"><img ' + thumbnail + ' src="./assets/repos/' +
-      encodeURIComponent(repo.name) + '.svg" alt="' + xml(name) + '"></a>\n<h3><a href="' + url + '">' +
+    return '<td ' + cell + ' valign="top">\n<a title="' + xml(description) + '" href="' + url + '"><img ' + thumbnail + ' src="' + cover + '" alt="' + xml(info.coverAlt || name) + '"></a>\n<h3><a href="' + url + '">' +
       xml(name) + '</a>' + starLabel + '</h3>\n<p>' + xml(description) + '</p>' +
       (detail ? '\n<p><sub>' + detail + '</sub></p>' : '') + '\n</td>';
   });

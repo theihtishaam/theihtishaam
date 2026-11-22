@@ -7,10 +7,13 @@ test('the grid includes every public repository, highlights the chosen projects 
  const grid=projectGrid(repos,'2026-11-13');
  assert.equal((grid.match(/<img /g)||[]).length,69);
  assert.equal((grid.match(/<tr>/g)||[]).length,35);
- for(const r of repos)assert.ok(grid.includes(`assets/repos/${r.name}.svg`));
- assert.ok(grid.indexOf('agents-brain.svg')<grid.indexOf('Procure-guard-ai.svg'));
- assert.ok(grid.indexOf('Procure-guard-ai.svg')<grid.indexOf('exactwork-skills.svg'));
- assert.ok(grid.indexOf('exactwork-skills.svg')<grid.indexOf('future-0.svg'));
+ for(const r of repos){
+  const path = r.name.startsWith('future-') ? `assets/repos/${r.name}.svg` : `assets/covers/${r.name}.webp`;
+  assert.ok(grid.includes(path), path);
+ }
+ assert.ok(grid.indexOf('agents-brain.webp')<grid.indexOf('Procure-guard-ai.webp'));
+ assert.ok(grid.indexOf('Procure-guard-ai.webp')<grid.indexOf('exactwork-skills.webp'));
+ assert.ok(grid.indexOf('exactwork-skills.webp')<grid.indexOf('future-0.svg'));
  assert.doesNotMatch(grid,/<details|<summary|show.more/i);
 });
 test('public metadata cannot inject markup or an unsafe repository link',()=>{

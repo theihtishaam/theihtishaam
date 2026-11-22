@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
-    <title id="title">Omni Skills Forge</title><desc id="desc">Find relevant guidance in a workspace, switch skills on or off, and combine a few files into one project skill.</desc>
+    <title id="title">Omni Skills Forge</title><desc id="desc">Search 50,000+ agent skills by task, turn on the ones a workspace needs, or combine several into a project skill.</desc>
     <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
     <rect width="520" height="160" fill="#182035"/>
     <path d="M324 0h196v160H294z" fill="url(#grid)"/>

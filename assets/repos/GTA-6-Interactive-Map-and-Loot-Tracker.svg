@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-labelledby="title desc">
-    <title id="title">GTA 6 Loot Map</title><desc id="desc">Choose a mission or collectible, plot a route across Leonida, and keep an offline field journal.</desc>
+    <title id="title">GTA 6 Loot Map</title><desc id="desc">Choose a mission, plan a route across Leonida, and keep an offline field journal of loot and collectibles.</desc>
     <defs><pattern id="grid" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0v14" fill="none" stroke="#505a71" opacity=".35"/></pattern></defs>
     <rect width="520" height="160" fill="#182035"/>
     <path d="M324 0h196v160H294z" fill="url(#grid)"/>
