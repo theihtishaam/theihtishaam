@@ -3,8 +3,7 @@
   <img src="./assets/folio/developer-work.webp" width="100%" alt="Ihtisham Ahmad — Full Stack Developer · AI Engineer · Agentic Tools. Featuring Agent Shadow Brain and Omni Skills Forge.">
 </picture></h1>
 
-I build tools that help coding agents share what they learn, help procurement teams check the evidence behind a decision, and help players find their way around Leonida.
-
+I'm a **.NET Full-Stack Developer and AI Engineer** passionate about building intelligent, scalable, and real-world software solutions. I specialize in **C#, ASP.NET Core, Angular, SQL Server, Python, and AI/ML**, with a focus on **Agentic AI, LLMs, RAG, automation, and intelligent systems**. I build open-source tools that enhance AI coding agents, enable shared memory and continuous learning, automate complex workflows, and bridge traditional enterprise applications with next-generation AI technologies.
 **Open to software engineering and applied AI roles, and to research collaborations.** [Connect on LinkedIn](https://www.linkedin.com/in/ihtishamdeveloper/) · [Email me](mailto:Theihtisham@outlook.com)
 
 [Explore the projects](#public-repositories) · [Package downloads](#npm-downloads) · [Languages & tools](#languages--tools) · [Contact](#contact)
