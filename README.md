@@ -1,6 +1,6 @@
 <h1><picture>
-  <source media="(max-width: 600px)" srcset="./assets/folio/prism-mobile.webp">
-  <img src="./assets/folio/prism.webp" width="100%" alt="Ihtisham Ahmad · Software engineering and applied AI">
+  <source media="(max-width: 600px)" srcset="./assets/folio/developer-work-mobile.webp">
+  <img src="./assets/folio/developer-work.webp" width="100%" alt="Ihtisham Ahmad — Full Stack Developer · AI Engineer · Agentic Tools. Featuring Agent Shadow Brain and Omni Skills Forge.">
 </picture></h1>
 
 I build tools that help coding agents share what they learn, help procurement teams check the evidence behind a decision, and help players find their way around Leonida.
