@@ -37,12 +37,24 @@ async function selectedPublicProjects(){
  }))).filter(Boolean);
 }
 /** Refresh all packages from this public npm maintainer; API failures preserve the last good data. */
-async function refreshNpm(){
+async function refreshNpm({npmOnly=false}={}){
  try{
   let previous={packages:[]};
   try{previous=JSON.parse(await readFile('data/npm-packages.json','utf8'));}catch{}
   const get=async url=>{const r=await fetch(url,{headers:{Accept:'application/json','User-Agent':'theihtishaam-profile-refresh'},signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Public npm API HTTP '+r.status);return r.json();};
   const catalog=await collectNpmPackages(get,previous);
+  if(npmOnly){
+   if(catalog.errors.length)throw Error('Incomplete npm refresh: '+catalog.errors.map(e=>e.package+': '+e.message).join('; '));
+   for(const old of previous.packages??[]){
+    const next=catalog.packages.find(p=>p.name===old.name);
+    if(!next||next.coverageEnd<old.coverageEnd)throw Error('Missing or older npm report for '+old.name);
+   }
+   const unchanged=previous.packages?.length===catalog.packages.length&&catalog.packages.every(p=>{
+    const old=previous.packages.find(q=>q.name===p.name);
+    return old&&old.status===p.status&&old.coverageStart===p.coverageStart&&old.coverageEnd===p.coverageEnd&&old.downloads===p.downloads&&old.last30Days===p.last30Days&&old.recentStart===p.recentStart&&old.recentEnd===p.recentEnd;
+   });
+   if(unchanged){console.log('Npm reports are unchanged; retaining the existing verified snapshot.');return;}
+  }
   const primary=catalog.packages.find(p=>p.name===PRIMARY_PACKAGE);
   if(!primary)throw Error('No verified primary npm package; retaining previous assets');
   const snapshot={schemaVersion:2,package:primary.name,sourceRepo:'theihtishaam/agents-brain',refreshedAt:primary.refreshedAt,coverageStart:primary.coverageStart,coverageEnd:primary.coverageEnd,downloads:primary.downloads,last30Days:primary.last30Days,source:'https://api.npmjs.org/downloads/point/',status:primary.status,note:'Package downloads are not unique users; each snapshot retains its reporting date.'};
@@ -53,7 +65,7 @@ async function refreshNpm(){
   const chart = lifetimeDownloadsChart(catalog);
   if (chart) await put('assets/npm-packages/lifetime.svg', chart);
   await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog));
-  try {
+  if(!npmOnly)try {
    const stats=await get('https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/docs/catalog-stats.json');
    if(!Number.isSafeInteger(stats.skillFiles)||stats.skillFiles<0||!Number.isSafeInteger(stats.categoryPaths)||stats.categoryPaths<0)throw Error('Invalid catalog counts');
    await replaceReadmeRegion('AUTO_OMNI_CATALOG',`**${stats.skillFiles.toLocaleString('en-US')} skill files · ${stats.categoryPaths} categories.** [Catalog counts](https://github.com/theihtishaam/omni-skills-forge/blob/main/docs/catalog-stats.json).`);
@@ -61,7 +73,7 @@ async function refreshNpm(){
 
   console.log('Npm packages verified: '+catalog.packages.length+'; additional 1,000+ highlights: '+qualifiedPackages(catalog).length);
   for(const error of catalog.errors)console.warn(error.package+': '+error.message);
- }catch(e){console.warn('Npm refresh skipped; preserving last verified snapshot:',e.message);}
+ }catch(e){if(npmOnly)throw e;console.warn('Npm refresh skipped; preserving last verified snapshot:',e.message);}
 }
 async function replaceReadmeRegion(name,body){
  const before='<!-- '+name+'_START -->',after='<!-- '+name+'_END -->';
@@ -87,7 +99,9 @@ async function publishReadmeProjects(official,featured,date){
  await put('README.md',next);
 }
 async function main(){
- await refreshNpm();
+ const npmOnly=process.argv.includes('--npm-only');
+ await refreshNpm({npmOnly});
+ if(npmOnly)return;
  const [u,raw,featured]=await Promise.all([api('/users/'+login),repos(),selectedPublicProjects()]);
  if(u.login!==login)throw Error('Unexpected account');
  const all=raw.filter(r=>r.owner?.login===login&&!r.private);
