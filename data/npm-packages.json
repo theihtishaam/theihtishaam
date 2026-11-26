@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-22T09:53:48.343Z",
+  "refreshedAt": "2026-11-26T10:22:37.928Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -12,45 +12,45 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
       "repository": "git+https://github.com/theihtishaam/agents-brain.git",
-      "downloads": 7083,
-      "last30Days": 1792,
-      "recentStart": "2026-10-23",
-      "recentEnd": "2026-11-21",
+      "downloads": 7152,
+      "last30Days": 1843,
+      "recentStart": "2026-10-26",
+      "recentEnd": "2026-11-24",
       "coverageStart": "2026-04-10",
-      "coverageEnd": "2026-11-21",
+      "coverageEnd": "2026-11-24",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-22T09:53:46.035Z",
+      "refreshedAt": "2026-11-26T10:22:35.494Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 7083,
+          "downloads": 7152,
           "start": "2026-04-10",
-          "end": "2026-11-21",
+          "end": "2026-11-24",
           "package": "@theihtisham/agent-shadow-brain"
         }
       ]
     },
     {
       "name": "omni-skills-forge",
-      "description": "50,009 Markdown skill files for coding agents across 28 categories. Find relevant skills by task and combine selected files into a reusable workspace skill.",
-      "version": "2.3.2",
+      "description": "50,012 Markdown skill files across 30 categories for coding and everyday project work. Find relevant skills by task and combine selected files into a reusable workspace skill.",
+      "version": "2.4.0",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
       "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
-      "downloads": 146553,
-      "last30Days": 2255,
-      "recentStart": "2026-10-23",
-      "recentEnd": "2026-11-21",
+      "downloads": 149162,
+      "last30Days": 2419,
+      "recentStart": "2026-10-26",
+      "recentEnd": "2026-11-24",
       "coverageStart": "2026-04-12",
-      "coverageEnd": "2026-11-21",
+      "coverageEnd": "2026-11-24",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-22T09:53:46.914Z",
+      "refreshedAt": "2026-11-26T10:22:36.108Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 146553,
+          "downloads": 149162,
           "start": "2026-04-12",
-          "end": "2026-11-21",
+          "end": "2026-11-24",
           "package": "omni-skills-forge"
         }
       ]
@@ -62,20 +62,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/exactwork-skills",
       "repository": "git+https://github.com/theihtishaam/exactwork-skills.git",
-      "downloads": 693,
-      "last30Days": 693,
-      "recentStart": "2026-10-23",
-      "recentEnd": "2026-11-21",
+      "downloads": 722,
+      "last30Days": 722,
+      "recentStart": "2026-10-26",
+      "recentEnd": "2026-11-24",
       "coverageStart": "2026-11-13",
-      "coverageEnd": "2026-11-21",
+      "coverageEnd": "2026-11-24",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-22T09:53:47.638Z",
+      "refreshedAt": "2026-11-26T10:22:36.897Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 693,
+          "downloads": 722,
           "start": "2026-11-13",
-          "end": "2026-11-21",
+          "end": "2026-11-24",
           "package": "@theihtisham/exactwork-skills"
         }
       ]
@@ -83,24 +83,24 @@
     {
       "name": "gta6-loot-map",
       "description": "GTA 6 Loot Map by theihtishaam. Explore Leonida, find loot and collectibles, plan GPS routes, and track community discoveries.",
-      "version": "0.1.1",
+      "version": "0.1.5",
       "deprecated": null,
       "url": "https://www.npmjs.com/package/gta6-loot-map",
       "repository": "git+https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker.git",
-      "downloads": 301,
-      "last30Days": 301,
-      "recentStart": "2026-10-23",
-      "recentEnd": "2026-11-21",
+      "downloads": 670,
+      "last30Days": 670,
+      "recentStart": "2026-10-26",
+      "recentEnd": "2026-11-24",
       "coverageStart": "2026-11-21",
-      "coverageEnd": "2026-11-21",
+      "coverageEnd": "2026-11-24",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-22T09:53:48.343Z",
+      "refreshedAt": "2026-11-26T10:22:37.928Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 301,
+          "downloads": 670,
           "start": "2026-11-21",
-          "end": "2026-11-21",
+          "end": "2026-11-24",
           "package": "gta6-loot-map"
         }
       ]
