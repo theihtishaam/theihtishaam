@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,lifetimeDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {milestone,starsSummary,starsMarkdown,periods,collectNpmPackages,qualifiedPackages,npmHighlights,npmCard,lifetimeDownloadsChart,lifetimeAssetPath,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 test('download milestones advance at each threshold without rounding up',()=>{
  for(const [value,label] of [[0,'0'],[999,'999'],[1000,'1K+'],[6030,'6K+'],[9999,'9K+'],[140122,'140K+'],[999999,'999K+'],[1000000,'1M+']])assert.equal(milestone(value),label);
  assert.throws(()=>milestone(-1));assert.throws(()=>milestone(NaN));
@@ -29,7 +29,11 @@ test('featured packages and qualifying future packages use exact lifetime totals
  const chart=lifetimeDownloadsChart(snapshot);
  assert.match(chart,/155,630/);
  const markdown=npmHighlights(snapshot);
- assert.match(markdown,/lifetime\.svg/);
+ const path=lifetimeAssetPath(chart);
+ assert.match(path,/^assets\/npm-packages\/lifetime-[a-f0-9]{40}\.svg$/);
+ assert.ok(markdown.includes('src="./'+path+'"'));
+ assert.equal(lifetimeAssetPath(lifetimeDownloadsChart(snapshot)),path);
+ assert.notEqual(lifetimeAssetPath(lifetimeDownloadsChart({packages:rows.map((pkg,i)=>i===0?{...pkg,downloads:pkg.downloads+1}:pkg)})),path);
  for(const pkg of rows.slice(0,5)){
    assert.ok(markdown.includes('www.npmjs.com/package/'+pkg.name));
    assert.ok(markdown.includes(pkg.downloads.toLocaleString('en-US')));

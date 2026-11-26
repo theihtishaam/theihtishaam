@@ -72,7 +72,7 @@ I'm a **.NET Full-Stack Developer and AI Engineer** passionate about building in
 ## npm downloads
 
 <!-- AUTO_NPM_PACKAGES_START -->
-<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/lifetime.svg" alt="Total npm downloads since launch: Omni Skills Forge 149,162 through 2026-11-24, Agent Shadow Brain 7,152 through 2026-11-24, ExactWork Skills 722 through 2026-11-24, GTA 6 Loot Map 670 through 2026-11-24"></a>
+<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/lifetime-4a6e4741ed34721f6f02ee0735ab868a1386f198.svg" alt="Total npm downloads since launch: Omni Skills Forge 149,162 through 2026-11-24, Agent Shadow Brain 7,152 through 2026-11-24, ExactWork Skills 722 through 2026-11-24, GTA 6 Loot Map 670 through 2026-11-24"></a>
 
 <a href="https://www.npmjs.com/package/omni-skills-forge">Omni Skills Forge</a> · <a href="https://www.npmjs.com/package/@theihtisham/agent-shadow-brain">Agent Shadow Brain</a> · <a href="https://www.npmjs.com/package/@theihtisham/exactwork-skills">ExactWork Skills</a> · <a href="https://www.npmjs.com/package/gta6-loot-map">GTA 6 Loot Map</a>
 <!-- AUTO_NPM_PACKAGES_END -->

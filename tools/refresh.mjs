@@ -1,7 +1,7 @@
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,readdir,unlink} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {projectsTimeline,latestRepositoryList,projectCard,projectGrid,projectOrder} from './project-grid.mjs';
-import {starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmHighlights,lifetimeDownloadsChart,PRIMARY_PACKAGE} from './profile-metrics.mjs';
+import {starsSummary,starsMarkdown,collectNpmPackages,qualifiedPackages,npmHighlights,lifetimeDownloadsChart,lifetimeAssetPath,PRIMARY_PACKAGE} from './profile-metrics.mjs';
 const login='theihtishaam';
 const headers={'Accept':'application/vnd.github+json','User-Agent':'github-profile-refresh','X-GitHub-Api-Version':'2022-11-28'};
 if(process.env.GITHUB_TOKEN)headers.Authorization='Bearer '+process.env.GITHUB_TOKEN;
@@ -43,6 +43,7 @@ async function refreshNpm({npmOnly=false}={}){
   try{previous=JSON.parse(await readFile('data/npm-packages.json','utf8'));}catch{}
   const get=async url=>{const r=await fetch(url,{headers:{Accept:'application/json','User-Agent':'theihtishaam-profile-refresh'},signal:AbortSignal.timeout(30000)});if(!r.ok)throw Error('Public npm API HTTP '+r.status);return r.json();};
   const catalog=await collectNpmPackages(get,previous);
+  const chart=lifetimeDownloadsChart(catalog);
   if(npmOnly){
    if(catalog.errors.length)throw Error('Incomplete npm refresh: '+catalog.errors.map(e=>e.package+': '+e.message).join('; '));
    for(const old of previous.packages??[]){
@@ -53,7 +54,12 @@ async function refreshNpm({npmOnly=false}={}){
     const old=previous.packages.find(q=>q.name===p.name);
     return old&&old.status===p.status&&old.coverageStart===p.coverageStart&&old.coverageEnd===p.coverageEnd&&old.downloads===p.downloads&&old.last30Days===p.last30Days&&old.recentStart===p.recentStart&&old.recentEnd===p.recentEnd;
    });
-   if(unchanged){console.log('Npm reports are unchanged; retaining the existing verified snapshot.');return;}
+   if(unchanged&&chart){
+    const path=lifetimeAssetPath(chart);
+    const existing=await readFile(path,'utf8').catch(()=>null);
+    const readme=await readFile('README.md','utf8');
+    if(existing===chart&&readme.includes('src="./'+path+'"')){console.log('Npm reports are unchanged; retaining the existing verified snapshot.');return;}
+   }
   }
   const primary=catalog.packages.find(p=>p.name===PRIMARY_PACKAGE);
   if(!primary)throw Error('No verified primary npm package; retaining previous assets');
@@ -62,9 +68,19 @@ async function refreshNpm({npmOnly=false}={}){
    await put(folder+'/npm-metrics.json',JSON.stringify(snapshot,null,2)+'\n');
    await put(folder+'/npm-packages.json',JSON.stringify(catalog,null,2)+'\n');
   }
-  const chart = lifetimeDownloadsChart(catalog);
-  if (chart) await put('assets/npm-packages/lifetime.svg', chart);
-  await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog));
+  if(chart){
+   const path=lifetimeAssetPath(chart);
+   const before=await readFile('README.md','utf8');
+   const prior=before.match(/src="\.\/(assets\/npm-packages\/lifetime-[a-f0-9]{40}\.svg)"/)?.[1];
+   await put('assets/npm-packages/lifetime.svg',chart);
+   await put(path,chart);
+   await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog,chart));
+   // Keep the current and previous card URLs, so cached README pages still work.
+   for(const name of await readdir('assets/npm-packages')){
+    const candidate='assets/npm-packages/'+name;
+    if(/^lifetime-[a-f0-9]{40}\.svg$/.test(name)&&candidate!==path&&candidate!==prior)await unlink(candidate);
+   }
+  }else await replaceReadmeRegion('AUTO_NPM_PACKAGES',npmHighlights(catalog,chart));
   if(!npmOnly)try {
    const stats=await get('https://raw.githubusercontent.com/theihtishaam/omni-skills-forge/main/docs/catalog-stats.json');
    if(!Number.isSafeInteger(stats.skillFiles)||stats.skillFiles<0||!Number.isSafeInteger(stats.categoryPaths)||stats.categoryPaths<0)throw Error('Invalid catalog counts');

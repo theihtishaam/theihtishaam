@@ -42,7 +42,7 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" = workflow_dispatch ]; then
             git add -- README.md assets/repos assets/npm-packages data/npm-packages.json docs/npm-packages.json assets/statistics.svg assets/recent-projects.svg assets/face-scan.svg docs/PUBLIC_PROJECTS.md data/github-stats.json data/public-projects.json docs/github-stats.json docs/public-projects.json assets/npm-milestone.svg data/npm-metrics.json docs/npm-metrics.json docs/assets/npm-milestone.svg
           else
-            git add -- README.md assets/npm-packages/lifetime.svg data/npm-packages.json docs/npm-packages.json data/npm-metrics.json docs/npm-metrics.json
+            git add -- README.md assets/npm-packages data/npm-packages.json docs/npm-packages.json data/npm-metrics.json docs/npm-metrics.json
           fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: refresh public GitHub profile"

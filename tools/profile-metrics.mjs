@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 const DAY=86400000;
 export const NPM_MAINTAINER='theihtisham';
 export const PRIMARY_PACKAGE='@theihtisham/agent-shadow-brain';
@@ -127,12 +128,17 @@ export function lifetimeDownloadsChart(snapshot) {
     <path d="M28 50h624" stroke="#334959"/>${total}${rows.join('')}</g></svg>`;
 }
 
-export function npmHighlights(snapshot) {
+export function lifetimeAssetPath(chart) {
+  const hash = createHash('sha1').update('blob ' + Buffer.byteLength(chart) + '\0').update(chart).digest('hex');
+  return 'assets/npm-packages/lifetime-' + hash + '.svg';
+}
+
+export function npmHighlights(snapshot, chart = lifetimeDownloadsChart(snapshot)) {
   const packages = lifetimePackages(snapshot);
   if (!packages.length) return 'Lifetime download figures are awaiting a complete npm report.';
   const label = pkg => packageLabels.get(pkg.name)?.[0] || pkg.name;
   const alt = packages.map(pkg => label(pkg) + ' ' + pkg.downloads.toLocaleString('en-US') + ' through ' + pkg.coverageEnd).join(', ');
   const links = packages.map(pkg => '<a href="https://www.npmjs.com/package/' + xml(pkg.name) + '">' + xml(label(pkg)) + '</a>');
-  return '<a href="./data/npm-packages.json"><img width="100%" src="./assets/npm-packages/lifetime.svg" alt="' +
+  return '<a href="./data/npm-packages.json"><img width="100%" src="./' + lifetimeAssetPath(chart) + '" alt="' +
     xml('Total npm downloads since launch: ' + alt) + '"></a>\n\n' + links.join(' · ');
 }
