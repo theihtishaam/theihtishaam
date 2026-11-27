@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "maintainer": "theihtisham",
   "threshold": 1000,
-  "refreshedAt": "2026-11-26T10:22:37.928Z",
+  "refreshedAt": "2026-11-27T18:11:47.275Z",
   "discoveryComplete": true,
   "packages": [
     {
@@ -12,20 +12,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/agent-shadow-brain",
       "repository": "git+https://github.com/theihtishaam/agents-brain.git",
-      "downloads": 7152,
-      "last30Days": 1843,
-      "recentStart": "2026-10-26",
-      "recentEnd": "2026-11-24",
+      "downloads": 7169,
+      "last30Days": 1850,
+      "recentStart": "2026-10-28",
+      "recentEnd": "2026-11-26",
       "coverageStart": "2026-04-10",
-      "coverageEnd": "2026-11-24",
+      "coverageEnd": "2026-11-26",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-26T10:22:35.494Z",
+      "refreshedAt": "2026-11-27T18:11:45.657Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 7152,
+          "downloads": 7169,
           "start": "2026-04-10",
-          "end": "2026-11-24",
+          "end": "2026-11-26",
           "package": "@theihtisham/agent-shadow-brain"
         }
       ]
@@ -37,20 +37,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/omni-skills-forge",
       "repository": "git+https://github.com/theihtishaam/omni-skills-forge.git",
-      "downloads": 149162,
-      "last30Days": 2419,
-      "recentStart": "2026-10-26",
-      "recentEnd": "2026-11-24",
+      "downloads": 149284,
+      "last30Days": 2325,
+      "recentStart": "2026-10-28",
+      "recentEnd": "2026-11-26",
       "coverageStart": "2026-04-12",
-      "coverageEnd": "2026-11-24",
+      "coverageEnd": "2026-11-26",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-26T10:22:36.108Z",
+      "refreshedAt": "2026-11-27T18:11:46.126Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 149162,
+          "downloads": 149284,
           "start": "2026-04-12",
-          "end": "2026-11-24",
+          "end": "2026-11-26",
           "package": "omni-skills-forge"
         }
       ]
@@ -62,20 +62,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/@theihtisham/exactwork-skills",
       "repository": "git+https://github.com/theihtishaam/exactwork-skills.git",
-      "downloads": 722,
-      "last30Days": 722,
-      "recentStart": "2026-10-26",
-      "recentEnd": "2026-11-24",
+      "downloads": 732,
+      "last30Days": 732,
+      "recentStart": "2026-10-28",
+      "recentEnd": "2026-11-26",
       "coverageStart": "2026-11-13",
-      "coverageEnd": "2026-11-24",
+      "coverageEnd": "2026-11-26",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-26T10:22:36.897Z",
+      "refreshedAt": "2026-11-27T18:11:46.868Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 722,
+          "downloads": 732,
           "start": "2026-11-13",
-          "end": "2026-11-24",
+          "end": "2026-11-26",
           "package": "@theihtisham/exactwork-skills"
         }
       ]
@@ -87,20 +87,20 @@
       "deprecated": null,
       "url": "https://www.npmjs.com/package/gta6-loot-map",
       "repository": "git+https://github.com/theihtishaam/GTA-6-Interactive-Map-and-Loot-Tracker.git",
-      "downloads": 670,
-      "last30Days": 670,
-      "recentStart": "2026-10-26",
-      "recentEnd": "2026-11-24",
+      "downloads": 692,
+      "last30Days": 692,
+      "recentStart": "2026-10-28",
+      "recentEnd": "2026-11-26",
       "coverageStart": "2026-11-21",
-      "coverageEnd": "2026-11-24",
+      "coverageEnd": "2026-11-26",
       "completeSinceCreation": true,
-      "refreshedAt": "2026-11-26T10:22:37.928Z",
+      "refreshedAt": "2026-11-27T18:11:47.275Z",
       "status": "verified",
       "receipts": [
         {
-          "downloads": 670,
+          "downloads": 692,
           "start": "2026-11-21",
-          "end": "2026-11-24",
+          "end": "2026-11-26",
           "package": "gta6-loot-map"
         }
       ]
